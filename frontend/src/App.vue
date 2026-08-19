@@ -115,7 +115,7 @@
 import { computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { Box, LogOut, LayoutDashboard, PlusCircle, FileBarChart, Package, Users, Shield } from 'lucide-vue-next';
-import { hasPermission, logout as authLogout } from '../utils/auth';
+import { hasPermission, logout as authLogout } from './utils/auth';
 
 const route = useRoute();
 const router = useRouter();
