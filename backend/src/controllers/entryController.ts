@@ -80,7 +80,7 @@ export const updateEntry = async (req: AuthRequest, res: Response) => {
     }
 
     // 2. Strict Scoping Check for Editing
-    if (req.user?.role !== 'admin' && existingEntry.userId !== req.user?.id) {
+    if (!req.user?.permissions.includes('view_all_entries') && existingEntry.userId !== req.user?.id) {
       return res.status(403).json({ error: 'You do not have permission to edit this entry.' });
     }
 
@@ -126,15 +126,18 @@ export const getDashboardStats = async (req: AuthRequest, res: Response) => {
     monthStart.setDate(1);
     monthStart.setHours(0, 0, 0, 0);
 
+    // Apply data scoping so staff only see their own stats
+    const baseWhere = enforceDataScoping(req);
+
     // Get today's entries
     const todayEntries = await prisma.entry.findMany({
-      where: { date: { gte: todayStart } },
+      where: { ...baseWhere, date: { gte: todayStart } },
       select: { qty: true, productId: true }
     });
 
     // Get month's entries for running total
     const monthEntries = await prisma.entry.aggregate({
-      where: { date: { gte: monthStart } },
+      where: { ...baseWhere, date: { gte: monthStart } },
       _sum: { qty: true }
     });
 
@@ -144,6 +147,7 @@ export const getDashboardStats = async (req: AuthRequest, res: Response) => {
 
     // Get recent activity
     const recentActivity = await prisma.entry.findMany({
+      where: baseWhere,
       take: 8,
       orderBy: { createdAt: 'desc' },
       include: {

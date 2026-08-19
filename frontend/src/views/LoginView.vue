@@ -63,18 +63,28 @@ const handleLogin = async () => {
   error.value = '';
   
   try {
-    // Simulate API delay
-    await new Promise(resolve => setTimeout(resolve, 800));
+    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
     
-    // Simulate success
-    if (email.value.includes('@')) {
+    const response = await fetch(`${apiUrl}/auth/login`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email.value, password: password.value })
+    });
+    
+    const data = await response.json();
+    
+    if (response.ok) {
       localStorage.setItem('isAuthenticated', 'true');
-      router.push('/dashboard');
+      localStorage.setItem('permissions', JSON.stringify(data.permissions || []));
+      localStorage.setItem('userName', data.name || '');
+      
+      // Force a tiny delay to ensure router picks up storage
+      setTimeout(() => router.push('/dashboard'), 50);
     } else {
-      error.value = 'Invalid credentials';
+      error.value = data.error || 'Invalid credentials';
     }
   } catch (err) {
-    error.value = 'An error occurred';
+    error.value = 'Failed to connect to server';
   } finally {
     isLoading.value = false;
   }

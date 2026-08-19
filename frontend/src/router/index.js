@@ -5,6 +5,8 @@ import AddEntryView from '../views/AddEntryView.vue';
 import ReportsView from '../views/ReportsView.vue';
 import LoginView from '../views/LoginView.vue';
 import ProductsView from '../views/ProductsView.vue';
+import ManageUsersView from '../views/ManageUsersView.vue';
+import ManageRolesView from '../views/ManageRolesView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -41,6 +43,18 @@ const router = createRouter({
       path: '/products',
       name: 'products',
       component: ProductsView,
+      meta: { requiresAuth: true }
+    },
+    {
+      path: '/settings/users',
+      name: 'manage-users',
+      component: ManageUsersView,
+      meta: { requiresAuth: true }
+    },
+    {
+      path: '/settings/roles',
+      name: 'manage-roles',
+      component: ManageRolesView,
       meta: { requiresAuth: true }
     }
   ]

@@ -31,10 +31,24 @@
           Reports
         </router-link>
         
-        <router-link v-if="isAdmin" to="/products" class="flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors" active-class="bg-gray-100 text-ink" :class="route.path === '/products' ? '' : 'text-ink-soft hover:text-ink hover:bg-gray-50'">
+        <router-link v-if="canManageProducts" to="/products" class="flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors" active-class="bg-gray-100 text-ink" :class="route.path === '/products' ? '' : 'text-ink-soft hover:text-ink hover:bg-gray-50'">
           <Package class="w-4 h-4 mr-3" />
           Products
         </router-link>
+
+        <div v-if="canManageUsers" class="pt-4">
+          <div class="text-xs font-semibold text-muted uppercase tracking-wider mb-3 px-2">Settings</div>
+          
+          <router-link to="/settings/users" class="flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors" active-class="bg-gray-100 text-ink" :class="route.path === '/settings/users' ? '' : 'text-ink-soft hover:text-ink hover:bg-gray-50'">
+            <Users class="w-4 h-4 mr-3" />
+            Users
+          </router-link>
+          
+          <router-link to="/settings/roles" class="flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors" active-class="bg-gray-100 text-ink" :class="route.path === '/settings/roles' ? '' : 'text-ink-soft hover:text-ink hover:bg-gray-50'">
+            <Shield class="w-4 h-4 mr-3" />
+            Roles
+          </router-link>
+        </div>
       </nav>
 
       <!-- Bottom: User Profile & Logout -->
@@ -98,9 +112,10 @@
 </template>
 
 <script setup>
-import { computed, ref } from 'vue';
+import { computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-import { Box, LogOut, LayoutDashboard, PlusCircle, FileBarChart, Package } from 'lucide-vue-next';
+import { Box, LogOut, LayoutDashboard, PlusCircle, FileBarChart, Package, Users, Shield } from 'lucide-vue-next';
+import { hasPermission, logout as authLogout } from '../utils/auth';
 
 const route = useRoute();
 const router = useRouter();
@@ -108,12 +123,14 @@ const router = useRouter();
 const companyName = import.meta.env.VITE_COMPANY_NAME || 'Label Tracker Pro';
 const isPublicPage = computed(() => route.path === '/login' || route.path === '/');
 
-// Mocked for UI demonstration
-const isAdmin = ref(true); 
-const userName = ref("Test Admin");
+const userName = computed(() => {
+  return localStorage.getItem('userName') || 'User';
+});
+
+const canManageProducts = computed(() => hasPermission('manage_products'));
+const canManageUsers = computed(() => hasPermission('manage_users'));
 
 const logout = () => {
-  localStorage.removeItem('isAuthenticated');
-  router.push('/login');
+  authLogout();
 };
 </script>

@@ -10,9 +10,20 @@ export const login = async (req: Request, res: Response) => {
   const { email, password } = req.body;
 
   try {
-    const user = await prisma.user.findUnique({ where: { email: email.toLowerCase() } });
+    const user = await prisma.user.findUnique({ 
+      where: { email: email.toLowerCase() },
+      include: {
+        roleRelation: { include: { permissions: { include: { permission: true } } } },
+        overrides: { include: { permission: true } }
+      }
+    });
+
     if (!user || !user.passwordHash) {
       return res.status(401).json({ error: 'Invalid email or password' });
+    }
+    
+    if (!user.isActive) {
+      return res.status(401).json({ error: 'Account disabled' });
     }
 
     const isValid = await bcrypt.compare(password, user.passwordHash);
@@ -20,9 +31,8 @@ export const login = async (req: Request, res: Response) => {
       return res.status(401).json({ error: 'Invalid email or password' });
     }
 
-    const token = jwt.sign({ id: user.id, role: user.role }, JWT_SECRET, { expiresIn: '1d' });
+    const token = jwt.sign({ id: user.id }, JWT_SECRET, { expiresIn: '1d' });
 
-    // Set HTTP-only cookie
     res.cookie('token', token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
@@ -30,7 +40,20 @@ export const login = async (req: Request, res: Response) => {
       maxAge: 24 * 60 * 60 * 1000 // 1 day
     });
 
-    return res.json({ message: 'Logged in successfully', role: user.role, name: user.name });
+    const perms = new Set<string>();
+    if (user.roleRelation) {
+      user.roleRelation.permissions.forEach(rp => perms.add(rp.permission.key));
+    }
+    user.overrides.forEach(o => {
+      if (o.granted) perms.add(o.permission.key);
+      else perms.delete(o.permission.key);
+    });
+
+    return res.json({ 
+      message: 'Logged in successfully', 
+      permissions: Array.from(perms),
+      name: user.name 
+    });
   } catch (err) {
     return res.status(500).json({ error: 'Internal server error' });
   }
