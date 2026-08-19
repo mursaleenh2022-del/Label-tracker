@@ -20,6 +20,10 @@ app.use(cors({
 // Apply standard rate limiting to all requests
 app.use(apiLimiter);
 
+// Health check routes for cron-job.org keep-alive
+app.get('/', (req, res) => res.status(200).send('Label Tracker API is awake.'));
+app.get('/api/health', (req, res) => res.status(200).json({ status: 'ok' }));
+
 // Routes
 app.use('/api', router);
 
