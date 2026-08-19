@@ -1,0 +1,8 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <rect width="256" height="256" rx="64" fill="#111827" />
+  <path d="M192 120 L136 176 C129.7 182.2 119.5 182.2 113.3 176 L80 142.6 C73.7 136.4 73.7 126.2 80 120 L136 64 C139 61 143 59.3 147.3 59.3 L186.6 59.3 C192.5 59.3 197.3 64 197.3 69.9 L197.3 109.3 C197.3 113.5 195.6 117.5 192 120 Z" fill="none" stroke="#f59e0b" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="165" cy="91" r="14" fill="#f59e0b" />
+  <!-- Add a little inner line/detail for flair -->
+  <line x1="110" y1="110" x2="135" y2="135" stroke="#f59e0b" stroke-width="12" stroke-linecap="round" />
+  <line x1="125" y1="95" x2="150" y2="120" stroke="#f59e0b" stroke-width="12" stroke-linecap="round" />
+</svg>

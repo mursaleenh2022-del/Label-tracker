@@ -1,0 +1,5 @@
+{
+  "summary": "Prisma schema with models for User, Product, Entry, and EntryAuditLog, along with speed-boosting indexes.",
+  "updatedAt": "2026-08-19T10:48:53.477918800Z",
+  "userFacing": true
+}

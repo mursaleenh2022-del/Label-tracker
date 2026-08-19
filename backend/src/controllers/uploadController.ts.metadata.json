@@ -1,0 +1,4 @@
+{
+  "summary": "Update uploadController to inject database products into Gemini prompt for accurate ID matching",
+  "updatedAt": "2026-08-19T14:24:15.664379800Z"
+}

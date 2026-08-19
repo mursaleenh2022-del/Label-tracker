@@ -1,0 +1,30 @@
+import express from 'express';
+import cors from 'cors';
+import dotenv from 'dotenv';
+import { apiLimiter } from './middleware/rateLimiter';
+import router from './routes';
+
+dotenv.config();
+
+const app = express();
+app.set('trust proxy', 1);
+
+// Middleware
+app.use(express.json());
+// Ensure CORS strictly matches your Netlify domain in production
+app.use(cors({
+  origin: process.env.FRONTEND_URL || '*',
+  credentials: true,
+}));
+
+// Apply standard rate limiting to all requests
+app.use(apiLimiter);
+
+// Routes
+app.use('/api', router);
+
+// Start server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Label Tracker API is running on http://localhost:${PORT}`);
+});
