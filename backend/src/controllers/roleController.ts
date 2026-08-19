@@ -43,15 +43,15 @@ export const updateRole = async (req: Request, res: Response) => {
     const { id } = req.params;
     const { name, permissionIds } = req.body;
     
-    const role = await prisma.role.findUnique({ where: { id: parseInt(id) } });
+    const role = await prisma.role.findUnique({ where: { id: parseInt(id as string) } });
     if (!role) return res.status(404).json({ error: 'Role not found' });
     if (role.isSystemDefault) return res.status(403).json({ error: 'Cannot modify system default roles' });
     
     // Clear and reset permissions
     await prisma.$transaction([
-      prisma.rolePermission.deleteMany({ where: { roleId: parseInt(id) } }),
+      prisma.rolePermission.deleteMany({ where: { roleId: parseInt(id as string) } }),
       prisma.role.update({
-        where: { id: parseInt(id) },
+        where: { id: parseInt(id as string) },
         data: {
           name,
           permissions: {
@@ -72,11 +72,11 @@ export const deleteRole = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
     
-    const role = await prisma.role.findUnique({ where: { id: parseInt(id) } });
+    const role = await prisma.role.findUnique({ where: { id: parseInt(id as string) } });
     if (!role) return res.status(404).json({ error: 'Role not found' });
     if (role.isSystemDefault) return res.status(403).json({ error: 'Cannot delete system default roles' });
     
-    await prisma.role.delete({ where: { id: parseInt(id) } });
+    await prisma.role.delete({ where: { id: parseInt(id as string) } });
     res.json({ message: 'Role deleted' });
   } catch (error) {
     res.status(500).json({ error: 'Failed to delete role' });

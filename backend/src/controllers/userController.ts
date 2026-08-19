@@ -57,7 +57,7 @@ export const updateUser = async (req: Request, res: Response) => {
     
     // Update basic info
     await prisma.user.update({
-      where: { id: parseInt(id) },
+      where: { id: parseInt(id as string) },
       data: { roleId, isActive }
     });
     
@@ -65,13 +65,13 @@ export const updateUser = async (req: Request, res: Response) => {
     if (Array.isArray(overrides)) {
       // Clear existing
       await prisma.userPermissionOverride.deleteMany({
-        where: { userId: parseInt(id) }
+        where: { userId: parseInt(id as string) }
       });
       // Insert new
       if (overrides.length > 0) {
         await prisma.userPermissionOverride.createMany({
           data: overrides.map((o: any) => ({
-            userId: parseInt(id),
+            userId: parseInt(id as string),
             permissionId: o.permissionId,
             granted: o.granted
           }))

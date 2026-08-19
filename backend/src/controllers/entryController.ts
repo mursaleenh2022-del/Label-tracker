@@ -70,7 +70,7 @@ export const createEntry = async (req: AuthRequest, res: Response) => {
 export const updateEntry = async (req: AuthRequest, res: Response) => {
   const { id } = req.params;
   const { date, productId, qty } = req.body;
-  const entryId = Number(id);
+  const entryId = Number(id as string);
 
   try {
     // 1. Fetch the existing entry to verify ownership and get old values for the audit log
