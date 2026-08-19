@@ -21,6 +21,13 @@
   --color-danger: #ef4444;
   --color-danger-bg: #fee2e2;
   --color-danger-text: #991b1b;
+  
+  --color-amber: #f59e0b;
+  --color-amber-dark: #d97706;
+  --color-green: #10b981;
+  --color-green-dark: #059669;
+  --color-red: #ef4444;
+  --color-red-dark: #dc2626;
 }
 
 :root {
