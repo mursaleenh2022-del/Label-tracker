@@ -157,47 +157,47 @@
     <section id="pricing" class="py-24 bg-white border-y border-line px-4">
       <div class="max-w-6xl mx-auto text-center">
         <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Simple, transparent pricing</h2>
-        <p class="text-lg text-ink-soft max-w-2xl mx-auto mb-16">Start for free, upgrade when your volume grows.</p>
+        <p class="text-lg text-ink-soft max-w-2xl mx-auto mb-20">Start for free, upgrade when your volume grows.</p>
         
-        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto items-center">
           <!-- Starter -->
-          <div class="p-8 rounded-3xl bg-card border border-line text-left flex flex-col">
+          <div class="p-8 rounded-3xl bg-card border border-line text-left flex flex-col h-full shadow-sm">
             <h3 class="font-bold text-xl mb-2">Starter</h3>
             <p class="text-sm text-muted mb-6">Perfect for small shops.</p>
             <div class="mb-6"><span class="text-4xl font-bold">$0</span><span class="text-muted">/mo</span></div>
-            <ul class="space-y-3 mb-8 flex-grow text-sm text-ink-soft">
-              <li class="flex items-center"><Check class="w-4 h-4 text-green-500 mr-2 shrink-0" /> 500 AI Scans per month</li>
-              <li class="flex items-center"><Check class="w-4 h-4 text-green-500 mr-2 shrink-0" /> Basic Excel Reports</li>
-              <li class="flex items-center"><Check class="w-4 h-4 text-green-500 mr-2 shrink-0" /> 1 Admin Seat</li>
+            <ul class="space-y-4 mb-8 flex-grow text-sm text-ink-soft">
+              <li class="flex items-center"><Check class="w-4 h-4 text-green-500 mr-3 shrink-0" /> 500 AI Scans per month</li>
+              <li class="flex items-center"><Check class="w-4 h-4 text-green-500 mr-3 shrink-0" /> Basic Excel Reports</li>
+              <li class="flex items-center"><Check class="w-4 h-4 text-green-500 mr-3 shrink-0" /> 1 Admin Seat</li>
             </ul>
-            <router-link to="/login" class="w-full block text-center bg-gray-100 hover:bg-gray-200 text-ink font-medium py-3 rounded-xl transition-colors">Start for free</router-link>
+            <router-link to="/login" class="w-full block text-center bg-gray-100 hover:bg-gray-200 text-ink font-medium py-3.5 rounded-xl transition-colors">Start for free</router-link>
           </div>
           
           <!-- Pro -->
-          <div class="p-8 rounded-3xl bg-ink text-white text-left flex flex-col relative transform md:-translate-y-4 shadow-xl">
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-amber text-ink text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Most Popular</div>
-            <h3 class="font-bold text-xl mb-2 text-white">Professional</h3>
-            <p class="text-sm text-gray-300 mb-6">For growing warehouses.</p>
+          <div class="p-8 rounded-3xl bg-ink text-white text-left flex flex-col relative transform md:scale-105 shadow-2xl ring-4 ring-ink/10 h-full z-10">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#f59e0b] text-[#09090b] text-[11px] font-extrabold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-sm whitespace-nowrap border border-[#d97706]">Most Popular</div>
+            <h3 class="font-bold text-xl mb-2 text-white mt-2">Professional</h3>
+            <p class="text-sm text-gray-400 mb-6">For growing warehouses.</p>
             <div class="mb-6"><span class="text-4xl font-bold">$49</span><span class="text-gray-400">/mo</span></div>
-            <ul class="space-y-3 mb-8 flex-grow text-sm text-gray-300">
-              <li class="flex items-center"><Check class="w-4 h-4 text-amber mr-2 shrink-0" /> 5,000 AI Scans per month</li>
-              <li class="flex items-center"><Check class="w-4 h-4 text-amber mr-2 shrink-0" /> Batch Upload Mode (Up to 50)</li>
-              <li class="flex items-center"><Check class="w-4 h-4 text-amber mr-2 shrink-0" /> Custom Excel Templates</li>
+            <ul class="space-y-4 mb-8 flex-grow text-sm text-gray-300">
+              <li class="flex items-center"><Check class="w-4 h-4 text-[#f59e0b] mr-3 shrink-0" /> 5,000 AI Scans per month</li>
+              <li class="flex items-center"><Check class="w-4 h-4 text-[#f59e0b] mr-3 shrink-0" /> Batch Upload Mode (Up to 50)</li>
+              <li class="flex items-center"><Check class="w-4 h-4 text-[#f59e0b] mr-3 shrink-0" /> Custom Excel Templates</li>
             </ul>
-            <router-link to="/login" class="w-full block text-center bg-primary hover:bg-primary-hover text-white font-medium py-3 rounded-xl transition-colors">Start 14-day trial</router-link>
+            <router-link to="/login" class="w-full block text-center bg-white hover:bg-gray-100 text-ink font-bold py-3.5 rounded-xl transition-colors mt-auto">Start 14-day trial</router-link>
           </div>
           
           <!-- Enterprise -->
-          <div class="p-8 rounded-3xl bg-card border border-line text-left flex flex-col">
+          <div class="p-8 rounded-3xl bg-card border border-line text-left flex flex-col h-full shadow-sm">
             <h3 class="font-bold text-xl mb-2">Enterprise</h3>
             <p class="text-sm text-muted mb-6">For massive operations.</p>
             <div class="mb-6"><span class="text-4xl font-bold">$199</span><span class="text-muted">/mo</span></div>
-            <ul class="space-y-3 mb-8 flex-grow text-sm text-ink-soft">
-              <li class="flex items-center"><Check class="w-4 h-4 text-green-500 mr-2 shrink-0" /> Unlimited AI Scans</li>
-              <li class="flex items-center"><Check class="w-4 h-4 text-green-500 mr-2 shrink-0" /> Dedicated Account Manager</li>
-              <li class="flex items-center"><Check class="w-4 h-4 text-green-500 mr-2 shrink-0" /> API Access</li>
+            <ul class="space-y-4 mb-8 flex-grow text-sm text-ink-soft">
+              <li class="flex items-center"><Check class="w-4 h-4 text-green-500 mr-3 shrink-0" /> Unlimited AI Scans</li>
+              <li class="flex items-center"><Check class="w-4 h-4 text-green-500 mr-3 shrink-0" /> Dedicated Account Manager</li>
+              <li class="flex items-center"><Check class="w-4 h-4 text-green-500 mr-3 shrink-0" /> API Access</li>
             </ul>
-            <router-link to="/login" class="w-full block text-center bg-gray-100 hover:bg-gray-200 text-ink font-medium py-3 rounded-xl transition-colors">Contact Sales</router-link>
+            <router-link to="/login" class="w-full block text-center bg-gray-100 hover:bg-gray-200 text-ink font-medium py-3.5 rounded-xl transition-colors mt-auto">Contact Sales</router-link>
           </div>
         </div>
       </div>

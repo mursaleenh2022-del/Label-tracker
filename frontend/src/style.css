@@ -30,6 +30,12 @@
   --card: #ffffff;
   --line: #e4e4e7;
   --muted: #a1a1aa;
+  --amber: #f59e0b;
+  --amber-dark: #d97706;
+  --green: #10b981;
+  --green-dark: #059669;
+  --red: #ef4444;
+  --red-dark: #dc2626;
 }
 
 body {
