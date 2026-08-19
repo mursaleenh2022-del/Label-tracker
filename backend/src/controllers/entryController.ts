@@ -15,7 +15,7 @@ export const getEntries = async (req: AuthRequest, res: Response) => {
     
     // CRITICAL SECURITY: This applies the strict data scoping rule.
     // If the user is staff, this completely ignores queryUserId and forces it to their own ID.
-    const whereClause = enforceDataScoping(req, queryUserId);
+    const whereClause: any = enforceDataScoping(req, queryUserId);
 
     // Filter by specific product if requested
     if (req.query.productId) {
