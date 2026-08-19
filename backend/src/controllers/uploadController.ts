@@ -38,14 +38,14 @@ export const extractLabelData = async (req: Request, res: Response) => {
     ${productListText}
 
     Task 1: Find the closest matching product from the list above. If it exists, return its ID in 'productId' and set 'newProductName' to null.
-    Task 2: If the product is ENTIRELY NEW and does not exist in the list, set 'productId' to null, and return the exact extracted product name in a new key called 'newProductName'.
-    Task 3: Identify the Quantity.
+    Task 2: If the product is ENTIRELY NEW, or you cannot find a match, YOU MUST set 'productId' to null, and YOU MUST extract a descriptive name from the label and return it in 'newProductName'. Do not leave both null.
+    Task 3: Identify the Quantity (default to 1 if not found).
     Task 4: Identify a unique 'reference' string from the label (Tracking Number, Order ID, or Recipient Name/Address).
 
     Return ONLY a raw JSON object with exactly these four keys, and no markdown formatting:
     {"productId": 12, "newProductName": null, "quantity": 50, "reference": "1Z9999"}
     or
-    {"productId": null, "newProductName": "Brand New Perfume 50ml", "quantity": 1, "reference": "John Doe, NY"}`;
+    {"productId": null, "newProductName": "Brand New Item 50ml", "quantity": 1, "reference": "John Doe, NY"}`;
 
     const result = await model.generateContent([prompt, { inlineData }]);
     let text = result.response.text();
