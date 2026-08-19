@@ -106,7 +106,7 @@ const route = useRoute();
 const router = useRouter();
 
 const companyName = import.meta.env.VITE_COMPANY_NAME || 'Label Tracker Pro';
-const isPublicPage = computed(() => route.path === '/login' || route.path === '/dashboard');
+const isPublicPage = computed(() => route.path === '/login' || route.path === '/');
 
 // Mocked for UI demonstration
 const isAdmin = ref(true); 
