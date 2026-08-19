@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import LandingView from '../views/LandingView.vue';
 import DashboardView from '../views/DashboardView.vue';
 import AddEntryView from '../views/AddEntryView.vue';
 import ReportsView from '../views/ReportsView.vue';
@@ -9,38 +10,52 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
+      path: '/',
+      name: 'landing',
+      component: LandingView
+    },
+    {
       path: '/login',
       name: 'login',
       component: LoginView
     },
     {
-      path: '/',
+      path: '/dashboard',
       name: 'dashboard',
-      component: DashboardView
+      component: DashboardView,
+      meta: { requiresAuth: true }
     },
     {
       path: '/add',
       name: 'add-entry',
-      component: AddEntryView
+      component: AddEntryView,
+      meta: { requiresAuth: true }
     },
     {
       path: '/reports',
       name: 'reports',
-      component: ReportsView
+      component: ReportsView,
+      meta: { requiresAuth: true }
     },
     {
       path: '/products',
       name: 'products',
-      component: ProductsView
+      component: ProductsView,
+      meta: { requiresAuth: true }
     }
   ]
 });
 
-// Basic navigation guard (stubbed until Pinia auth is active)
 router.beforeEach((to, from, next) => {
-  const isAuthenticated = true; // Replace with authStore.isAuthenticated
-  if (to.name !== 'login' && !isAuthenticated) {
+  // Check if user is authenticated via localStorage
+  const isAuthenticated = localStorage.getItem('isAuthenticated') === 'true';
+  
+  if (to.meta.requiresAuth && !isAuthenticated) {
+    // If route requires auth and user is not logged in, redirect to login
     next({ name: 'login' });
+  } else if (to.name === 'login' && isAuthenticated) {
+    // If logged in user tries to go to login page, redirect to dashboard
+    next({ name: 'dashboard' });
   } else {
     next();
   }

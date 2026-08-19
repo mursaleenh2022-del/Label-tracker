@@ -68,7 +68,8 @@ const handleLogin = async () => {
     
     // Simulate success
     if (email.value.includes('@')) {
-      router.push('/');
+      localStorage.setItem('isAuthenticated', 'true');
+      router.push('/dashboard');
     } else {
       error.value = 'Invalid credentials';
     }

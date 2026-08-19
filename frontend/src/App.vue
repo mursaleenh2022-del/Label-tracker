@@ -2,7 +2,7 @@
   <div class="min-h-screen bg-paper font-sans text-ink flex selection:bg-ink selection:text-white">
     
     <!-- Sidebar Navigation (Hidden on Login page) -->
-    <aside v-if="!isLoginPage" class="w-64 bg-card border-r border-line flex flex-col flex-shrink-0 hidden md:flex">
+    <aside v-if="!isPublicPage" class="w-64 bg-card border-r border-line flex flex-col flex-shrink-0 hidden md:flex">
       
       <!-- Top: App Name & Logo -->
       <div class="h-16 flex items-center px-6 border-b border-line/50 shrink-0">
@@ -16,7 +16,7 @@
       <nav class="flex-grow px-4 py-6 space-y-1.5 overflow-y-auto">
         <div class="text-xs font-semibold text-muted uppercase tracking-wider mb-3 px-2">Menu</div>
         
-        <router-link to="/" class="flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors" active-class="bg-gray-100 text-ink" :class="route.path === '/' ? '' : 'text-ink-soft hover:text-ink hover:bg-gray-50'">
+        <router-link to="/dashboard" class="flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors" active-class="bg-gray-100 text-ink" :class="route.path === '/dashboard' ? '' : 'text-ink-soft hover:text-ink hover:bg-gray-50'">
           <LayoutDashboard class="w-4 h-4 mr-3" />
           Overview
         </router-link>
@@ -57,7 +57,7 @@
     </aside>
 
     <!-- Mobile Header (Visible only on small screens) -->
-    <div v-if="!isLoginPage" class="md:hidden fixed top-0 left-0 right-0 h-14 bg-card border-b border-line flex items-center justify-between px-4 z-50">
+    <div v-if="!isPublicPage" class="md:hidden fixed top-0 left-0 right-0 h-14 bg-card border-b border-line flex items-center justify-between px-4 z-50">
       <div class="flex items-center">
         <div class="w-6 h-6 bg-ink rounded-md flex items-center justify-center mr-2">
           <Box class="w-3 h-3 text-white" />
@@ -80,8 +80,8 @@
     </main>
     
     <!-- Mobile Bottom Nav -->
-    <div v-if="!isLoginPage" class="md:hidden fixed bottom-0 left-0 right-0 bg-card border-t border-line flex justify-around p-2 z-50 pb-safe">
-      <router-link to="/" class="p-2 rounded-md flex flex-col items-center" active-class="text-ink" :class="route.path === '/' ? 'text-ink' : 'text-muted'">
+    <div v-if="!isPublicPage" class="md:hidden fixed bottom-0 left-0 right-0 bg-card border-t border-line flex justify-around p-2 z-50 pb-safe">
+      <router-link to="/dashboard" class="p-2 rounded-md flex flex-col items-center" active-class="text-ink" :class="route.path === '/dashboard' ? 'text-ink' : 'text-muted'">
         <LayoutDashboard class="w-5 h-5" />
         <span class="text-[10px] mt-1 font-medium">Home</span>
       </router-link>
@@ -106,13 +106,14 @@ const route = useRoute();
 const router = useRouter();
 
 const companyName = import.meta.env.VITE_COMPANY_NAME || 'Label Tracker Pro';
-const isLoginPage = computed(() => route.path === '/login');
+const isPublicPage = computed(() => route.path === '/login' || route.path === '/dashboard');
 
 // Mocked for UI demonstration
 const isAdmin = ref(true); 
 const userName = ref("Test Admin");
 
 const logout = () => {
+  localStorage.removeItem('isAuthenticated');
   router.push('/login');
 };
 </script>
