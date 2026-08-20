@@ -92,9 +92,9 @@
 </template>
 
 <script setup>
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
 import { ref, onMounted } from 'vue';
 import { Plus, Edit2, Trash2, Loader2 } from 'lucide-vue-next';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
 
 const categories = ref([]);
 const isLoading = ref(true);
