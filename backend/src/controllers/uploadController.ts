@@ -22,7 +22,8 @@ export const extractLabelData = async (req: Request, res: Response) => {
     const productListText = products.map(p => `ID: ${p.id} | Name: ${p.name}`).join('\n');
 
     const aiProvider = process.env.AI_PROVIDER || 'groq'; // Default to groq now
-    const prompt = `Analyze this document/image. It is a product label, invoice, or receipt.
+    const originalName = req.file.originalname || 'unknown_file';
+    const prompt = `Analyze this document/image. It is a product label, invoice, or receipt. The file was uploaded with the filename: "${originalName}". Sometimes the product name is in this filename if the label itself does not have it.
     Identify the product name, the quantity received, and a unique reference.
 
     Here is the list of valid products in our database:
