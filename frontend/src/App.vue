@@ -48,6 +48,10 @@
             <Shield class="w-4 h-4 mr-3" />
             Roles
           </router-link>
+            <router-link v-if="canManageProducts" to="/settings/categories" class="flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors" active-class="bg-gray-100 text-ink" :class="route.path === '/settings/categories' ? '' : 'text-ink-soft hover:text-ink hover:bg-gray-50'">
+              <Package class="w-4 h-4 mr-3" />
+              Categories
+            </router-link>
         </div>
       </nav>
 
