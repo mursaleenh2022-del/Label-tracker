@@ -60,6 +60,11 @@
                 </div>
               </td>
               <td class="px-6 py-4">
+                <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-700 border border-gray-200">
+                  {{ product.category || 'Other' }}
+                </span>
+              </td>
+              <td class="px-6 py-4">
                 <span v-if="product.isActive" class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-success-bg text-success-text border border-success/20">
                   Active
                 </span>
@@ -97,6 +102,15 @@
             <div>
               <label class="block text-xs font-medium text-ink-soft mb-1.5">Product Name</label>
               <input type="text" v-model="modalForm.name" required placeholder="e.g. Premium Espresso Blend" class="w-full px-3 py-2 bg-white border border-line rounded-md text-sm text-ink input-ring" />
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-ink-soft mb-1.5">Category</label>
+              <select v-model="modalForm.category" required class="w-full px-3 py-2 bg-white border border-line rounded-md text-sm text-ink input-ring">
+                <option value="Perfumes">Perfumes</option>
+                <option value="Supplements">Supplements</option>
+                <option value="Skincare">Skincare</option>
+                <option value="Other">Other</option>
+              </select>
             </div>
             <div v-if="editingProduct">
               <label class="flex items-center space-x-2">
