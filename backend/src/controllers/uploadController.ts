@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { GoogleGenerativeAI } from '@google/generative-ai';
+import Groq from 'groq-sdk';
 import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
@@ -10,10 +11,7 @@ export const extractLabelData = async (req: Request, res: Response) => {
   }
 
   try {
-    const apiKey = process.env.GEMINI_API_KEY;
-    if (!apiKey) {
-      throw new Error('Server configuration error: Gemini API key missing.');
-    }
+    const apiKey = process.env.GEMINI_API_KEY; // Kept for fallback validation in block
 
     // Fetch all active products from the database
     const products = await prisma.product.findMany({
@@ -23,14 +21,7 @@ export const extractLabelData = async (req: Request, res: Response) => {
 
     const productListText = products.map(p => `ID: ${p.id} | Name: ${p.name}`).join('\n');
 
-    const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: "gemini-3.6-flash" });
-
-    const inlineData = {
-      data: req.file.buffer.toString("base64"),
-      mimeType: req.file.mimetype
-    };
-
+    const aiProvider = process.env.AI_PROVIDER || 'groq'; // Default to groq now
     const prompt = `Analyze this document/image. It is a product label, invoice, or receipt.
     Identify the product name, the quantity received, and a unique reference.
 
@@ -47,8 +38,45 @@ export const extractLabelData = async (req: Request, res: Response) => {
     or
     {"productId": null, "newProductName": "Brand New Item 50ml", "quantity": 1, "reference": "John Doe, NY"}`;
 
-    const result = await model.generateContent([prompt, { inlineData }]);
-    let text = result.response.text();
+    let text = "";
+
+    if (aiProvider === 'groq') {
+      const groqApiKey = process.env.GROQ_API_KEY;
+      if (!groqApiKey) throw new Error('Server configuration error: GROQ_API_KEY missing.');
+      const groq = new Groq({ apiKey: groqApiKey });
+      
+      const chatCompletion = await groq.chat.completions.create({
+        messages: [
+          {
+            role: "user",
+            content: [
+              { type: "text", text: prompt },
+              {
+                type: "image_url",
+                image_url: {
+                  url: `data:${req.file.mimetype};base64,${req.file.buffer.toString("base64")}`,
+                },
+              },
+            ],
+          },
+        ],
+        model: "llama-3.2-11b-vision-preview",
+        temperature: 0
+      });
+      text = chatCompletion.choices[0]?.message?.content || "";
+      
+    } else {
+      if (!apiKey) throw new Error('Server configuration error: Gemini API key missing.');
+      const genAI = new GoogleGenerativeAI(apiKey);
+      const model = genAI.getGenerativeModel({ model: "gemini-3.6-flash" }); // user's old config
+
+      const inlineData = {
+        data: req.file.buffer.toString("base64"),
+        mimeType: req.file.mimetype
+      };
+      const result = await model.generateContent([prompt, { inlineData }]);
+      text = result.response.text();
+    }
     text = text.replace(/```json/g, '').replace(/```/g, '').trim();
     
     let parsedData;
@@ -60,39 +88,31 @@ export const extractLabelData = async (req: Request, res: Response) => {
     }
 
     let finalProductId = parseInt(parsedData.productId) || null;
-    let newlyCreatedProduct = null;
+    let isUnmatched = false;
 
-    // Auto-create new product if the AI identified one that wasn't in the list
     if (!finalProductId && parsedData.newProductName) {
-      try {
-        const created = await prisma.product.create({
-          data: { name: parsedData.newProductName }
-        });
-        finalProductId = created.id;
-        newlyCreatedProduct = created;
-      } catch (err) {
-        // If it fails (e.g., unique constraint on name), just find the existing one
-        const existing = await prisma.product.findUnique({
-          where: { name: parsedData.newProductName }
-        });
-        if (existing) {
-          finalProductId = existing.id;
-        }
-      }
+      isUnmatched = true;
     }
 
     return res.json({ 
-      success: true, 
+      success: true,
+      isUnmatched,
       suggestedProductId: finalProductId,
+      suggestedNewProductName: parsedData.newProductName || null,
       suggestedQty: parseInt(parsedData.quantity) || 1,
-      suggestedReference: parsedData.reference || '',
-      newlyCreatedProduct
+      suggestedReference: parsedData.reference || ''
     });
   } catch (error: any) {
     console.error('Gemini error:', error);
+    let errorMessage = 'Failed to read image using AI.';
+    if (error.message && error.message.includes('429')) {
+      errorMessage = 'AI is busy — please wait a moment and try again.';
+    } else {
+      errorMessage += ' ' + (error.message || '');
+    }
     return res.status(500).json({ 
       success: false, 
-      error: 'Failed to read image using AI. ' + (error.message || '') 
+      error: errorMessage 
     });
   }
 };

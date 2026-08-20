@@ -193,7 +193,7 @@
 <script setup>
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
 
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted, watch } from 'vue';
 import { Camera, Sparkles, AlertCircle, Calendar, Hash, Package, ChevronDown, Check, CheckCircle, X, Plus, Loader2 } from 'lucide-vue-next';
 
 const mode = ref('single'); // 'single' or 'batch'
@@ -217,6 +217,15 @@ const singleForm = ref({
 });
 
 const batchEntries = ref([]);
+const savedBatch = sessionStorage.getItem('batchQueue');
+if (savedBatch) {
+  try {
+    batchEntries.value = JSON.parse(savedBatch);
+  } catch(e) {}
+}
+watch(batchEntries, (newVal) => {
+  sessionStorage.setItem('batchQueue', JSON.stringify(newVal));
+}, { deep: true });
 const MAX_BATCH_SIZE = 50;
 const FREE_TIER_DELAY_MS = 4000;
 
@@ -246,7 +255,7 @@ const handlePaste = (event) => {
 onMounted(async () => {
   window.addEventListener('paste', handlePaste);
   try {
-    const res = await fetch(`${API_URL}/api/products`);
+    const res = await fetch(`${API_URL}/api/products`, { credentials: 'include' });
     if (res.ok) {
       products.value = await res.json();
     }
@@ -279,6 +288,7 @@ const processSingleFile = async (file) => {
     formData.append('label', file);
 
     const res = await fetch(`${API_URL}/api/upload`, {
+      credentials: 'include',
       method: 'POST',
       body: formData
     });
@@ -318,6 +328,7 @@ const startQueueProcessor = async () => {
       formData.append('label', file);
 
       const res = await fetch(`${API_URL}/api/upload`, {
+        credentials: 'include',
         method: 'POST',
         body: formData
       });
@@ -388,13 +399,14 @@ const startQueueProcessor = async () => {
 
 // --- SINGLE MODE LOGIC ---
 const resetSingleForm = () => {
-  singleForm.value = { date: new Date().toISOString().split('T')[0], productId: '', qty: '', reference: '' };
+  singleForm.value = { date: new Date().toISOString().split('T')[0], productId: '', isUnmatched: false, suggestedNewProductName: '', qty: '', reference: '' };
 };
 
 const submitSingleEntry = async () => {
   isSaving.value = true;
   try {
     const res = await fetch(`${API_URL}/api/entries`, {
+      credentials: 'include',
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(singleForm.value)
@@ -415,6 +427,26 @@ const submitSingleEntry = async () => {
 const addManualRow = () => {
   batchEntries.value.unshift({ date: new Date().toISOString().split('T')[0], productId: '', qty: '', reference: '', aiError: '' });
 };
+
+const approveProduct = async (entry) => {
+  try {
+    const res = await fetch(`${API_URL}/api/products`, {
+      credentials: 'include',
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: entry.suggestedNewProductName, isActive: true })
+    });
+    if (!res.ok) throw new Error('Failed to create product');
+    const newProd = await res.json();
+    products.value.push(newProd);
+    products.value.sort((a,b) => a.name.localeCompare(b.name));
+    entry.productId = newProd.id;
+    entry.isUnmatched = false;
+  } catch (err) {
+    alert('Failed to approve product. You might need to add it manually in the Products tab.');
+  }
+};
+
 const removeBatchEntry = (index) => {
   batchEntries.value.splice(index, 1);
 };
@@ -433,6 +465,7 @@ const submitBatchEntries = async () => {
   try {
     for (const entry of batchEntries.value) {
       const res = await fetch(`${API_URL}/api/entries`, {
+        credentials: 'include',
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ date: entry.date, productId: entry.productId, qty: entry.qty, reference: entry.reference })
