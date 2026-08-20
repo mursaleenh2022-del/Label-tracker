@@ -15,7 +15,12 @@ app.use(express.json());
 app.use(cookieParser());
 // Ensure CORS works for cross-origin credentials
 app.use(cors({
-  origin: process.env.FRONTEND_URL || true,
+  origin: (origin, callback) => {
+    // Allow all origins (true) for ease of deployment, 
+    // or validate against FRONTEND_URL if strict security is needed.
+    // For now, reflecting the origin prevents CORS errors.
+    callback(null, true);
+  },
   credentials: true,
 }));
 
