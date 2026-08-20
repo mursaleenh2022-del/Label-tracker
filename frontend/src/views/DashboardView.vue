@@ -154,7 +154,7 @@ const formatTimeAgo = (dateStr) => {
 
 onMounted(async () => {
   try {
-    const res = await fetch(`${API_URL}/api/dashboard/stats`);
+    const res = await fetch(`${API_URL}/api/dashboard/stats`, { credentials: 'include' });
     if (res.ok) {
       stats.value = await res.json();
     }

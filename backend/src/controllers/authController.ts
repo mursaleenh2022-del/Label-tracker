@@ -36,7 +36,7 @@ export const login = async (req: Request, res: Response) => {
     res.cookie('token', token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: process.env.NODE_ENV === 'production' ? 'lax' : 'none',
+      sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
       maxAge: 24 * 60 * 60 * 1000 // 1 day
     });
 
@@ -71,8 +71,37 @@ export const resetPassword = async (req: Request, res: Response) => {
 };
 
 export const setInitialPassword = async (req: Request, res: Response) => {
-  // Implementation for staff clicking an invite link
-  return res.json({ message: 'Initial password set successfully.' });
+  const { token, password } = req.body;
+  if (!token || !password) return res.status(400).json({ error: 'Token and password required' });
+
+  try {
+    const user = await prisma.user.findFirst({
+      where: {
+        inviteToken: token,
+        inviteTokenExpiry: { gt: new Date() }
+      }
+    });
+
+    if (!user) {
+      return res.status(400).json({ error: 'Invalid or expired invitation link' });
+    }
+
+    const passwordHash = await bcrypt.hash(password, 10);
+
+    await prisma.user.update({
+      where: { id: user.id },
+      data: {
+        passwordHash,
+        isActive: true,
+        inviteToken: null,
+        inviteTokenExpiry: null
+      }
+    });
+
+    return res.json({ message: 'Password set successfully. You can now login.' });
+  } catch (err) {
+    return res.status(500).json({ error: 'Internal server error' });
+  }
 };
 
 export const logout = (req: Request, res: Response) => {

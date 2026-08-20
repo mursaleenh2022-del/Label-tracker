@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { login, requestPasswordReset, resetPassword, setInitialPassword, logout } from './controllers/authController';
-import { getUsers, createUser, updateUser } from './controllers/userController';
+import { getUsers, createUser, updateUser, deleteUser } from './controllers/userController';
 import { getRoles, createRole, updateRole, deleteRole, getPermissions } from './controllers/roleController';
 import { getProducts, createProduct, updateProduct, deleteProduct } from './controllers/productController';
 import { getEntries, createEntry, updateEntry, getDashboardStats } from './controllers/entryController';
@@ -22,6 +22,7 @@ router.post('/auth/logout', logout);
 router.get('/users', authenticate, requirePermission('manage_users'), getUsers);
 router.post('/users', authenticate, requirePermission('manage_users'), createUser);
 router.put('/users/:id', authenticate, requirePermission('manage_users'), updateUser);
+router.delete('/users/:id', authenticate, requirePermission('manage_users'), deleteUser);
 
 // --- Role Management Routes ---
 router.get('/roles', authenticate, requirePermission('manage_users'), getRoles);

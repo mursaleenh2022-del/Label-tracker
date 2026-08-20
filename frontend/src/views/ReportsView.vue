@@ -74,7 +74,7 @@ const downloadReport = async () => {
   try {
     const url = `${API_URL}/api/reports/download?startDate=${startDate.value}&endDate=${endDate.value}`;
     
-    const response = await fetch(url);
+    const response = await fetch(url, { credentials: 'include' });
     if (!response.ok) {
       throw new Error('Failed to generate report for this range.');
     }

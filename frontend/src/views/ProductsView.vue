@@ -139,7 +139,7 @@ const modalForm = ref({ name: '', isActive: true });
 const fetchProducts = async () => {
   isLoading.value = true;
   try {
-    const res = await fetch(`${API_URL}/api/products`);
+    const res = await fetch(`${API_URL}/api/products`, { credentials: 'include' });
     if (res.ok) {
       products.value = await res.json();
     }
@@ -186,6 +186,7 @@ const saveProduct = async () => {
       : `${API_URL}/api/products`;
       
     const res = await fetch(url, {
+      credentials: 'include',
       method: isEditing ? 'PUT' : 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(modalForm.value)
@@ -210,6 +211,7 @@ const deleteProduct = async (id) => {
   
   try {
     const res = await fetch(`${API_URL}/api/products/${id}`, {
+      credentials: 'include',
       method: 'DELETE'
     });
     

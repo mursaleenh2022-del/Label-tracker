@@ -66,6 +66,7 @@ const handleLogin = async () => {
     const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
     
     const response = await fetch(`${apiUrl}/auth/login`, {
+      credentials: 'include',
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: email.value, password: password.value })

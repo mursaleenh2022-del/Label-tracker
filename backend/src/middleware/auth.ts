@@ -54,6 +54,12 @@ export const authenticate = async (req: AuthRequest, res: Response, next: NextFu
       }
     });
 
+    // HARD BLOCK: If the user resolves to having absolutely zero permissions (e.g. 'No Role'),
+    // reject them globally at the middleware level, even for basic routes.
+    if (perms.size === 0) {
+      return res.status(403).json({ error: 'Account has no assigned role or permissions. Access denied.' });
+    }
+
     // Attach to request (Per-Request Cache)
     req.user = { id: user.id, permissions: Array.from(perms) };
     next();

@@ -1,0 +1,1 @@
+import { PrismaClient } from '@prisma/client'; const prisma = new PrismaClient(); async function check() { const entries = await prisma.entry.findMany({ include: { product: true }}); console.log('Found ' + entries.length + ' entries in local SQLite.'); if (entries.length > 0) console.log(entries); await prisma.$disconnect(); } check();

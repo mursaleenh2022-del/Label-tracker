@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv';
 import { apiLimiter } from './middleware/rateLimiter';
 import router from './routes';
@@ -11,9 +12,10 @@ app.set('trust proxy', 1);
 
 // Middleware
 app.use(express.json());
-// Ensure CORS strictly matches your Netlify domain in production
+app.use(cookieParser());
+// Ensure CORS works for cross-origin credentials
 app.use(cors({
-  origin: process.env.FRONTEND_URL || '*',
+  origin: process.env.FRONTEND_URL || true,
   credentials: true,
 }));
 

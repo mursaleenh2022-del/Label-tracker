@@ -1,0 +1,1 @@
+import { PrismaClient } from '@prisma/client'; const prisma = new PrismaClient({ datasourceUrl: 'file:D:/Dashboard ecommerce/backend/dev.db' }); prisma.product.count().then(c => { console.log('Old Products:', c); prisma.$disconnect(); });
