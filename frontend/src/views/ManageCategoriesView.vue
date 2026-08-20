@@ -137,7 +137,7 @@ const saveCategory = async () => {
   isSaving.value = true;
   error.value = '';
   try {
-    const endpoint = isEditing.value ? \`\${API_URL}/api/categories/\${form.value.id}\` : \`\${API_URL}/api/categories\`;
+    const endpoint = isEditing.value ? `${API_URL}/api/categories/${form.value.id}` : `${API_URL}/api/categories`;
     const res = await fetch(endpoint, {
       method: isEditing.value ? 'PUT' : 'POST',
       headers: { 'Content-Type': 'application/json' },
