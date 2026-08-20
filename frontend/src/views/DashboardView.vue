@@ -108,7 +108,7 @@
                 <div class="flex items-center space-x-2">
                   <p class="text-sm font-medium text-ink truncate">{{ entry.product.name }}</p>
                   <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-gray-100 text-gray-600 border border-gray-200">
-                    {{ entry.product.category || 'Other' }}
+                    {{ entry.product.categoryRel?.name || 'Other' }}
                   </span>
                 </div>
                 <div class="flex items-center text-xs text-ink-soft mt-1">

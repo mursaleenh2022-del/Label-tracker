@@ -90,7 +90,7 @@
             <div class="md:col-span-2 space-y-1.5">
               <label class="text-xs font-medium text-ink-soft">Category</label>
               <div class="w-full px-3 py-2 bg-gray-50 border border-line rounded-md text-sm text-ink-soft h-9 flex items-center">
-                {{ products.find(p => p.id === singleForm.productId)?.category || '-' }}
+                {{ products.find(p => p.id === singleForm.productId)?.categoryRel?.name || '-' }}
               </div>
             </div>
           </div>

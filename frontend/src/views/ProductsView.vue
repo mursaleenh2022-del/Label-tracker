@@ -61,7 +61,7 @@
               </td>
               <td class="px-6 py-4">
                 <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-700 border border-gray-200">
-                  {{ product.category || 'Other' }}
+                  {{ product.categoryRel?.name || 'Other' }}
                 </span>
               </td>
               <td class="px-6 py-4">
@@ -105,11 +105,9 @@
             </div>
             <div>
               <label class="block text-xs font-medium text-ink-soft mb-1.5">Category</label>
-              <select v-model="modalForm.category" required class="w-full px-3 py-2 bg-white border border-line rounded-md text-sm text-ink input-ring">
-                <option value="Perfumes">Perfumes</option>
-                <option value="Supplements">Supplements</option>
-                <option value="Skincare">Skincare</option>
-                <option value="Other">Other</option>
+              <select v-model="modalForm.categoryId" required class="w-full px-3 py-2 bg-white border border-line rounded-md text-sm text-ink input-ring">
+                <option value="" disabled>Select category...</option>
+                <option v-for="cat in activeCategories" :key="cat.id" :value="cat.id">{{ cat.name }}</option>
               </select>
             </div>
             <div v-if="editingProduct">
@@ -149,7 +147,7 @@ const isModalOpen = ref(false);
 const editingProduct = ref(null);
 const isSaving = ref(false);
 const modalError = ref('');
-const modalForm = ref({ name: '', category: 'Other', isActive: true });
+const modalForm = ref({ name: '', categoryId: '', isActive: true });
 
 const fetchProducts = async () => {
   isLoading.value = true;
@@ -174,14 +172,14 @@ const filteredProducts = computed(() => {
 
 const openAddModal = () => {
   editingProduct.value = null;
-  modalForm.value = { name: '', category: 'Other', isActive: true };
+  modalForm.value = { name: '', categoryId: '', isActive: true };
   modalError.value = '';
   isModalOpen.value = true;
 };
 
 const openEditModal = (product) => {
   editingProduct.value = product;
-  modalForm.value = { name: product.name, category: product.category || 'Other', isActive: product.isActive };
+  modalForm.value = { name: product.name, categoryId: product.categoryId || '', isActive: product.isActive };
   modalError.value = '';
   isModalOpen.value = true;
 };

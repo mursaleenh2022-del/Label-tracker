@@ -63,10 +63,20 @@ model UserPermissionOverride {
   @@id([userId, permissionId])
 }
 
+
+model Category {
+  id        Int       @id @default(autoincrement())
+  name      String    @unique
+  isActive  Boolean   @default(true)
+  products  Product[]
+}
+
 model Product {
   id          Int      @id @default(autoincrement())
   name        String   @unique
-  category    String   @default("Other")
+  category    String   @default("Other") // Legacy column
+  categoryId  Int?
+  categoryRel Category? @relation(fields: [categoryId], references: [id])
   isActive    Boolean  @default(true)
   entries     Entry[]
 }

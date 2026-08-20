@@ -8,6 +8,7 @@ import SetPasswordView from '../views/SetPasswordView.vue';
 import ProductsView from '../views/ProductsView.vue';
 import ManageUsersView from '../views/ManageUsersView.vue';
 import ManageRolesView from '../views/ManageRolesView.vue';
+import ManageCategoriesView from '../views/ManageCategoriesView.vue';
 import { hasPermission } from '../utils/auth';
 
 const router = createRouter({

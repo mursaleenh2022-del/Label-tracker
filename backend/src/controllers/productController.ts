@@ -7,7 +7,7 @@ const prisma = new PrismaClient();
 export const getProducts = async (req: Request, res: Response) => {
   try {
     const products = await prisma.product.findMany({
-      orderBy: { name: 'asc' },
+      orderBy: { name: 'asc' }, include: { categoryRel: true },
     });
     return res.json(products);
   } catch (error) {
@@ -16,11 +16,13 @@ export const getProducts = async (req: Request, res: Response) => {
 };
 
 export const createProduct = async (req: Request, res: Response) => {
-  const { name, category } = req.body;
-  try {
-    const finalCategory = VALID_CATEGORIES.includes(category) ? category : 'Other';
+  const { name, categoryId } = req.body;
+    try {
       const newProduct = await prisma.product.create({
-        data: { name, category: finalCategory },
+        data: { 
+          name, 
+          categoryId: categoryId ? Number(categoryId) : null
+        },
       });
     return res.status(201).json(newProduct);
   } catch (error) {
@@ -30,13 +32,14 @@ export const createProduct = async (req: Request, res: Response) => {
 
 export const updateProduct = async (req: Request, res: Response) => {
   const { id } = req.params;
-  const { name, isActive, category } = req.body;
-
-  try {
-    const updateData: any = { name, isActive };
-      if (category && VALID_CATEGORIES.includes(category)) {
-        updateData.category = category;
+  const { name, isActive, categoryId } = req.body;
+  
+    try {
+      const updateData: any = { name, isActive };
+      if (categoryId !== undefined) {
+        updateData.categoryId = categoryId ? Number(categoryId) : null;
       }
+      
       const updated = await prisma.product.update({
         where: { id: Number(id) },
         data: updateData,

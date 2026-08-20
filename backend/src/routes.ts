@@ -3,6 +3,7 @@ import { login, requestPasswordReset, resetPassword, setInitialPassword, logout 
 import { getUsers, createUser, updateUser, deleteUser } from './controllers/userController';
 import { getRoles, createRole, updateRole, deleteRole, getPermissions } from './controllers/roleController';
 import { getProducts, createProduct, updateProduct, deleteProduct } from './controllers/productController';
+import { getCategories, createCategory, updateCategory, deleteCategory } from './controllers/categoryController';
 import { getEntries, createEntry, updateEntry, getDashboardStats } from './controllers/entryController';
 import { extractLabelData } from './controllers/uploadController';
 import { generateDailyReport, downloadReport } from './controllers/reportController';
@@ -30,6 +31,12 @@ router.post('/roles', authenticate, requirePermission('manage_users'), createRol
 router.put('/roles/:id', authenticate, requirePermission('manage_users'), updateRole);
 router.delete('/roles/:id', authenticate, requirePermission('manage_users'), deleteRole);
 router.get('/permissions', authenticate, requirePermission('manage_users'), getPermissions);
+
+// --- Categories Routes ---
+router.get('/categories', authenticate, getCategories);
+router.post('/categories', authenticate, requirePermission('manage_products'), createCategory);
+router.put('/categories/:id', authenticate, requirePermission('manage_products'), updateCategory);
+router.delete('/categories/:id', authenticate, requirePermission('manage_products'), deleteCategory);
 
 // --- Products Routes ---
 router.get('/products', authenticate, getProducts);

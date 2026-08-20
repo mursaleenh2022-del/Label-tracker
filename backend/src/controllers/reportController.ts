@@ -48,7 +48,7 @@ export const downloadReport = async (req: Request, res: Response) => {
         }
       },
       include: {
-        product: { select: { name: true, category: true } },
+        product: { select: { name: true, categoryRel: { select: { name: true } } } },
         user: { select: { name: true } }
       },
       orderBy: [{ date: 'asc' }, { product: { name: 'asc' } }]
@@ -153,7 +153,7 @@ export const downloadReport = async (req: Request, res: Response) => {
       const formattedDate = formatInTimeZone(e.date, WAREHOUSE_TZ, 'yyyy-MM-dd');
       sheet.getCell(`A${currentRow}`).value = formattedDate;
       sheet.getCell(`B${currentRow}`).value = e.product.name;
-      sheet.getCell(`C${currentRow}`).value = e.product.category || 'Other';
+      sheet.getCell(`C${currentRow}`).value = (e.product.categoryRel && e.product.categoryRel.name) ? e.product.categoryRel.name : 'Other';
       sheet.getCell(`D${currentRow}`).value = e.qty;
       
       ['A', 'B', 'C', 'D'].forEach(col => {
