@@ -212,6 +212,14 @@ const saveUser = async () => {
       return;
     }
 
+    if (isEditing.value) {
+      const originalUser = users.value.find(u => u.id === form.value.id);
+      if (originalUser && originalUser.name === localStorage.getItem('userName')) {
+        localStorage.setItem('userName', form.value.name);
+        window.dispatchEvent(new Event('user-updated'));
+      }
+    }
+
     await fetchUsers();
     showModal.value = false;
   } catch (err) {

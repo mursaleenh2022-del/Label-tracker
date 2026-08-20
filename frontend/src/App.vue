@@ -112,7 +112,7 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
+import { computed, ref, onMounted, onUnmounted } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { Box, LogOut, LayoutDashboard, PlusCircle, FileBarChart, Package, Users, Shield } from 'lucide-vue-next';
 import { hasPermission, logout as authLogout } from './utils/auth';
@@ -123,8 +123,25 @@ const router = useRouter();
 const companyName = import.meta.env.VITE_COMPANY_NAME || 'Label Tracker Pro';
 const isPublicPage = computed(() => route.path === '/login' || route.path === '/');
 
-const userName = computed(() => {
-  return localStorage.getItem('userName') || 'User';
+const userName = ref(localStorage.getItem('userName') || 'User');
+
+const userInitials = computed(() => {
+  const name = userName.value || '';
+  return name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase() || 'U';
+});
+
+const updateUserName = () => {
+  userName.value = localStorage.getItem('userName') || 'User';
+};
+
+onMounted(() => {
+  window.addEventListener('user-updated', updateUserName);
+  window.addEventListener('storage', updateUserName); // for multi-tab
+});
+
+onUnmounted(() => {
+  window.removeEventListener('user-updated', updateUserName);
+  window.removeEventListener('storage', updateUserName);
 });
 
 const canManageProducts = computed(() => hasPermission('manage_products'));
