@@ -66,6 +66,7 @@ model UserPermissionOverride {
 model Product {
   id          Int      @id @default(autoincrement())
   name        String   @unique
+  category    String   @default("Other")
   isActive    Boolean  @default(true)
   entries     Entry[]
 }

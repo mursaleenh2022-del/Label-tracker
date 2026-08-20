@@ -48,7 +48,7 @@ export const downloadReport = async (req: Request, res: Response) => {
         }
       },
       include: {
-        product: { select: { name: true } },
+        product: { select: { name: true, category: true } },
         user: { select: { name: true } }
       },
       orderBy: [{ date: 'asc' }, { product: { name: 'asc' } }]
@@ -79,7 +79,8 @@ export const downloadReport = async (req: Request, res: Response) => {
     // Setup Columns
     sheet.getColumn('A').width = 15; // Date
     sheet.getColumn('B').width = 50; // Product Name
-    sheet.getColumn('C').width = 15; // Quantity
+    sheet.getColumn('C').width = 20; // Category
+    sheet.getColumn('D').width = 15; // Quantity
 
     const headerFill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF3B5998' } } as ExcelJS.Fill;
     const lightGrayFill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFF2F2F2' } } as ExcelJS.Fill;
@@ -137,9 +138,9 @@ export const downloadReport = async (req: Request, res: Response) => {
     sheet.getCell('C4').border = borders;
 
     // Row 6: Table Headers
-    ['A6', 'B6', 'C6'].forEach((cell, index) => {
+    ['A6', 'B6', 'C6', 'D6'].forEach((cell, index) => {
       const c = sheet.getCell(cell);
-      c.value = ['Date', 'Product Name', 'Quantity'][index];
+      c.value = ['Date', 'Product Name', 'Category', 'Quantity'][index];
       c.font = { color: { argb: 'FFFFFFFF' }, bold: true };
       c.fill = headerFill;
       c.alignment = { horizontal: 'center' };
@@ -152,26 +153,27 @@ export const downloadReport = async (req: Request, res: Response) => {
       const formattedDate = formatInTimeZone(e.date, WAREHOUSE_TZ, 'yyyy-MM-dd');
       sheet.getCell(`A${currentRow}`).value = formattedDate;
       sheet.getCell(`B${currentRow}`).value = e.product.name;
-      sheet.getCell(`C${currentRow}`).value = e.qty;
+      sheet.getCell(`C${currentRow}`).value = e.product.category || 'Other';
+      sheet.getCell(`D${currentRow}`).value = e.qty;
       
-      ['A', 'B', 'C'].forEach(col => {
+      ['A', 'B', 'C', 'D'].forEach(col => {
         const c = sheet.getCell(`${col}${currentRow}`);
         c.border = borders;
         c.fill = rowLightFill;
-        if (col === 'C') c.alignment = { horizontal: 'center' };
+        if (col === 'D') c.alignment = { horizontal: 'center' };
       });
       currentRow++;
     });
 
     // Bottom Row
-    sheet.mergeCells(`A${currentRow}:C${currentRow}`);
+    sheet.mergeCells(`A${currentRow}:D${currentRow}`);
     const bottom = sheet.getCell(`A${currentRow}`);
     bottom.value = 'End of the Day';
     bottom.font = { bold: true };
     bottom.fill = bottomFill;
     bottom.alignment = { horizontal: 'center' };
     bottom.border = borders;
-    sheet.getCell(`C${currentRow}`).border = borders;
+    sheet.getCell(`D${currentRow}`).border = borders;
 
     // Send the file
     res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');

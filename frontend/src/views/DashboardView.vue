@@ -105,7 +105,12 @@
                 <Package class="w-4 h-4" />
               </div>
               <div class="ml-4 flex-1 min-w-0">
-                <p class="text-sm font-medium text-ink truncate">{{ entry.product.name }}</p>
+                <div class="flex items-center space-x-2">
+                  <p class="text-sm font-medium text-ink truncate">{{ entry.product.name }}</p>
+                  <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-gray-100 text-gray-600 border border-gray-200">
+                    {{ entry.product.category || 'Other' }}
+                  </span>
+                </div>
                 <div class="flex items-center text-xs text-ink-soft mt-1">
                   <span v-if="entry.reference" class="mr-2 px-1.5 py-0.5 bg-gray-100 rounded text-[10px] uppercase font-bold tracking-wider">{{ entry.reference }}</span>
                   <span>Added by {{ entry.user?.name || 'System' }}</span>

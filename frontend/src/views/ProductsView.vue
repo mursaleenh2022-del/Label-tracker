@@ -41,6 +41,7 @@
           <thead>
             <tr class="bg-gray-50/50 border-b border-line text-xs font-semibold text-ink-soft uppercase tracking-wider">
               <th class="px-6 py-3">Product Name</th>
+              <th class="px-6 py-3">Category</th>
               <th class="px-6 py-3 w-32">Status</th>
               <th class="px-6 py-3 w-32 text-right">Actions</th>
             </tr>
@@ -76,7 +77,7 @@
               </td>
             </tr>
             <tr v-if="filteredProducts.length === 0 && !isLoading">
-              <td colspan="3" class="px-6 py-12 text-center text-sm text-ink-soft">
+              <td colspan="4" class="px-6 py-12 text-center text-sm text-ink-soft">
                 No products found matching your search.
               </td>
             </tr>
@@ -134,7 +135,7 @@ const isModalOpen = ref(false);
 const editingProduct = ref(null);
 const isSaving = ref(false);
 const modalError = ref('');
-const modalForm = ref({ name: '', isActive: true });
+const modalForm = ref({ name: '', category: 'Other', isActive: true });
 
 const fetchProducts = async () => {
   isLoading.value = true;
@@ -159,14 +160,14 @@ const filteredProducts = computed(() => {
 
 const openAddModal = () => {
   editingProduct.value = null;
-  modalForm.value = { name: '', isActive: true };
+  modalForm.value = { name: '', category: 'Other', isActive: true };
   modalError.value = '';
   isModalOpen.value = true;
 };
 
 const openEditModal = (product) => {
   editingProduct.value = product;
-  modalForm.value = { name: product.name, isActive: product.isActive };
+  modalForm.value = { name: product.name, category: product.category || 'Other', isActive: product.isActive };
   modalError.value = '';
   isModalOpen.value = true;
 };

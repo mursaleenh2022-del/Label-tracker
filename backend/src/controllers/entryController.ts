@@ -30,7 +30,7 @@ export const getEntries = async (req: AuthRequest, res: Response) => {
     const entries = await prisma.entry.findMany({
       where: whereClause,
       include: {
-        product: { select: { name: true } },
+        product: { select: { name: true, category: true } },
         user: { select: { name: true } },
       },
       orderBy: [{ date: 'desc' }, { createdAt: 'desc' }],
@@ -151,7 +151,7 @@ export const getDashboardStats = async (req: AuthRequest, res: Response) => {
       take: 8,
       orderBy: { createdAt: 'desc' },
       include: {
-        product: { select: { name: true } },
+        product: { select: { name: true, category: true } },
         user: { select: { name: true } }
       }
     });

@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+const VALID_CATEGORIES = ['Perfumes', 'Supplements', 'Skincare', 'Other'];
 import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
@@ -15,7 +16,7 @@ export const getProducts = async (req: Request, res: Response) => {
 };
 
 export const createProduct = async (req: Request, res: Response) => {
-  const { name } = req.body;
+  const { name, category } = req.body;
   try {
     const newProduct = await prisma.product.create({
       data: { name },
@@ -28,7 +29,7 @@ export const createProduct = async (req: Request, res: Response) => {
 
 export const updateProduct = async (req: Request, res: Response) => {
   const { id } = req.params;
-  const { name, isActive } = req.body;
+  const { name, isActive, category } = req.body;
 
   try {
     const updated = await prisma.product.update({
