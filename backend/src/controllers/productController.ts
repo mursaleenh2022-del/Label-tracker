@@ -18,9 +18,10 @@ export const getProducts = async (req: Request, res: Response) => {
 export const createProduct = async (req: Request, res: Response) => {
   const { name, category } = req.body;
   try {
-    const newProduct = await prisma.product.create({
-      data: { name },
-    });
+    const finalCategory = VALID_CATEGORIES.includes(category) ? category : 'Other';
+      const newProduct = await prisma.product.create({
+        data: { name, category: finalCategory },
+      });
     return res.status(201).json(newProduct);
   } catch (error) {
     return res.status(400).json({ error: 'Failed to create product. Name may already exist.' });
@@ -32,10 +33,14 @@ export const updateProduct = async (req: Request, res: Response) => {
   const { name, isActive, category } = req.body;
 
   try {
-    const updated = await prisma.product.update({
-      where: { id: Number(id) },
-      data: { name, isActive },
-    });
+    const updateData: any = { name, isActive };
+      if (category && VALID_CATEGORIES.includes(category)) {
+        updateData.category = category;
+      }
+      const updated = await prisma.product.update({
+        where: { id: Number(id) },
+        data: updateData,
+      });
     return res.json(updated);
   } catch (error) {
     return res.status(400).json({ error: 'Failed to update product.' });
