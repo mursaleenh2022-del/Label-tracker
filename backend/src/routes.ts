@@ -46,6 +46,7 @@ router.delete('/products/:id', authenticate, requirePermission('manage_products'
 
 // --- Entries & Dashboard Routes ---
 router.get('/dashboard/stats', authenticate, getDashboardStats);
+router.get('/entries/summary', authenticate, getEntriesSummary);
 router.get('/entries', authenticate, getEntries);
 router.post('/entries', authenticate, createEntry);
 router.put('/entries/:id', authenticate, updateEntry);

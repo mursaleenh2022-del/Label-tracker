@@ -4,6 +4,54 @@ import { AuthRequest, enforceDataScoping } from '../middleware/auth';
 
 const prisma = new PrismaClient();
 
+export const getEntriesSummary = async (req: AuthRequest, res: Response) => {
+  try {
+    const page = Math.max(1, Number(req.query.page) || 1);
+    const limit = Math.max(1, Number(req.query.limit) || 10);
+    const offset = (page - 1) * limit;
+
+    const whereClause: any = enforceDataScoping(req);
+
+    const datesResult = await prisma.entry.groupBy({
+      by: ['date'],
+      where: whereClause,
+      orderBy: { date: 'desc' },
+      skip: offset,
+      take: limit
+    });
+    
+    const totalDatesResult = await prisma.entry.groupBy({
+      by: ['date'],
+      where: whereClause
+    });
+    const totalPages = Math.ceil(totalDatesResult.length / limit);
+
+    const summary = await Promise.all(datesResult.map(async (d) => {
+      const stats = await prisma.entry.aggregate({
+        where: { ...whereClause, date: d.date },
+        _sum: { qty: true },
+        _count: { id: true }
+      });
+      const products = await prisma.entry.findMany({
+        where: { ...whereClause, date: d.date },
+        select: { productId: true },
+        distinct: ['productId']
+      });
+
+      return {
+        date: d.date,
+        totalEntries: stats._count.id,
+        totalQty: stats._sum.qty || 0,
+        uniqueProducts: products.length
+      };
+    }));
+
+    return res.json({ data: summary, totalPages, currentPage: page });
+  } catch (error) {
+    return res.status(500).json({ error: 'Failed to fetch summary' });
+  }
+};
+
 export const getEntries = async (req: AuthRequest, res: Response) => {
   try {
     const page = Math.max(1, Number(req.query.page) || 1);
