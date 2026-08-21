@@ -159,7 +159,7 @@ const formatDate = (dateString) => {
 const fetchSummary = async (page = 1) => {
   isLoadingSummary.value = true;
   try {
-    const res = await fetch(\`\${API_URL}/api/entries/summary?page=\${page}&limit=10\`, { credentials: 'include' });
+    const res = await fetch(`${API_URL}/api/entries/summary?page=${page}&limit=10`, { credentials: 'include' });
     if (res.ok) {
       const data = await res.json();
       summaryData.value = data.data;
@@ -192,7 +192,7 @@ const toggleDay = async (date) => {
   
   try {
     const dateStr = date.split('T')[0];
-    const res = await fetch(\`\${API_URL}/api/entries?date=\${dateStr}&limit=1000\`, { credentials: 'include' });
+    const res = await fetch(`${API_URL}/api/entries?date=${dateStr}&limit=1000`, { credentials: 'include' });
     if (res.ok) {
       const data = await res.json();
       expandedEntries.value = data.data;
@@ -218,7 +218,7 @@ const downloadReport = async () => {
   error.value = '';
 
   try {
-    const url = \`\${API_URL}/api/reports/download?startDate=\${startDate.value}&endDate=\${endDate.value}\`;
+    const url = `${API_URL}/api/reports/download?startDate=${startDate.value}&endDate=${endDate.value}`;
     const response = await fetch(url, { credentials: 'include' });
     if (!response.ok) throw new Error('Failed to generate report for this range.');
     
@@ -226,7 +226,7 @@ const downloadReport = async () => {
     const downloadUrl = window.URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = downloadUrl;
-    a.download = \`Shipping_Label_Tracker_\${startDate.value}_to_\${endDate.value}.xlsx\`;
+    a.download = `Shipping_Label_Tracker_${startDate.value}_to_${endDate.value}.xlsx`;
     document.body.appendChild(a);
     a.click();
     
