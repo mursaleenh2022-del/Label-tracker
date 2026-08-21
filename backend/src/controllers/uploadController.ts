@@ -69,13 +69,25 @@ export const extractLabelData = async (req: Request, res: Response) => {
     } else {
       if (!apiKey) throw new Error('Server configuration error: Gemini API key missing.');
       const genAI = new GoogleGenerativeAI(apiKey);
-      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" }); // user's old config
+      const model = genAI.getGenerativeModel({ model: "gemini-3.6-flash" });
 
       const inlineData = {
         data: req.file.buffer.toString("base64"),
         mimeType: req.file.mimetype
       };
-      const result = await model.generateContent([prompt, { inlineData }]);
+      
+      let result;
+      try {
+        result = await model.generateContent([prompt, { inlineData }]);
+      } catch (geminiErr: any) {
+        if (geminiErr.message && (geminiErr.message.includes('503') || geminiErr.message.includes('429'))) {
+          console.log('Gemini 3.6 overloaded, waiting 2 seconds and retrying...');
+          await new Promise(r => setTimeout(r, 2000));
+          result = await model.generateContent([prompt, { inlineData }]);
+        } else {
+          throw geminiErr;
+        }
+      }
       text = result.response.text();
     }
     text = text.replace(/```json/g, '').replace(/```/g, '').trim();
