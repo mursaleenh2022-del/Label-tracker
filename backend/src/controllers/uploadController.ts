@@ -69,7 +69,7 @@ export const extractLabelData = async (req: Request, res: Response) => {
     } else {
       if (!apiKey) throw new Error('Server configuration error: Gemini API key missing.');
       const genAI = new GoogleGenerativeAI(apiKey);
-      const model = genAI.getGenerativeModel({ model: "gemini-3.6-flash" }); // user's old config
+      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" }); // user's old config
 
       const inlineData = {
         data: req.file.buffer.toString("base64"),
