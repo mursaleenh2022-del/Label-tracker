@@ -64,6 +64,12 @@ const router = createRouter({
       name: 'manage-roles',
       component: ManageRolesView,
       meta: { requiresAuth: true, requiresPermission: 'manage_users' }
+    },
+    {
+      path: '/settings/categories',
+      name: 'manage-categories',
+      component: ManageCategoriesView,
+      meta: { requiresAuth: true, requiresPermission: 'manage_products' }
     }
   ]
 });
