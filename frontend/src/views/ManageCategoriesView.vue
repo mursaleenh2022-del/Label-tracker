@@ -13,7 +13,7 @@
       </div>
     </header>
 
-    <div class="bg-card border border-line rounded-xl card-shadow overflow-hidden relative min-h-[400px]">
+    <div class="bg-card border border-line rounded-xl card-shadow overflow-hidden relative">
       <div v-if="isLoading" class="absolute inset-0 bg-white/80 flex items-center justify-center z-10">
         <Loader2 class="w-8 h-8 text-amber animate-spin" />
       </div>
