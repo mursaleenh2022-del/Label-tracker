@@ -137,25 +137,31 @@
                   <Calendar class="w-4 h-4 text-muted absolute left-2 top-2" />
                 </div>
               </div>
-              <div class="md:col-span-4 space-y-1.5">
-                <label class="text-xs font-medium text-ink-soft">Product / Label Type</label>
-                <div class="relative">
-                  <select v-model="entry.productId" required :class="['w-full pl-8 pr-6 py-1.5 bg-white border border-line rounded-md text-sm input-ring appearance-none', entry.productId ? 'text-ink' : 'text-muted']">
-                    <option value="" disabled>Select a product...</option>
-                    <option v-for="p in products" :key="p.id" :value="p.id" class="text-ink">{{ p.name }}</option>
-                  </select>
-                  <Package class="w-4 h-4 text-muted absolute left-2 top-2 pointer-events-none" />
-                  <ChevronDown class="w-4 h-4 text-muted absolute right-2 top-2 pointer-events-none" />
+              <div class="md:col-span-3 space-y-1.5">
+                  <label class="text-xs font-medium text-ink-soft">Product / Label Type</label>
+                  <div class="relative">
+                    <select v-model="entry.productId" required :class="['w-full pl-8 pr-6 py-1.5 bg-white border border-line rounded-md text-sm input-ring appearance-none', entry.productId ? 'text-ink' : 'text-muted']">
+                      <option value="" disabled>Select a product...</option>
+                      <option v-for="p in products" :key="p.id" :value="p.id" class="text-ink">{{ p.name }}</option>
+                    </select>
+                    <Package class="w-4 h-4 text-muted absolute left-2 top-2 pointer-events-none" />
+                    <ChevronDown class="w-4 h-4 text-muted absolute right-2 top-2 pointer-events-none" />
+                  </div>
                 </div>
-              </div>
-              <div class="md:col-span-2 space-y-1.5">
-                <label class="text-xs font-medium text-ink-soft">Qty</label>
-                <div class="relative">
-                  <input type="number" v-model="entry.qty" min="1" required class="w-full pl-8 pr-2 py-1.5 bg-white border border-line rounded-md text-sm font-mono text-ink input-ring" />
-                  <Hash class="w-4 h-4 text-muted absolute left-2 top-2" />
+                <div class="md:col-span-2 space-y-1.5">
+                  <label class="text-xs font-medium text-ink-soft">Category</label>
+                  <div class="w-full px-2 py-1.5 bg-gray-50 border border-line rounded-md text-sm text-ink-soft h-[30px] flex items-center overflow-hidden whitespace-nowrap text-ellipsis">
+                    {{ products.find(p => p.id === entry.productId)?.categoryRel?.name || '-' }}
+                  </div>
                 </div>
-              </div>
-              <div class="md:col-span-4 space-y-1.5">
+                <div class="md:col-span-2 space-y-1.5">
+                  <label class="text-xs font-medium text-ink-soft">Qty</label>
+                  <div class="relative">
+                    <input type="number" v-model="entry.qty" min="1" required class="w-full pl-8 pr-2 py-1.5 bg-white border border-line rounded-md text-sm font-mono text-ink input-ring" />
+                    <Hash class="w-4 h-4 text-muted absolute left-2 top-2" />
+                  </div>
+                </div>
+                <div class="md:col-span-3 space-y-1.5">
                 <label class="text-xs font-medium text-ink-soft">Address / Reference</label>
                 <input type="text" v-model="entry.reference" placeholder="e.g. 1Z9999 or John Doe, NY" class="w-full px-2 py-1.5 bg-white border border-line rounded-md text-sm text-ink input-ring" />
               </div>
