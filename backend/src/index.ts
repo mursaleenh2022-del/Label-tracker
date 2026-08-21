@@ -5,7 +5,8 @@ import dotenv from 'dotenv';
 import { apiLimiter } from './middleware/rateLimiter';
 import router from './routes';
 
-dotenv.config();
+import path from 'path';
+dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
 const app = express();
 app.set('trust proxy', 1);
