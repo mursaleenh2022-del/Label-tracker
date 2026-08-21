@@ -4,7 +4,7 @@ import { getUsers, createUser, updateUser, deleteUser } from './controllers/user
 import { getRoles, createRole, updateRole, deleteRole, getPermissions } from './controllers/roleController';
 import { getProducts, createProduct, updateProduct, deleteProduct } from './controllers/productController';
 import { getCategories, createCategory, updateCategory, deleteCategory } from './controllers/categoryController';
-import { getEntries, createEntry, updateEntry, getDashboardStats } from './controllers/entryController';
+import { getEntries, getEntriesSummary, createEntry, updateEntry, getDashboardStats } from './controllers/entryController';
 import { extractLabelData } from './controllers/uploadController';
 import { generateDailyReport, downloadReport } from './controllers/reportController';
 import { authenticate, requirePermission } from './middleware/auth';
