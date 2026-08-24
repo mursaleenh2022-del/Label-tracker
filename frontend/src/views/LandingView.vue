@@ -281,14 +281,16 @@
     </section>
 
     <!-- Pre-Footer CTA (New Immersive Element) -->
-    <section class="py-24 bg-[#FDFCFA] text-[#2B2620] relative overflow-hidden border-y border-[#ECE7DE]">
-      <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xNSkiLz48L3N2Zz4=')] opacity-50"></div>
-      <div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_800px_at_50%_100%,#2B2620,transparent)]"></div>
+    <!-- Pre-Footer CTA -->
+    <section class="py-24 bg-[#211D19] text-[#F2EAD9] relative overflow-hidden mt-12 border-t border-[#2B2620]">
+      <!-- Decor -->
+      <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjQyLDIzNCwyMTcsMC4wNSkiLz48L3N2Zz4=')] opacity-100"></div>
+      <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[radial-gradient(ellipse_at_bottom,#B08D57_0%,transparent_70%)] opacity-20 pointer-events-none"></div>
       
       <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center relative z-10" data-reveal>
-        <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-8">Ready to automate your warehouse?</h2>
-        <p class="text-xl text-[#F2EAD9] mb-10 font-medium max-w-2xl mx-auto">Join hundreds of logistics teams who have eliminated manual data entry completely.</p>
-        <router-link to="/login" class="inline-flex items-center h-16 px-10 bg-[#F2EAD9] text-[#211D19] hover:bg-white font-extrabold rounded-full transition-transform hover:scale-105 duration-200 text-lg shadow-xl shadow-[#211D19]/50">
+        <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 text-[#FDFCFA]">Ready to automate your warehouse?</h2>
+        <p class="text-xl text-[#F2EAD9]/80 mb-10 font-medium max-w-2xl mx-auto">Join hundreds of logistics teams who have eliminated manual data entry completely.</p>
+        <router-link to="/login" class="inline-flex items-center justify-center h-14 px-10 bg-[#F2EAD9] text-[#211D19] hover:bg-[#FDFCFA] font-bold rounded-full transition-all hover:scale-105 duration-200 text-base shadow-xl shadow-[#B08D57]/10">
           Create your free account
         </router-link>
       </div>
