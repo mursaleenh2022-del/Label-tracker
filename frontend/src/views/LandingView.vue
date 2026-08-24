@@ -26,123 +26,128 @@
       </div>
     </nav>
 
-    <!-- Cinematic Centered Hero Section -->
-    <header class="pt-32 pb-0 px-6 lg:px-8 max-w-7xl mx-auto relative hero-section flex flex-col items-center" ref="heroSection">
-      
-      <!-- Copy Center -->
-      
-      <div class="relative z-30 hero-text-wrapper text-center max-w-4xl mx-auto flex flex-col items-center">
-        <div class="hero-pill-wrap overflow-hidden mb-8">
-          <div class="hero-pill inline-flex items-center space-x-2 bg-[#ECE7DE]/50 border border-[#B08D57]/30 rounded-full px-4 py-1.5 shadow-sm">
-            <span class="flex h-2 w-2 relative">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#B08D57] opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2 w-2 bg-[#8F6F3E]"></span>
-            </span>
-            <span class="text-xs font-bold uppercase tracking-wider text-[#6E675C]">Vision AI 2.0 Now Live</span>
+    <!-- 50/50 Split Hero Section with Modern Animations -->
+    <header class="min-h-screen flex items-center pt-20 px-6 lg:px-8 max-w-[90rem] mx-auto relative hero-section" ref="heroSection">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center w-full">
+        
+        <!-- Left: Copy (Staggered Reveal) -->
+        <div class="relative z-30 hero-text-wrapper pr-0 lg:pr-12">
+          
+          <div class="hero-pill-wrap overflow-hidden mb-8">
+            <div class="hero-pill inline-flex items-center space-x-3 bg-[#ECE7DE]/50 border border-[#B08D57]/30 rounded-full px-5 py-2 shadow-sm">
+              <span class="flex h-2.5 w-2.5 relative">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#B08D57] opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#8F6F3E]"></span>
+              </span>
+              <span class="text-xs font-bold uppercase tracking-widest text-[#6E675C]">Vision AI 2.0 Now Live</span>
+            </div>
+          </div>
+          
+          <h1 class="text-6xl md:text-[5.5rem] text-[#2B2620] font-extrabold tracking-tighter mb-8 leading-[1.05] flex flex-col">
+            <span class="overflow-hidden inline-block py-1"><span class="hero-word inline-block transform translate-y-[100%]">Stop typing.</span></span>
+            <span class="overflow-hidden inline-block py-1"><span class="hero-word text-transparent bg-clip-text bg-gradient-to-r from-[#8F6F3E] via-[#B08D57] to-[#8F6F3E] bg-[length:200%_auto] animate-gradient inline-block transform translate-y-[100%]">Start scanning.</span></span>
+          </h1>
+          
+          <p class="text-xl md:text-2xl text-[#6E675C] mb-12 max-w-xl leading-relaxed font-medium hero-desc">
+            The intelligent data extraction engine for high-volume operations. Turn messy shipping labels into structured data instantly.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row items-start gap-5 hero-btns">
+            <router-link to="/login" class="inline-flex items-center justify-center h-16 px-10 bg-[#211D19] text-[#F2EAD9] font-bold rounded-full hover:bg-[#2B2620] hover:-translate-y-1 transition-all duration-300 text-lg shadow-2xl shadow-[#211D19]/20">
+              Start 14-day trial
+            </router-link>
+            <a href="#how-it-works" class="inline-flex items-center justify-center h-16 px-10 bg-[#FDFCFA] text-[#2B2620] font-bold rounded-full border border-[#ECE7DE] hover:bg-[#FAF8F4] hover:border-[#6E675C] transition-all duration-300 text-lg">
+              See how it works
+            </a>
           </div>
         </div>
         
-        <h1 class="text-6xl md:text-8xl text-[#2B2620] font-extrabold tracking-tighter mb-8 leading-[0.95] flex flex-col items-center">
-          <span class="overflow-hidden inline-block"><span class="hero-word inline-block transform translate-y-[100%]">Stop typing.</span></span>
-          <span class="overflow-hidden inline-block"><span class="hero-word text-transparent bg-clip-text bg-gradient-to-r from-[#8F6F3E] via-[#B08D57] to-[#8F6F3E] bg-[length:200%_auto] animate-gradient inline-block transform translate-y-[100%]">Start scanning.</span></span>
-        </h1>
-        
-        <p class="text-xl md:text-2xl text-[#6E675C] mb-12 max-w-2xl mx-auto leading-relaxed font-medium hero-desc">
-          The intelligent data extraction engine for high-volume operations. Turn messy shipping labels into structured data instantly.
-        </p>
-        
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 hero-btns">
-          <router-link to="/login" class="inline-flex items-center justify-center h-16 px-10 bg-[#211D19] text-[#F2EAD9] font-bold rounded-full hover:bg-[#2B2620] hover:-translate-y-1 transition-all duration-300 text-lg shadow-2xl shadow-[#211D19]/20">
-            Start 14-day trial
-          </router-link>
-          <a href="#how-it-works" class="inline-flex items-center justify-center h-16 px-10 bg-[#FDFCFA] text-[#2B2620] font-bold rounded-full border border-[#ECE7DE] hover:bg-[#FAF8F4] hover:border-[#6E675C] transition-all duration-300 text-lg">
-            See how it works
-          </a>
+        <!-- Right: Mockup with Laser Scan -->
+        <div class="relative w-full aspect-[4/3] lg:aspect-auto lg:h-[70vh] flex items-center justify-center perspective-1000 hero-mockup-wrapper z-20 mt-12 lg:mt-0">
+          
+          <!-- Floating Tags -->
+          <div class="absolute top-[10%] left-[-5%] bg-[#FDFCFA] p-4 rounded-2xl shadow-2xl border border-[#ECE7DE] z-30 parallax-el flex items-center space-x-4" data-speed="1.2">
+            <div class="w-12 h-12 bg-[#FAF8F4] rounded-xl flex items-center justify-center"><FileText class="text-[#8F6F3E] w-6 h-6" /></div>
+            <div>
+              <p class="text-[10px] uppercase font-bold text-[#6E675C] tracking-wider mb-1">Raw Input</p>
+              <p class="text-sm font-mono font-bold text-[#2B2620]">label_v2.pdf</p>
+            </div>
+          </div>
+          
+          <div class="absolute bottom-[10%] right-[-5%] bg-[#211D19] p-4 rounded-2xl shadow-2xl border border-[#6E675C] z-30 parallax-el flex items-center space-x-4" data-speed="1.5">
+            <div class="w-12 h-12 bg-[#2B2620] rounded-xl flex items-center justify-center"><Database class="text-[#F2EAD9] w-6 h-6" /></div>
+            <div>
+              <p class="text-[10px] uppercase font-bold text-[#F2EAD9]/70 tracking-wider mb-1">AI Output</p>
+              <p class="text-sm font-mono font-bold text-[#B08D57]">12 Items Synced</p>
+            </div>
+          </div>
+
+          <!-- Glowing Backdrops -->
+          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-tr from-[#ECE7DE] to-[#B08D57] blur-[100px] -z-10 rounded-full opacity-40 animate-pulse-slow"></div>
+
+          <!-- Mockup Box -->
+          <div class="mockup-container w-full max-w-2xl bg-[#FDFCFA] rounded-2xl md:rounded-[2rem] border border-[#ECE7DE] shadow-[0_30px_80px_-15px_rgba(0,0,0,0.2)] overflow-hidden relative" ref="heroMockup">
+            
+            <!-- Laser Scan Effect -->
+            <div class="absolute inset-0 z-50 pointer-events-none overflow-hidden rounded-2xl">
+              <div class="w-full h-[3px] bg-[#B08D57] shadow-[0_0_30px_10px_rgba(176,141,87,0.6)] animate-laser-scan"></div>
+            </div>
+
+            <div class="bg-[#FAF8F4]/80 backdrop-blur-sm border-b border-[#ECE7DE] px-5 py-4 flex items-center space-x-2">
+              <div class="w-3.5 h-3.5 rounded-full bg-rose-400"></div>
+              <div class="w-3.5 h-3.5 rounded-full bg-amber-400"></div>
+              <div class="w-3.5 h-3.5 rounded-full bg-emerald-400"></div>
+              <div class="ml-4 text-xs font-mono text-[#6E675C] flex-1 text-center pr-10">app.labeltracker.pro/batch</div>
+            </div>
+            
+            <div class="p-6 md:p-8 bg-[#FDFCFA]/60 backdrop-blur-md">
+              <div class="flex items-center justify-between mb-8">
+                <div>
+                  <h3 class="font-extrabold text-xl text-[#2B2620]">Pending Batch</h3>
+                  <p class="text-xs text-[#6E675C] mt-1 font-medium">Processed from clipboard</p>
+                </div>
+                <div class="h-8 px-3 bg-[#FAF8F4] border border-[#ECE7DE] rounded-md text-xs font-bold text-[#2B2620] flex items-center shadow-sm">
+                  <Check class="w-4 h-4 mr-2 text-[#8F6F3E]" /> Complete
+                </div>
+              </div>
+              
+              <div class="border border-[#ECE7DE] rounded-xl overflow-hidden bg-[#FDFCFA] shadow-sm">
+                <table class="w-full text-left text-sm">
+                  <thead class="bg-[#FAF8F4] border-b border-[#ECE7DE]">
+                    <tr>
+                      <th class="px-5 py-4 font-mono text-[10px] uppercase tracking-wider text-[#6E675C] font-bold">Reference</th>
+                      <th class="px-5 py-4 font-mono text-[10px] uppercase tracking-wider text-[#6E675C] font-bold">Product</th>
+                      <th class="px-5 py-4 font-mono text-[10px] uppercase tracking-wider text-[#6E675C] font-bold text-right">Qty</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-[#ECE7DE]">
+                    <tr class="bg-[#8F6F3E]/5">
+                      <td class="px-5 py-4 font-mono text-[#2B2620] font-bold">1Z99923...</td>
+                      <td class="px-5 py-4 font-bold text-[#2B2620]">Wireless Earbuds Pro</td>
+                      <td class="px-5 py-4 text-right font-mono text-[#2B2620] font-bold">12</td>
+                    </tr>
+                    <tr>
+                      <td class="px-5 py-4 font-mono text-[#2B2620] font-bold">JD01928...</td>
+                      <td class="px-5 py-4 font-bold text-[#2B2620]">Ergo Office Chair</td>
+                      <td class="px-5 py-4 text-right font-mono text-[#2B2620] font-bold">1</td>
+                    </tr>
+                    <tr>
+                      <td class="px-5 py-4 font-mono text-[#2B2620] font-bold">TBA192...</td>
+                      <td class="px-5 py-4 font-bold text-[#2B2620]">Standing Desk Mat</td>
+                      <td class="px-5 py-4 text-right font-mono text-[#2B2620] font-bold">4</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       
-      <!-- Massive Mockup Center -->
-      <div class="w-full mt-24 relative hero-mockup-wrapper z-20">
-        
-        <!-- Floating Parallax Elements -->
-        <div class="absolute -top-12 md:-top-20 left-[10%] md:left-[20%] bg-[#FDFCFA] p-4 rounded-2xl shadow-2xl border border-[#ECE7DE] z-30 parallax-el flex items-center space-x-4" data-speed="1.5">
-          <div class="w-12 h-12 bg-[#FAF8F4] rounded-xl flex items-center justify-center"><FileText class="text-[#8F6F3E] w-6 h-6" /></div>
-          <div>
-            <p class="text-[10px] uppercase font-bold text-[#6E675C] tracking-wider mb-1">Raw Input</p>
-            <p class="text-sm font-mono font-bold text-[#2B2620]">label_v2.pdf</p>
-          </div>
-        </div>
-        
-        <div class="absolute -top-8 md:-top-12 right-[5%] md:right-[15%] bg-[#211D19] p-4 rounded-2xl shadow-2xl border border-[#6E675C] z-30 parallax-el flex items-center space-x-4" data-speed="1.2">
-          <div class="w-12 h-12 bg-[#2B2620] rounded-xl flex items-center justify-center"><Database class="text-[#F2EAD9] w-6 h-6" /></div>
-          <div>
-            <p class="text-[10px] uppercase font-bold text-[#F2EAD9]/70 tracking-wider mb-1">AI Output</p>
-            <p class="text-sm font-mono font-bold text-[#B08D57]">12 Items Synced</p>
-          </div>
-        </div>
-
-        <!-- Glowing Backdrops -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-gradient-to-tr from-[#ECE7DE] to-[#B08D57] blur-[120px] -z-10 rounded-full opacity-50 animate-pulse-slow"></div>
-
-        <!-- Static Coded Dashboard Mockup -->
-        <div class="mockup-container bg-[#FDFCFA] rounded-t-3xl md:rounded-t-[2.5rem] border-t-2 border-x-2 border-[#ECE7DE] shadow-[0_-20px_80px_-20px_rgba(0,0,0,0.15)] overflow-hidden relative w-[95%] md:w-[90%] mx-auto h-[50vh] md:h-[65vh]" ref="heroMockup">
-          
-          <!-- Laser Scan Effect -->
-          <div class="absolute inset-0 z-50 pointer-events-none overflow-hidden">
-            <div class="w-full h-[3px] bg-[#B08D57] shadow-[0_0_30px_10px_rgba(176,141,87,0.6)] animate-laser-scan"></div>
-          </div>
-
-          <div class="bg-[#FAF8F4]/80 backdrop-blur-sm border-b border-[#ECE7DE] px-6 py-4 flex items-center space-x-2">
-            <div class="w-3.5 h-3.5 rounded-full bg-rose-400"></div>
-            <div class="w-3.5 h-3.5 rounded-full bg-amber-400"></div>
-            <div class="w-3.5 h-3.5 rounded-full bg-emerald-400"></div>
-            <div class="ml-4 text-xs font-mono text-[#6E675C] flex-1 text-center pr-10">app.labeltracker.pro/batch</div>
-          </div>
-          
-          <div class="p-8 md:p-12 bg-[#FDFCFA]/60 backdrop-blur-md h-full">
-            <div class="flex items-center justify-between mb-8">
-              <div>
-                <h3 class="font-extrabold text-2xl text-[#2B2620]">Pending Batch</h3>
-                <p class="text-sm text-[#6E675C] mt-1 font-medium">Processed from clipboard</p>
-              </div>
-              <div class="h-10 px-4 bg-[#FAF8F4] border border-[#ECE7DE] rounded-lg text-sm font-bold text-[#2B2620] flex items-center shadow-sm">
-                <Check class="w-4 h-4 mr-2 text-[#8F6F3E]" /> Complete
-              </div>
-            </div>
-            
-            <div class="border border-[#ECE7DE] rounded-xl overflow-hidden bg-[#FDFCFA] shadow-sm">
-              <table class="w-full text-left text-base">
-                <thead class="bg-[#FAF8F4] border-b border-[#ECE7DE]">
-                  <tr>
-                    <th class="px-6 py-4 font-mono text-xs uppercase tracking-wider text-[#6E675C] font-bold">Reference</th>
-                    <th class="px-6 py-4 font-mono text-xs uppercase tracking-wider text-[#6E675C] font-bold">Product</th>
-                    <th class="px-6 py-4 font-mono text-xs uppercase tracking-wider text-[#6E675C] font-bold text-right">Qty</th>
-                    <th class="px-6 py-4 font-mono text-xs uppercase tracking-wider text-[#6E675C] font-bold">Status</th>
-                  </tr>
-                </thead>
-                <tbody class="divide-y divide-[#ECE7DE]">
-                  <tr class="bg-[#8F6F3E]/5">
-                    <td class="px-6 py-4 font-mono text-[#2B2620] font-bold">1Z99923...</td>
-                    <td class="px-6 py-4 font-bold text-[#2B2620]">Wireless Earbuds Pro</td>
-                    <td class="px-6 py-4 text-right font-mono text-[#2B2620] font-bold">12</td>
-                    <td class="px-6 py-4"><span class="inline-flex items-center px-3 py-1 rounded-md text-xs font-bold bg-[#ECE7DE] text-[#2B2620]">Extracted</span></td>
-                  </tr>
-                  <tr>
-                    <td class="px-6 py-4 font-mono text-[#2B2620] font-bold">JD01928...</td>
-                    <td class="px-6 py-4 font-bold text-[#2B2620]">Ergo Office Chair</td>
-                    <td class="px-6 py-4 text-right font-mono text-[#2B2620] font-bold">1</td>
-                    <td class="px-6 py-4"><span class="inline-flex items-center px-3 py-1 rounded-md text-xs font-bold bg-[#ECE7DE] text-[#2B2620]">Extracted</span></td>
-                  </tr>
-                  <tr>
-                    <td class="px-6 py-4 font-mono text-[#2B2620] font-bold">TBA192...</td>
-                    <td class="px-6 py-4 font-bold text-[#2B2620]">Standing Desk Mat</td>
-                    <td class="px-6 py-4 text-right font-mono text-[#2B2620] font-bold">4</td>
-                    <td class="px-6 py-4"><span class="inline-flex items-center px-3 py-1 rounded-md text-xs font-bold bg-[#ECE7DE] text-[#2B2620]">Extracted</span></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
+      <!-- Premium Scroll Indicator -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center justify-center opacity-80 cursor-pointer hover:opacity-100 transition-opacity z-50" @click="scrollDown">
+        <div class="w-[30px] h-[46px] border-2 border-[#6E675C]/50 rounded-full flex justify-center p-1 relative shadow-lg bg-[#FAF8F4]/50 backdrop-blur-sm">
+          <div class="w-1.5 h-1.5 bg-[#8F6F3E] rounded-full animate-scroll-wheel"></div>
         </div>
       </div>
     </header>
@@ -562,44 +567,31 @@ onMounted(() => {
     });
   });
 
-  // 3. CINEMATIC HERO 3D TILT SCRUB
+  // 3. ZOOM-THROUGH SCRUB FOR 50/50 LAYOUT
   if (heroMockup.value) {
-    // Initial 3D tilted state
+    // Initial 3D tilt
     gsap.set('.hero-mockup-wrapper', { 
-      rotateX: 25, 
-      scale: 0.9, 
-      y: 50,
-      transformPerspective: 1500, 
-      transformOrigin: 'top center' 
+      rotateX: 10, 
+      rotateY: -15,
+      transformPerspective: 1200,
     });
     
-    // As you scroll down, it rotates flat and scales up to fill screen
+    // Zoom out on scroll
     gsap.to('.hero-mockup-wrapper', {
+      scale: 1.2,
+      opacity: 0,
+      y: 100,
       rotateX: 0,
-      scale: 1,
-      y: -50,
-      ease: "none",
+      rotateY: 0,
+      ease: "power1.inOut",
       scrollTrigger: {
         trigger: ".hero-section",
         start: "top top",
-        end: "bottom top",
+        end: "+=100%",
         scrub: 1
       }
     });
   }
-  
-  gsap.to('.hero-text-wrapper', {
-    y: -150,
-    opacity: 0,
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".hero-section",
-      start: "top top",
-      end: "bottom top",
-      scrub: 1
-    }
-  });
-
   // 4. Statement Text Word-by-Word Highlight
   const statementWords = gsap.utils.toArray('.statement-word');
   if (statementWords.length > 0) {
