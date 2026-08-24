@@ -123,8 +123,7 @@
         </div>
       </div>
       
-      
-      </div>
+
     </header>
 
     <!-- Continuous Infinite Marquee -->
@@ -171,8 +170,7 @@
 
     <!-- CINEMATIC PINNED CARD STACK (HEAVY IMMERSIVE) -->
     <section id="features" class="bg-[#211D19] relative z-20" ref="engineWrapper">
-      <!-- We make this absolute so the background spans the entire pinned duration -->
-      <div class="absolute inset-0 bg-[#211D19] w-full h-[300vh]"></div>
+      
       
       <div class="h-screen sticky top-0 flex flex-col lg:flex-row items-center overflow-hidden px-6 lg:px-8 max-w-7xl mx-auto" ref="enginePin">
         
@@ -530,7 +528,7 @@ onMounted(() => {
       scrollTrigger: {
         trigger: engineWrapper.value,
         start: "top top",
-        end: "+=300%", // Scroll for 3x the height
+        end: "+=200%",
         pin: true,
         scrub: 1,
       }
@@ -542,8 +540,7 @@ onMounted(() => {
     // Animate Card 2 out, Card 3 in
       .to('.card-2', { scale: 0.9, opacity: 0.3, y: '-10%', duration: 1 })
       .to('.card-3', { y: '0%', scale: 1, opacity: 1, rotateX: 0, duration: 1, ease: 'power2.out' }, "<")
-    // Hold Card 3 for a moment
-      .to('.card-3', { duration: 0.5 });
+    
   }
 
   // 6. Dynamic Background Color Shift (Sand to Dark Anchor)
