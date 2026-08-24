@@ -126,23 +126,23 @@
     </section>
 
     <!-- Stats Section (New Immersive Element) -->
-    <section class="py-24 bg-[#211D19] text-[#F2EAD9] relative overflow-hidden">
+    <section class="py-24 bg-[#FDFCFA] text-[#2B2620] relative overflow-hidden border-y border-[#ECE7DE]">
       <!-- Decor -->
       <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNykiLz48L3N2Zz4=')] opacity-50"></div>
       
       <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10" data-reveal>
-        <div class="grid md:grid-cols-3 gap-12 text-center divide-y md:divide-y-0 md:divide-x divide-[#F2EAD9]/10">
+        <div class="grid md:grid-cols-3 gap-12 text-center divide-y md:divide-y-0 md:divide-x divide-[#ECE7DE]">
           <div class="py-6">
-            <div class="text-5xl font-extrabold text-[#B08D57] mb-2">99.9%</div>
-            <div class="text-[#F2EAD9]/70 font-semibold uppercase tracking-wide text-sm">Data Accuracy</div>
+            <div class="text-5xl font-extrabold text-[#8F6F3E] mb-2">99.9%</div>
+            <div class="text-[#6E675C] font-semibold uppercase tracking-wide text-sm">Data Accuracy</div>
           </div>
           <div class="py-6">
-            <div class="text-5xl font-extrabold text-[#B08D57] mb-2">&lt; 2s</div>
-            <div class="text-[#F2EAD9]/70 font-semibold uppercase tracking-wide text-sm">Processing Time</div>
+            <div class="text-5xl font-extrabold text-[#8F6F3E] mb-2">&lt; 2s</div>
+            <div class="text-[#6E675C] font-semibold uppercase tracking-wide text-sm">Processing Time</div>
           </div>
           <div class="py-6">
-            <div class="text-5xl font-extrabold text-[#B08D57] mb-2">1M+</div>
-            <div class="text-[#F2EAD9]/70 font-semibold uppercase tracking-wide text-sm">Labels Scanned</div>
+            <div class="text-5xl font-extrabold text-[#8F6F3E] mb-2">1M+</div>
+            <div class="text-[#6E675C] font-semibold uppercase tracking-wide text-sm">Labels Scanned</div>
           </div>
         </div>
       </div>
@@ -281,7 +281,7 @@
     </section>
 
     <!-- Pre-Footer CTA (New Immersive Element) -->
-    <section class="py-24 bg-[#211D19] text-[#F2EAD9] relative overflow-hidden">
+    <section class="py-24 bg-[#FDFCFA] text-[#2B2620] relative overflow-hidden border-y border-[#ECE7DE]">
       <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xNSkiLz48L3N2Zz4=')] opacity-50"></div>
       <div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_800px_at_50%_100%,#2B2620,transparent)]"></div>
       
