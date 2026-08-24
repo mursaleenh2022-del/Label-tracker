@@ -30,7 +30,7 @@
     <header class="pt-24 pb-24 md:pt-32 md:pb-32 px-6 lg:px-8 max-w-7xl mx-auto relative hero-section" ref="heroSection" @mousemove="handleMouseMove" @mouseleave="handleMouseLeave">
       <div class="grid md:grid-cols-12 gap-12 lg:gap-16 items-center">
         <!-- Copy Left (50%) -->
-        <div class="md:col-span-6 relative z-10 hero-text-wrapper" data-reveal>
+        <div class="md:col-span-6 relative z-10 hero-text-wrapper">
           <h1 class="display-title text-[#2B2620] font-extrabold tracking-tight mb-6 leading-[1.05]">
             Stop typing.<br/><span class="text-[#8F6F3E]">Start scanning.</span>
           </h1>
@@ -123,10 +123,7 @@
         </div>
       </div>
       
-      <!-- Scroll Indicator -->
-      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-70 animate-pulse z-50">
-        <span class="text-[10px] uppercase font-bold tracking-widest text-[#6E675C] mb-2">Scroll to explore</span>
-        <div class="w-px h-12 bg-gradient-to-b from-[#8F6F3E] to-transparent"></div>
+      
       </div>
     </header>
 
