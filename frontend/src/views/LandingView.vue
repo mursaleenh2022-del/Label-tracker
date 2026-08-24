@@ -387,12 +387,24 @@
       </div>
     </footer>
 
+  
+    <!-- Back to top button -->
+    <transition name="fade">
+      <button 
+        v-if="showBackToTop" 
+        @click="scrollToTop" 
+        class="fixed bottom-8 right-8 z-[100] w-14 h-14 bg-[#B08D57] text-[#211D19] rounded-full flex items-center justify-center shadow-2xl shadow-[#211D19]/40 hover:bg-[#8F6F3E] hover:text-[#F2EAD9] hover:-translate-y-1 transition-all duration-300"
+        aria-label="Back to top"
+      >
+        <ArrowUp class="w-6 h-6" />
+      </button>
+    </transition>
   </div>
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue';
-import { Box, Camera, Database, FileSpreadsheet, Check, FileText } from 'lucide-vue-next';
+import { onMounted, onUnmounted, ref } from 'vue';
+import { Box, Camera, Database, FileSpreadsheet, Check, FileText , ArrowUp } from 'lucide-vue-next';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
@@ -402,6 +414,15 @@ const heroMockup = ref(null);
 const heroSection = ref(null);
 const engineWrapper = ref(null);
 const enginePin = ref(null);
+
+const showBackToTop = ref(false);
+const handleScroll = () => {
+  showBackToTop.value = window.scrollY > 500;
+};
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
 
 const handleMouseMove = (e) => {
   if (!heroMockup.value || !heroSection.value) return;
@@ -436,6 +457,7 @@ const handleMouseLeave = () => {
 };
 
 onMounted(() => {
+  window.addEventListener("scroll", handleScroll);
   gsap.registerPlugin(ScrollTrigger);
   
   if(heroMockup.value) { 
@@ -637,6 +659,10 @@ onMounted(() => {
     });
   }, 3000);
 });
+
+onUnmounted(() => {
+  window.removeEventListener("scroll", handleScroll);
+});
 </script>
 
 <style scoped>
@@ -688,5 +714,13 @@ onMounted(() => {
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-100%); }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+  transform: translateY(20px) scale(0.9);
 }
 </style>
