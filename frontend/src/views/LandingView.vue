@@ -18,10 +18,10 @@
         <div class="hidden md:flex items-center space-x-8">
           <a href="#features" class="text-sm font-semibold text-[#6E675C] hover:text-[#2B2620] transition-colors">Features</a>
           <a href="#how-it-works" class="text-sm font-semibold text-[#6E675C] hover:text-[#2B2620] transition-colors">How it works</a>
-          <a href="#pricing" class="text-sm font-semibold text-[#6E675C] hover:text-[#2B2620] transition-colors">Pricing</a>
+          
           <div class="w-px h-6 bg-[#ECE7DE]"></div>
           <router-link to="/login" class="text-sm font-bold text-[#2B2620] hover:text-[#8F6F3E] transition-colors">Log in</router-link>
-          <router-link to="/login" class="btn-primary">Start free trial</router-link>
+          <router-link to="/login" class="btn-primary">Access System</router-link>
         </div>
       </div>
     </nav>
@@ -44,7 +44,7 @@
           
           <div class="flex flex-col sm:flex-row items-start gap-5 hero-btns">
             <router-link to="/login" class="inline-flex items-center justify-center h-16 px-10 bg-[#211D19] text-[#F2EAD9] font-bold rounded-full hover:bg-[#2B2620] hover:-translate-y-1 transition-all duration-300 text-lg shadow-2xl shadow-[#211D19]/20">
-              Start 14-day trial
+              Access System
             </router-link>
             <a href="#how-it-works" class="inline-flex items-center justify-center h-16 px-10 bg-[#FDFCFA] text-[#2B2620] font-bold rounded-full border border-[#ECE7DE] hover:bg-[#FAF8F4] hover:border-[#6E675C] transition-all duration-300 text-lg">
               See how it works
@@ -293,58 +293,6 @@
       </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="py-32 bg-[#FDFCFA] px-6 lg:px-8 border-t border-[#ECE7DE] relative z-20">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center max-w-2xl mx-auto mb-24" data-reveal>
-          <h2 class="text-4xl md:text-5xl font-extrabold text-[#2B2620] tracking-tight mb-6">Simple, transparent pricing</h2>
-          <p class="body-text text-[#6E675C] font-medium">Start for free, upgrade when your volume grows.</p>
-        </div>
-        
-        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto items-stretch">
-          <!-- Starter -->
-          <div class="p-10 rounded-[2rem] bg-[#FAF8F4] border border-[#ECE7DE] text-left flex flex-col shadow-sm" data-reveal>
-            <h3 class="font-bold text-2xl text-[#2B2620] mb-2">Starter</h3>
-            <p class="text-base text-[#6E675C] mb-8 font-medium">Perfect for small shops.</p>
-            <div class="mb-10"><span class="text-5xl font-extrabold text-[#2B2620]">$0</span><span class="text-[#6E675C] font-bold">/mo</span></div>
-            <ul class="space-y-5 mb-12 flex-grow text-base text-[#6E675C] font-medium">
-              <li class="flex items-start"><Check class="w-6 h-6 text-[#8F6F3E] mr-3 shrink-0" /> 500 AI Scans per month</li>
-              <li class="flex items-start"><Check class="w-6 h-6 text-[#8F6F3E] mr-3 shrink-0" /> Basic Excel Reports</li>
-              <li class="flex items-start"><Check class="w-6 h-6 text-[#8F6F3E] mr-3 shrink-0" /> 1 Admin Seat</li>
-            </ul>
-            <router-link to="/login" class="btn-secondary w-full justify-center h-14 text-base">Start for free</router-link>
-          </div>
-          
-          <!-- Pro -->
-          <div class="p-10 rounded-[2rem] bg-[#211D19] text-[#F2EAD9] text-left flex flex-col shadow-2xl relative border border-[#2B2620] transform md:-translate-y-4" data-reveal>
-            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#B08D57] text-[#211D19] text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg">Most Popular</div>
-            <h3 class="font-bold text-2xl text-[#F2EAD9] mb-2 mt-2">Professional</h3>
-            <p class="text-base text-[#F2EAD9]/70 mb-8 font-medium">For growing warehouses.</p>
-            <div class="mb-10"><span class="text-5xl font-extrabold text-[#F2EAD9]">$49</span><span class="text-[#F2EAD9]/70 font-bold">/mo</span></div>
-            <ul class="space-y-5 mb-12 flex-grow text-base text-[#F2EAD9]/90 font-medium">
-              <li class="flex items-start"><Check class="w-6 h-6 text-[#B08D57] mr-3 shrink-0" /> 5,000 AI Scans per month</li>
-              <li class="flex items-start"><Check class="w-6 h-6 text-[#B08D57] mr-3 shrink-0" /> Batch Upload Mode (Up to 50)</li>
-              <li class="flex items-start"><Check class="w-6 h-6 text-[#B08D57] mr-3 shrink-0" /> Custom Excel Templates</li>
-            </ul>
-            <router-link to="/login" class="w-full h-14 inline-flex items-center justify-center bg-[#B08D57] text-[#211D19] hover:bg-[#8F6F3E] hover:text-[#F2EAD9] font-bold rounded-full transition-colors mt-auto text-base shadow-lg shadow-[#B08D57]/20">Start 14-day trial</router-link>
-          </div>
-          
-          <!-- Enterprise -->
-          <div class="p-10 rounded-[2rem] bg-[#FAF8F4] border border-[#ECE7DE] text-left flex flex-col shadow-sm" data-reveal>
-            <h3 class="font-bold text-2xl text-[#2B2620] mb-2">Enterprise</h3>
-            <p class="text-base text-[#6E675C] mb-8 font-medium">For massive operations.</p>
-            <div class="mb-10"><span class="text-5xl font-extrabold text-[#2B2620]">$199</span><span class="text-[#6E675C] font-bold">/mo</span></div>
-            <ul class="space-y-5 mb-12 flex-grow text-base text-[#6E675C] font-medium">
-              <li class="flex items-start"><Check class="w-6 h-6 text-[#8F6F3E] mr-3 shrink-0" /> Unlimited AI Scans</li>
-              <li class="flex items-start"><Check class="w-6 h-6 text-[#8F6F3E] mr-3 shrink-0" /> Dedicated Account Manager</li>
-              <li class="flex items-start"><Check class="w-6 h-6 text-[#8F6F3E] mr-3 shrink-0" /> API Access</li>
-            </ul>
-            <router-link to="/login" class="btn-secondary w-full justify-center h-14 text-base">Contact Sales</router-link>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Pre-Footer CTA -->
     <section class="py-24 bg-[#211D19] text-[#F2EAD9] relative overflow-hidden border-t border-[#2B2620] z-20">
       <!-- Decor -->
@@ -352,10 +300,10 @@
       <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[radial-gradient(ellipse_at_bottom,#B08D57_0%,transparent_70%)] opacity-20 pointer-events-none"></div>
       
       <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center relative z-10" data-reveal>
-        <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 text-[#FDFCFA]">Ready to automate your warehouse?</h2>
-        <p class="text-xl text-[#F2EAD9]/80 mb-10 font-medium max-w-2xl mx-auto">Join hundreds of logistics teams who have eliminated manual data entry completely.</p>
+        <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 text-[#FDFCFA]">Ready to automate your workflow?</h2>
+        <p class="text-xl text-[#F2EAD9]/80 mb-10 font-medium max-w-2xl mx-auto">Log in to the secure internal portal to begin extracting shipping data.</p>
         <router-link to="/login" class="inline-flex items-center justify-center h-14 px-10 bg-[#F2EAD9] text-[#211D19] hover:bg-[#FDFCFA] font-bold rounded-full transition-all hover:scale-105 duration-200 text-base shadow-xl shadow-[#B08D57]/10">
-          Create your free account
+          Access System
         </router-link>
       </div>
     </section>
@@ -376,7 +324,7 @@
           <h4 class="font-bold text-[#F2EAD9] mb-6 text-base">Product</h4>
           <ul class="space-y-4 text-base font-medium">
             <li><a href="#features" class="hover:text-[#B08D57] transition-colors">Features</a></li>
-            <li><a href="#pricing" class="hover:text-[#B08D57] transition-colors">Pricing</a></li>
+            
             <li><router-link to="/login" class="hover:text-[#B08D57] transition-colors">Log In</router-link></li>
           </ul>
         </div>
