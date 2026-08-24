@@ -26,119 +26,124 @@
       </div>
     </nav>
 
-    <!-- Parallax Hero Section -->
-    <header class="pt-24 pb-24 md:pt-32 md:pb-32 px-6 lg:px-8 max-w-7xl mx-auto relative hero-section" ref="heroSection" @mousemove="handleMouseMove" @mouseleave="handleMouseLeave">
-      <div class="grid md:grid-cols-12 gap-12 lg:gap-16 items-center">
-        <!-- Copy Left (50%) -->
-        <div class="md:col-span-6 relative z-10 hero-text-wrapper">
-          <h1 class="display-title text-[#2B2620] font-extrabold tracking-tight mb-6 leading-[1.05]">
-            Stop typing.<br/><span class="text-[#8F6F3E]">Start scanning.</span>
-          </h1>
-          <p class="body-text text-[#6E675C] mb-10 max-w-lg leading-relaxed font-medium">
-            The intelligent data extraction engine for high-volume dropshipping operations. Turn messy shipping labels into clean, structured inventory data instantly.
-          </p>
-          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-            <router-link to="/login" class="btn-primary h-14 px-8 text-base shadow-lg shadow-[#211D19]/10">Start 14-day trial</router-link>
-            <a href="#how-it-works" class="btn-secondary h-14 px-8 text-base">See how it works</a>
-          </div>
-          <div class="mt-8 flex items-center space-x-6 text-sm font-semibold text-[#6E675C]">
-            <div class="flex items-center"><Check class="w-5 h-5 text-[#8F6F3E] mr-2" /> No credit card required</div>
-            <div class="flex items-center"><Check class="w-5 h-5 text-[#8F6F3E] mr-2" /> Setup in 2 minutes</div>
+    <!-- Cinematic Centered Hero Section -->
+    <header class="pt-32 pb-0 px-6 lg:px-8 max-w-7xl mx-auto relative hero-section flex flex-col items-center" ref="heroSection">
+      
+      <!-- Copy Center -->
+      
+      <div class="relative z-30 hero-text-wrapper text-center max-w-4xl mx-auto flex flex-col items-center">
+        <div class="hero-pill-wrap overflow-hidden mb-8">
+          <div class="hero-pill inline-flex items-center space-x-2 bg-[#ECE7DE]/50 border border-[#B08D57]/30 rounded-full px-4 py-1.5 shadow-sm">
+            <span class="flex h-2 w-2 relative">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#B08D57] opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-[#8F6F3E]"></span>
+            </span>
+            <span class="text-xs font-bold uppercase tracking-wider text-[#6E675C]">Vision AI 2.0 Now Live</span>
           </div>
         </div>
         
-        <!-- Mockup Right (50%) -->
-        <div class="md:col-span-6 relative perspective-1000 mockup-wrapper hero-mockup-wrapper">
-          <!-- Floating Parallax Elements -->
-          <div class="absolute -top-10 -left-10 bg-[#FDFCFA] p-4 rounded-xl shadow-xl border border-[#ECE7DE] z-20 parallax-el flex items-center space-x-3" data-speed="0.8">
-            <div class="w-10 h-10 bg-[#FAF8F4] rounded-lg flex items-center justify-center"><FileText class="text-[#8F6F3E] w-5 h-5" /></div>
-            <div>
-              <p class="text-[10px] uppercase font-bold text-[#6E675C] tracking-wider">Raw Label</p>
-              <p class="text-xs font-mono font-bold text-[#2B2620]">label_v2.pdf</p>
-            </div>
-          </div>
-          
-          <div class="absolute -bottom-8 -right-8 bg-[#211D19] p-4 rounded-xl shadow-2xl border border-[#6E675C] z-20 parallax-el flex items-center space-x-3" data-speed="1.2">
-            <div class="w-10 h-10 bg-[#2B2620] rounded-lg flex items-center justify-center"><Database class="text-[#F2EAD9] w-5 h-5" /></div>
-            <div>
-              <p class="text-[10px] uppercase font-bold text-[#F2EAD9]/70 tracking-wider">Extracted</p>
-              <p class="text-xs font-mono font-bold text-[#B08D57]">12 Items Synced</p>
-            </div>
-          </div>
-
-          
-          <!-- Immersive Animated Orbs -->
-          <div class="absolute -inset-20 bg-gradient-to-tr from-[#ECE7DE] to-[#B08D57] blur-[100px] -z-10 rounded-full opacity-40 animate-pulse-slow"></div>
-          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#B08D57] blur-[120px] -z-10 rounded-full opacity-30 animate-spin-slow"></div>
-
-          
-          <!-- Static Coded Dashboard Mockup -->
-          <div class="mockup-container bg-[#FDFCFA] rounded-2xl border border-[#ECE7DE] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.15)] overflow-hidden relative" ref="heroMockup">
-            <div class="bg-[#FAF8F4]/80 backdrop-blur-sm border-b border-[#ECE7DE] px-4 py-3 flex items-center space-x-2">
-              <div class="w-3 h-3 rounded-full bg-rose-400"></div>
-              <div class="w-3 h-3 rounded-full bg-amber-400"></div>
-              <div class="w-3 h-3 rounded-full bg-emerald-400"></div>
-              <div class="ml-4 text-[10px] font-mono text-[#6E675C] flex-1 text-center pr-10">app.labeltracker.pro/batch</div>
-            </div>
-            <!-- Laser Scan Effect -->
-            <div class="absolute inset-0 z-50 pointer-events-none overflow-hidden rounded-2xl">
-              <div class="w-full h-[2px] bg-[#B08D57] shadow-[0_0_25px_8px_rgba(176,141,87,0.5)] animate-laser-scan"></div>
-            </div>
-            <div class="p-6 bg-[#FDFCFA]/60 backdrop-blur-md">
-              <div class="flex items-center justify-between mb-6">
-                <div>
-                  <h3 class="font-bold text-[#2B2620]">Pending Batch</h3>
-                  <p class="text-xs text-[#6E675C] mt-1">Processed from clipboard</p>
-                </div>
-                <div class="h-8 px-3 bg-[#FAF8F4] border border-[#ECE7DE] rounded text-xs font-bold text-[#2B2620] flex items-center">
-                  <Check class="w-3 h-3 mr-1.5 text-[#8F6F3E]" /> Complete
-                </div>
-              </div>
-              <div class="border border-[#ECE7DE] rounded-lg overflow-hidden bg-[#FDFCFA]">
-                <table class="w-full text-left text-sm">
-                  <thead class="bg-[#FAF8F4] border-b border-[#ECE7DE]">
-                    <tr>
-                      <th class="px-4 py-3 font-mono text-[10px] uppercase tracking-wider text-[#6E675C] font-bold">Reference</th>
-                      <th class="px-4 py-3 font-mono text-[10px] uppercase tracking-wider text-[#6E675C] font-bold">Product</th>
-                      <th class="px-4 py-3 font-mono text-[10px] uppercase tracking-wider text-[#6E675C] font-bold text-right">Qty</th>
-                      <th class="px-4 py-3 font-mono text-[10px] uppercase tracking-wider text-[#6E675C] font-bold">Status</th>
-                    </tr>
-                  </thead>
-                  <tbody class="divide-y divide-[#ECE7DE]">
-                    <tr class="bg-[#8F6F3E]/5">
-                      <td class="px-4 py-3 font-mono text-[#2B2620] text-xs">1Z99923...</td>
-                      <td class="px-4 py-3 font-semibold text-[#2B2620] text-xs">Wireless Earbuds Pro</td>
-                      <td class="px-4 py-3 text-right font-mono text-[#2B2620] text-xs">12</td>
-                      <td class="px-4 py-3"><span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-[#ECE7DE] text-[#2B2620]">Extracted</span></td>
-                    </tr>
-                    <tr>
-                      <td class="px-4 py-3 font-mono text-[#2B2620] text-xs">JD01928...</td>
-                      <td class="px-4 py-3 font-semibold text-[#2B2620] text-xs">Ergo Office Chair</td>
-                      <td class="px-4 py-3 text-right font-mono text-[#2B2620] text-xs">1</td>
-                      <td class="px-4 py-3"><span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-[#ECE7DE] text-[#2B2620]">Extracted</span></td>
-                    </tr>
-                    <tr>
-                      <td class="px-4 py-3 font-mono text-[#2B2620] text-xs">TBA192...</td>
-                      <td class="px-4 py-3 font-semibold text-[#2B2620] text-xs">Standing Desk Mat</td>
-                      <td class="px-4 py-3 text-right font-mono text-[#2B2620] text-xs">4</td>
-                      <td class="px-4 py-3"><span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-[#ECE7DE] text-[#2B2620]">Extracted</span></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
+        <h1 class="text-6xl md:text-8xl text-[#2B2620] font-extrabold tracking-tighter mb-8 leading-[0.95] flex flex-col items-center">
+          <span class="overflow-hidden inline-block"><span class="hero-word inline-block transform translate-y-[100%]">Stop typing.</span></span>
+          <span class="overflow-hidden inline-block"><span class="hero-word text-transparent bg-clip-text bg-gradient-to-r from-[#8F6F3E] via-[#B08D57] to-[#8F6F3E] bg-[length:200%_auto] animate-gradient inline-block transform translate-y-[100%]">Start scanning.</span></span>
+        </h1>
+        
+        <p class="text-xl md:text-2xl text-[#6E675C] mb-12 max-w-2xl mx-auto leading-relaxed font-medium hero-desc">
+          The intelligent data extraction engine for high-volume operations. Turn messy shipping labels into structured data instantly.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 hero-btns">
+          <router-link to="/login" class="inline-flex items-center justify-center h-16 px-10 bg-[#211D19] text-[#F2EAD9] font-bold rounded-full hover:bg-[#2B2620] hover:-translate-y-1 transition-all duration-300 text-lg shadow-2xl shadow-[#211D19]/20">
+            Start 14-day trial
+          </router-link>
+          <a href="#how-it-works" class="inline-flex items-center justify-center h-16 px-10 bg-[#FDFCFA] text-[#2B2620] font-bold rounded-full border border-[#ECE7DE] hover:bg-[#FAF8F4] hover:border-[#6E675C] transition-all duration-300 text-lg">
+            See how it works
+          </a>
         </div>
       </div>
       
-
-    
-      <!-- Premium Scroll Indicator -->
-      <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center justify-center opacity-80 cursor-pointer hover:opacity-100 transition-opacity z-50" @click="scrollDown">
-        <div class="w-[30px] h-[46px] border-2 border-[#6E675C]/50 rounded-full flex justify-center p-1 relative shadow-lg bg-[#FAF8F4]/50 backdrop-blur-sm">
-          <div class="w-1.5 h-1.5 bg-[#8F6F3E] rounded-full animate-scroll-wheel"></div>
+      <!-- Massive Mockup Center -->
+      <div class="w-full mt-24 relative hero-mockup-wrapper z-20">
+        
+        <!-- Floating Parallax Elements -->
+        <div class="absolute -top-12 md:-top-20 left-[10%] md:left-[20%] bg-[#FDFCFA] p-4 rounded-2xl shadow-2xl border border-[#ECE7DE] z-30 parallax-el flex items-center space-x-4" data-speed="1.5">
+          <div class="w-12 h-12 bg-[#FAF8F4] rounded-xl flex items-center justify-center"><FileText class="text-[#8F6F3E] w-6 h-6" /></div>
+          <div>
+            <p class="text-[10px] uppercase font-bold text-[#6E675C] tracking-wider mb-1">Raw Input</p>
+            <p class="text-sm font-mono font-bold text-[#2B2620]">label_v2.pdf</p>
+          </div>
         </div>
-        <span class="text-[9px] uppercase font-bold tracking-[0.2em] text-[#6E675C] mt-3">Scroll</span>
+        
+        <div class="absolute -top-8 md:-top-12 right-[5%] md:right-[15%] bg-[#211D19] p-4 rounded-2xl shadow-2xl border border-[#6E675C] z-30 parallax-el flex items-center space-x-4" data-speed="1.2">
+          <div class="w-12 h-12 bg-[#2B2620] rounded-xl flex items-center justify-center"><Database class="text-[#F2EAD9] w-6 h-6" /></div>
+          <div>
+            <p class="text-[10px] uppercase font-bold text-[#F2EAD9]/70 tracking-wider mb-1">AI Output</p>
+            <p class="text-sm font-mono font-bold text-[#B08D57]">12 Items Synced</p>
+          </div>
+        </div>
+
+        <!-- Glowing Backdrops -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-gradient-to-tr from-[#ECE7DE] to-[#B08D57] blur-[120px] -z-10 rounded-full opacity-50 animate-pulse-slow"></div>
+
+        <!-- Static Coded Dashboard Mockup -->
+        <div class="mockup-container bg-[#FDFCFA] rounded-t-3xl md:rounded-t-[2.5rem] border-t-2 border-x-2 border-[#ECE7DE] shadow-[0_-20px_80px_-20px_rgba(0,0,0,0.15)] overflow-hidden relative w-[95%] md:w-[90%] mx-auto h-[50vh] md:h-[65vh]" ref="heroMockup">
+          
+          <!-- Laser Scan Effect -->
+          <div class="absolute inset-0 z-50 pointer-events-none overflow-hidden">
+            <div class="w-full h-[3px] bg-[#B08D57] shadow-[0_0_30px_10px_rgba(176,141,87,0.6)] animate-laser-scan"></div>
+          </div>
+
+          <div class="bg-[#FAF8F4]/80 backdrop-blur-sm border-b border-[#ECE7DE] px-6 py-4 flex items-center space-x-2">
+            <div class="w-3.5 h-3.5 rounded-full bg-rose-400"></div>
+            <div class="w-3.5 h-3.5 rounded-full bg-amber-400"></div>
+            <div class="w-3.5 h-3.5 rounded-full bg-emerald-400"></div>
+            <div class="ml-4 text-xs font-mono text-[#6E675C] flex-1 text-center pr-10">app.labeltracker.pro/batch</div>
+          </div>
+          
+          <div class="p-8 md:p-12 bg-[#FDFCFA]/60 backdrop-blur-md h-full">
+            <div class="flex items-center justify-between mb-8">
+              <div>
+                <h3 class="font-extrabold text-2xl text-[#2B2620]">Pending Batch</h3>
+                <p class="text-sm text-[#6E675C] mt-1 font-medium">Processed from clipboard</p>
+              </div>
+              <div class="h-10 px-4 bg-[#FAF8F4] border border-[#ECE7DE] rounded-lg text-sm font-bold text-[#2B2620] flex items-center shadow-sm">
+                <Check class="w-4 h-4 mr-2 text-[#8F6F3E]" /> Complete
+              </div>
+            </div>
+            
+            <div class="border border-[#ECE7DE] rounded-xl overflow-hidden bg-[#FDFCFA] shadow-sm">
+              <table class="w-full text-left text-base">
+                <thead class="bg-[#FAF8F4] border-b border-[#ECE7DE]">
+                  <tr>
+                    <th class="px-6 py-4 font-mono text-xs uppercase tracking-wider text-[#6E675C] font-bold">Reference</th>
+                    <th class="px-6 py-4 font-mono text-xs uppercase tracking-wider text-[#6E675C] font-bold">Product</th>
+                    <th class="px-6 py-4 font-mono text-xs uppercase tracking-wider text-[#6E675C] font-bold text-right">Qty</th>
+                    <th class="px-6 py-4 font-mono text-xs uppercase tracking-wider text-[#6E675C] font-bold">Status</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-[#ECE7DE]">
+                  <tr class="bg-[#8F6F3E]/5">
+                    <td class="px-6 py-4 font-mono text-[#2B2620] font-bold">1Z99923...</td>
+                    <td class="px-6 py-4 font-bold text-[#2B2620]">Wireless Earbuds Pro</td>
+                    <td class="px-6 py-4 text-right font-mono text-[#2B2620] font-bold">12</td>
+                    <td class="px-6 py-4"><span class="inline-flex items-center px-3 py-1 rounded-md text-xs font-bold bg-[#ECE7DE] text-[#2B2620]">Extracted</span></td>
+                  </tr>
+                  <tr>
+                    <td class="px-6 py-4 font-mono text-[#2B2620] font-bold">JD01928...</td>
+                    <td class="px-6 py-4 font-bold text-[#2B2620]">Ergo Office Chair</td>
+                    <td class="px-6 py-4 text-right font-mono text-[#2B2620] font-bold">1</td>
+                    <td class="px-6 py-4"><span class="inline-flex items-center px-3 py-1 rounded-md text-xs font-bold bg-[#ECE7DE] text-[#2B2620]">Extracted</span></td>
+                  </tr>
+                  <tr>
+                    <td class="px-6 py-4 font-mono text-[#2B2620] font-bold">TBA192...</td>
+                    <td class="px-6 py-4 font-bold text-[#2B2620]">Standing Desk Mat</td>
+                    <td class="px-6 py-4 text-right font-mono text-[#2B2620] font-bold">4</td>
+                    <td class="px-6 py-4"><span class="inline-flex items-center px-3 py-1 rounded-md text-xs font-bold bg-[#ECE7DE] text-[#2B2620]">Extracted</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -420,6 +425,7 @@
 
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue';
+import Lenis from '@studio-freight/lenis';
 import { Box, Camera, Database, FileSpreadsheet, Check, FileText , ArrowUp } from 'lucide-vue-next';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -481,12 +487,45 @@ const handleMouseLeave = () => {
 };
 
 onMounted(() => {
+  // Initialize Lenis for buttery smooth, slightly slower scroll
+  const lenis = new Lenis({
+    duration: 1.5,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smoothWheel: true,
+    wheelMultiplier: 0.75, // Slower
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+
+  // Sync GSAP with Lenis
+  gsap.registerPlugin(ScrollTrigger);
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add((time)=>{
+    lenis.raf(time * 1000);
+  });
+  gsap.ticker.lagSmoothing(0, 0);
+
+  // Modern Portfolio Hero Entrance Animation
+  const heroTl = gsap.timeline({ defaults: { ease: "power4.out" } });
+  
+  gsap.set('.hero-pill', { y: '100%', opacity: 0 });
+  gsap.set('.hero-word', { y: '100%' });
+  gsap.set('.hero-desc', { opacity: 0, y: 20 });
+  gsap.set('.hero-btns', { opacity: 0, y: 20 });
+  
+  heroTl.to('.hero-pill', { y: '0%', opacity: 1, duration: 1, delay: 0.2 })
+        .to('.hero-word', { y: '0%', duration: 1.2, stagger: 0.15 }, "-=0.6")
+        .to('.hero-desc', { opacity: 1, y: 0, duration: 1 }, "-=0.8")
+        .to('.hero-btns', { opacity: 1, y: 0, duration: 1 }, "-=0.8");
+
   window.addEventListener("scroll", handleScroll);
   gsap.registerPlugin(ScrollTrigger);
   
-  if(heroMockup.value) { 
-    gsap.set(heroMockup.value, { rotateX: 6, rotateY: -12, transformPerspective: 1200 }); 
-  }
+  
   
   // 1. Basic Entrance Reveals
   const els = gsap.utils.toArray('[data-reveal]');
@@ -523,28 +562,41 @@ onMounted(() => {
     });
   });
 
-  // 3. MASSIVE HERO ZOOM SCRUB (HEAVY IMMERSIVE)
-  gsap.to('.hero-mockup-wrapper', {
-    scale: 1.2,
+  // 3. CINEMATIC HERO 3D TILT SCRUB
+  if (heroMockup.value) {
+    // Initial 3D tilted state
+    gsap.set('.hero-mockup-wrapper', { 
+      rotateX: 25, 
+      scale: 0.9, 
+      y: 50,
+      transformPerspective: 1500, 
+      transformOrigin: 'top center' 
+    });
+    
+    // As you scroll down, it rotates flat and scales up to fill screen
+    gsap.to('.hero-mockup-wrapper', {
+      rotateX: 0,
+      scale: 1,
+      y: -50,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".hero-section",
+        start: "top top",
+        end: "bottom top",
+        scrub: 1
+      }
+    });
+  }
+  
+  gsap.to('.hero-text-wrapper', {
+    y: -150,
     opacity: 0,
-    y: 100,
-    ease: "power1.inOut",
+    ease: "none",
     scrollTrigger: {
       trigger: ".hero-section",
       start: "top top",
       end: "bottom top",
       scrub: 1
-    }
-  });
-  
-  gsap.to('.hero-text-wrapper', {
-    y: -100,
-    opacity: 0,
-    scrollTrigger: {
-      trigger: ".hero-section",
-      start: "top top",
-      end: "bottom top",
-      scrub: true
     }
   });
 
@@ -782,5 +834,14 @@ onUnmounted(() => {
 }
 .animate-spin-slow {
   animation: spin-slow 8s linear infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animate-gradient {
+  animation: gradient 6s ease infinite;
 }
 </style>
