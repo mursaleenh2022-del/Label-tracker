@@ -66,7 +66,11 @@
             </div>
           </div>
 
-          <div class="absolute -inset-10 bg-gradient-to-tr from-[#ECE7DE] to-[#B08D57] blur-[80px] -z-10 rounded-full opacity-30"></div>
+          
+          <!-- Immersive Animated Orbs -->
+          <div class="absolute -inset-20 bg-gradient-to-tr from-[#ECE7DE] to-[#B08D57] blur-[100px] -z-10 rounded-full opacity-40 animate-pulse-slow"></div>
+          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#B08D57] blur-[120px] -z-10 rounded-full opacity-30 animate-spin-slow"></div>
+
           
           <!-- Static Coded Dashboard Mockup -->
           <div class="mockup-container bg-[#FDFCFA] rounded-2xl border border-[#ECE7DE] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.15)] overflow-hidden relative" ref="heroMockup">
@@ -75,6 +79,10 @@
               <div class="w-3 h-3 rounded-full bg-amber-400"></div>
               <div class="w-3 h-3 rounded-full bg-emerald-400"></div>
               <div class="ml-4 text-[10px] font-mono text-[#6E675C] flex-1 text-center pr-10">app.labeltracker.pro/batch</div>
+            </div>
+            <!-- Laser Scan Effect -->
+            <div class="absolute inset-0 z-50 pointer-events-none overflow-hidden rounded-2xl">
+              <div class="w-full h-[2px] bg-[#B08D57] shadow-[0_0_25px_8px_rgba(176,141,87,0.5)] animate-laser-scan"></div>
             </div>
             <div class="p-6 bg-[#FDFCFA]/60 backdrop-blur-md">
               <div class="flex items-center justify-between mb-6">
@@ -124,6 +132,14 @@
       </div>
       
 
+    
+      <!-- Premium Scroll Indicator -->
+      <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center justify-center opacity-80 cursor-pointer hover:opacity-100 transition-opacity z-50" @click="scrollDown">
+        <div class="w-[30px] h-[46px] border-2 border-[#6E675C]/50 rounded-full flex justify-center p-1 relative shadow-lg bg-[#FAF8F4]/50 backdrop-blur-sm">
+          <div class="w-1.5 h-1.5 bg-[#8F6F3E] rounded-full animate-scroll-wheel"></div>
+        </div>
+        <span class="text-[9px] uppercase font-bold tracking-[0.2em] text-[#6E675C] mt-3">Scroll</span>
+      </div>
     </header>
 
     <!-- Continuous Infinite Marquee -->
@@ -446,6 +462,14 @@ const handleMouseMove = (e) => {
   });
 };
 
+
+const scrollDown = () => {
+  window.scrollTo({
+    top: window.innerHeight * 0.8,
+    behavior: 'smooth'
+  });
+};
+
 const handleMouseLeave = () => {
   if (!heroMockup.value) return;
   gsap.to(heroMockup.value, {
@@ -722,5 +746,41 @@ onUnmounted(() => {
 .fade-enter-from, .fade-leave-to {
   opacity: 0;
   transform: translateY(20px) scale(0.9);
+}
+
+/* Immersive Hero Animations */
+@keyframes laser-scan {
+  0% { transform: translateY(-20%); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(120%); opacity: 0; }
+}
+.animate-laser-scan {
+  animation: laser-scan 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes scroll-wheel {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(20px); opacity: 0; }
+}
+.animate-scroll-wheel {
+  animation: scroll-wheel 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.05); }
+}
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
+}
+
+@keyframes spin-slow {
+  0% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+  50% { transform: translate(-50%, -50%) rotate(180deg) scale(1.2); }
+  100% { transform: translate(-50%, -50%) rotate(360deg) scale(1); }
+}
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
 }
 </style>
