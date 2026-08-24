@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-white text-slate-900 font-sans selection:bg-teal-500 selection:text-white relative overflow-hidden">
+  <div class="min-h-screen bg-white text-slate-900 font-sans selection:bg-indigo-500 selection:text-white relative overflow-hidden">
     
     <!-- Subtle Grid & Glow Background for Immersive Feel -->
     <div class="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]">
@@ -11,7 +11,7 @@
       <div class="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">
         <div class="flex items-center space-x-3">
           <div class="w-10 h-10 bg-slate-900 rounded-xl flex items-center justify-center shadow-md">
-            <Box class="w-5 h-5 text-teal-400" />
+            <Box class="w-5 h-5 text-indigo-400" />
           </div>
           <span class="font-bold tracking-tight text-xl text-slate-900">{{ companyName }}</span>
         </div>
@@ -20,7 +20,7 @@
           <a href="#how-it-works" class="text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors">How it works</a>
           <a href="#pricing" class="text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors">Pricing</a>
           <div class="w-px h-6 bg-slate-200"></div>
-          <router-link to="/login" class="text-sm font-bold text-slate-900 hover:text-teal-700 transition-colors">Log in</router-link>
+          <router-link to="/login" class="text-sm font-bold text-slate-900 hover:text-indigo-700 transition-colors">Log in</router-link>
           <router-link to="/login" class="btn-primary">Start free trial</router-link>
         </div>
       </div>
@@ -32,24 +32,24 @@
         <!-- Copy Left (50%) -->
         <div class="md:col-span-6 relative z-10" data-reveal>
           <h1 class="display-title text-slate-900 font-extrabold tracking-tight mb-6 leading-[1.05]">
-            Stop typing.<br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-teal-700">Start scanning.</span>
+            Stop typing.<br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-indigo-700">Start scanning.</span>
           </h1>
           <p class="body-text text-slate-600 mb-10 max-w-lg leading-relaxed font-medium">
             The intelligent data extraction engine for high-volume dropshipping operations. Turn messy shipping labels into clean, structured inventory data instantly.
           </p>
           <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-            <router-link to="/login" class="btn-primary h-14 px-8 text-base shadow-lg shadow-teal-900/10">Start 14-day trial</router-link>
+            <router-link to="/login" class="btn-primary h-14 px-8 text-base shadow-lg shadow-indigo-900/10">Start 14-day trial</router-link>
             <a href="#how-it-works" class="btn-secondary h-14 px-8 text-base">See how it works</a>
           </div>
           <div class="mt-8 flex items-center space-x-6 text-sm font-semibold text-slate-500">
-            <div class="flex items-center"><Check class="w-5 h-5 text-teal-600 mr-2" /> No credit card required</div>
-            <div class="flex items-center"><Check class="w-5 h-5 text-teal-600 mr-2" /> Setup in 2 minutes</div>
+            <div class="flex items-center"><Check class="w-5 h-5 text-indigo-600 mr-2" /> No credit card required</div>
+            <div class="flex items-center"><Check class="w-5 h-5 text-indigo-600 mr-2" /> Setup in 2 minutes</div>
           </div>
         </div>
         
         <!-- Mockup Right (50%) -->
         <div class="md:col-span-6 relative perspective-1000" data-reveal>
-          <div class="absolute -inset-4 bg-gradient-to-tr from-teal-100 to-teal-50 blur-3xl -z-10 rounded-[3rem] opacity-70"></div>
+          <div class="absolute -inset-4 bg-gradient-to-tr from-indigo-100 to-indigo-50 blur-3xl -z-10 rounded-[3rem] opacity-70"></div>
           
           <!-- Static Coded Dashboard Mockup (Animations Removed) -->
           <div class="mockup-container bg-white rounded-2xl border border-slate-200/60 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] overflow-hidden relative transform rotate-y-12 rotate-x-6 transition-transform hover:rotate-0 duration-700 ease-out">
@@ -67,7 +67,7 @@
                   <h3 class="font-bold text-slate-900">Pending Batch</h3>
                   <p class="text-xs text-slate-500 mt-1">Processed from clipboard</p>
                 </div>
-                <div class="h-8 px-3 bg-teal-50 border border-teal-100 rounded text-xs font-bold text-teal-700 flex items-center">
+                <div class="h-8 px-3 bg-indigo-50 border border-indigo-100 rounded text-xs font-bold text-indigo-700 flex items-center">
                   <Check class="w-3 h-3 mr-1.5" /> Complete
                 </div>
               </div>
@@ -84,23 +84,23 @@
                     </tr>
                   </thead>
                   <tbody class="divide-y divide-slate-50">
-                    <tr class="bg-teal-50/20">
+                    <tr class="bg-indigo-50/20">
                       <td class="px-4 py-3 font-mono text-slate-900 text-xs">1Z99923...</td>
                       <td class="px-4 py-3 font-semibold text-slate-900 text-xs">Wireless Earbuds Pro</td>
                       <td class="px-4 py-3 text-right font-mono text-slate-900 text-xs">12</td>
-                      <td class="px-4 py-3"><span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-teal-100 text-teal-800">Extracted</span></td>
+                      <td class="px-4 py-3"><span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-indigo-100 text-indigo-800">Extracted</span></td>
                     </tr>
                     <tr>
                       <td class="px-4 py-3 font-mono text-slate-900 text-xs">JD01928...</td>
                       <td class="px-4 py-3 font-semibold text-slate-900 text-xs">Ergo Office Chair</td>
                       <td class="px-4 py-3 text-right font-mono text-slate-900 text-xs">1</td>
-                      <td class="px-4 py-3"><span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-teal-100 text-teal-800">Extracted</span></td>
+                      <td class="px-4 py-3"><span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-indigo-100 text-indigo-800">Extracted</span></td>
                     </tr>
                     <tr>
                       <td class="px-4 py-3 font-mono text-slate-900 text-xs">TBA192...</td>
                       <td class="px-4 py-3 font-semibold text-slate-900 text-xs">Standing Desk Mat</td>
                       <td class="px-4 py-3 text-right font-mono text-slate-900 text-xs">4</td>
-                      <td class="px-4 py-3"><span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-teal-100 text-teal-800">Extracted</span></td>
+                      <td class="px-4 py-3"><span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-indigo-100 text-indigo-800">Extracted</span></td>
                     </tr>
                   </tbody>
                 </table>
@@ -133,15 +133,15 @@
       <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10" data-reveal>
         <div class="grid md:grid-cols-3 gap-12 text-center divide-y md:divide-y-0 md:divide-x divide-slate-800">
           <div class="py-6">
-            <div class="text-5xl font-extrabold text-teal-400 mb-2">99.9%</div>
+            <div class="text-5xl font-extrabold text-indigo-400 mb-2">99.9%</div>
             <div class="text-slate-400 font-semibold uppercase tracking-wide text-sm">Data Accuracy</div>
           </div>
           <div class="py-6">
-            <div class="text-5xl font-extrabold text-teal-400 mb-2">&lt; 2s</div>
+            <div class="text-5xl font-extrabold text-indigo-400 mb-2">&lt; 2s</div>
             <div class="text-slate-400 font-semibold uppercase tracking-wide text-sm">Processing Time</div>
           </div>
           <div class="py-6">
-            <div class="text-5xl font-extrabold text-teal-400 mb-2">1M+</div>
+            <div class="text-5xl font-extrabold text-indigo-400 mb-2">1M+</div>
             <div class="text-slate-400 font-semibold uppercase tracking-wide text-sm">Labels Scanned</div>
           </div>
         </div>
@@ -159,8 +159,8 @@
         <div class="grid md:grid-cols-3 gap-8">
           <!-- Feature 1 -->
           <div class="feature-card bg-white p-8 rounded-3xl border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative overflow-hidden group" data-reveal>
-            <div class="w-14 h-14 bg-teal-50 rounded-2xl flex items-center justify-center mb-8 transition-transform group-hover:scale-110 duration-300">
-              <Camera class="w-7 h-7 text-teal-600" />
+            <div class="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center mb-8 transition-transform group-hover:scale-110 duration-300">
+              <Camera class="w-7 h-7 text-indigo-600" />
             </div>
             <h3 class="text-2xl font-bold text-slate-900 mb-4">Vision AI Extraction</h3>
             <p class="text-slate-600 text-base leading-relaxed">Reads messy, crumpled, or badly printed shipping labels instantly. Our custom vision model is trained specifically on dropshipping and logistics formats.</p>
@@ -168,8 +168,8 @@
           
           <!-- Feature 2 -->
           <div class="feature-card bg-white p-8 rounded-3xl border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative overflow-hidden group" data-reveal>
-            <div class="w-14 h-14 bg-teal-50 rounded-2xl flex items-center justify-center mb-8 transition-transform group-hover:scale-110 duration-300">
-              <Database class="w-7 h-7 text-teal-600" />
+            <div class="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center mb-8 transition-transform group-hover:scale-110 duration-300">
+              <Database class="w-7 h-7 text-indigo-600" />
             </div>
             <h3 class="text-2xl font-bold text-slate-900 mb-4">Auto-Categorization</h3>
             <p class="text-slate-600 text-base leading-relaxed">Matches extracted text to your existing product database. Automatically assigns categories and flags brand new products for review before saving.</p>
@@ -177,8 +177,8 @@
           
           <!-- Feature 3 -->
           <div class="feature-card bg-white p-8 rounded-3xl border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative overflow-hidden group" data-reveal>
-            <div class="w-14 h-14 bg-teal-50 rounded-2xl flex items-center justify-center mb-8 transition-transform group-hover:scale-110 duration-300">
-              <FileSpreadsheet class="w-7 h-7 text-teal-600" />
+            <div class="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center mb-8 transition-transform group-hover:scale-110 duration-300">
+              <FileSpreadsheet class="w-7 h-7 text-indigo-600" />
             </div>
             <h3 class="text-2xl font-bold text-slate-900 mb-4">One-Click Excel Reports</h3>
             <p class="text-slate-600 text-base leading-relaxed">Filter by any date range and instantly download a perfectly formatted Excel sheet that matches your client's exact required tracking format.</p>
@@ -195,7 +195,7 @@
           <p class="body-text text-slate-600 font-medium">From a raw photo to perfectly structured data in seconds.</p>
         </div>
         
-        <div class="space-y-16 relative before:absolute before:inset-0 before:ml-[27px] md:before:ml-1/2 md:before:translate-x-[-50%] before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-px before:bg-gradient-to-b before:from-teal-100 before:via-teal-400 before:to-teal-100">
+        <div class="space-y-16 relative before:absolute before:inset-0 before:ml-[27px] md:before:ml-1/2 md:before:translate-x-[-50%] before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-px before:bg-gradient-to-b before:from-indigo-100 before:via-indigo-400 before:to-indigo-100">
           
           <!-- Step 1 -->
           <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group" data-reveal>
@@ -208,7 +208,7 @@
           
           <!-- Step 2 -->
           <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group" data-reveal>
-            <div class="flex items-center justify-center w-14 h-14 rounded-full bg-teal-500 text-white font-mono font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-lg shadow-teal-500/30 z-10 text-xl">02</div>
+            <div class="flex items-center justify-center w-14 h-14 rounded-full bg-indigo-500 text-white font-mono font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-lg shadow-indigo-500/30 z-10 text-xl">02</div>
             <div class="w-[calc(100%-5rem)] md:w-[calc(50%-4rem)] p-10 rounded-3xl bg-white border border-slate-100 shadow-xl shadow-slate-200/20">
               <h3 class="font-bold text-2xl text-slate-900 mb-3">AI Processing</h3>
               <p class="text-base text-slate-600 leading-relaxed font-medium">Our engine reads the image, finds the product in your database, and perfectly extracts the tracking reference.</p>
@@ -243,25 +243,25 @@
             <p class="text-base text-slate-500 mb-8 font-medium">Perfect for small shops.</p>
             <div class="mb-10"><span class="text-5xl font-extrabold text-slate-900">$0</span><span class="text-slate-500 font-bold">/mo</span></div>
             <ul class="space-y-5 mb-12 flex-grow text-base text-slate-700 font-medium">
-              <li class="flex items-start"><Check class="w-6 h-6 text-teal-600 mr-3 shrink-0" /> 500 AI Scans per month</li>
-              <li class="flex items-start"><Check class="w-6 h-6 text-teal-600 mr-3 shrink-0" /> Basic Excel Reports</li>
-              <li class="flex items-start"><Check class="w-6 h-6 text-teal-600 mr-3 shrink-0" /> 1 Admin Seat</li>
+              <li class="flex items-start"><Check class="w-6 h-6 text-indigo-600 mr-3 shrink-0" /> 500 AI Scans per month</li>
+              <li class="flex items-start"><Check class="w-6 h-6 text-indigo-600 mr-3 shrink-0" /> Basic Excel Reports</li>
+              <li class="flex items-start"><Check class="w-6 h-6 text-indigo-600 mr-3 shrink-0" /> 1 Admin Seat</li>
             </ul>
             <router-link to="/login" class="btn-secondary w-full justify-center h-14 text-base">Start for free</router-link>
           </div>
           
           <!-- Pro -->
           <div class="p-10 rounded-[2rem] bg-slate-900 text-white text-left flex flex-col shadow-2xl relative border border-slate-800" data-reveal>
-            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-teal-400 text-teal-950 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg">Most Popular</div>
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-indigo-400 text-indigo-950 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg">Most Popular</div>
             <h3 class="font-bold text-2xl text-white mb-2 mt-2">Professional</h3>
             <p class="text-base text-slate-400 mb-8 font-medium">For growing warehouses.</p>
             <div class="mb-10"><span class="text-5xl font-extrabold text-white">$49</span><span class="text-slate-400 font-bold">/mo</span></div>
             <ul class="space-y-5 mb-12 flex-grow text-base text-slate-300 font-medium">
-              <li class="flex items-start"><Check class="w-6 h-6 text-teal-400 mr-3 shrink-0" /> 5,000 AI Scans per month</li>
-              <li class="flex items-start"><Check class="w-6 h-6 text-teal-400 mr-3 shrink-0" /> Batch Upload Mode (Up to 50)</li>
-              <li class="flex items-start"><Check class="w-6 h-6 text-teal-400 mr-3 shrink-0" /> Custom Excel Templates</li>
+              <li class="flex items-start"><Check class="w-6 h-6 text-indigo-400 mr-3 shrink-0" /> 5,000 AI Scans per month</li>
+              <li class="flex items-start"><Check class="w-6 h-6 text-indigo-400 mr-3 shrink-0" /> Batch Upload Mode (Up to 50)</li>
+              <li class="flex items-start"><Check class="w-6 h-6 text-indigo-400 mr-3 shrink-0" /> Custom Excel Templates</li>
             </ul>
-            <router-link to="/login" class="w-full h-14 inline-flex items-center justify-center bg-teal-500 text-white hover:bg-teal-400 font-bold rounded-full transition-colors mt-auto text-base shadow-lg shadow-teal-500/20">Start 14-day trial</router-link>
+            <router-link to="/login" class="w-full h-14 inline-flex items-center justify-center bg-indigo-500 text-white hover:bg-indigo-400 font-bold rounded-full transition-colors mt-auto text-base shadow-lg shadow-indigo-500/20">Start 14-day trial</router-link>
           </div>
           
           <!-- Enterprise -->
@@ -270,9 +270,9 @@
             <p class="text-base text-slate-500 mb-8 font-medium">For massive operations.</p>
             <div class="mb-10"><span class="text-5xl font-extrabold text-slate-900">$199</span><span class="text-slate-500 font-bold">/mo</span></div>
             <ul class="space-y-5 mb-12 flex-grow text-base text-slate-700 font-medium">
-              <li class="flex items-start"><Check class="w-6 h-6 text-teal-600 mr-3 shrink-0" /> Unlimited AI Scans</li>
-              <li class="flex items-start"><Check class="w-6 h-6 text-teal-600 mr-3 shrink-0" /> Dedicated Account Manager</li>
-              <li class="flex items-start"><Check class="w-6 h-6 text-teal-600 mr-3 shrink-0" /> API Access</li>
+              <li class="flex items-start"><Check class="w-6 h-6 text-indigo-600 mr-3 shrink-0" /> Unlimited AI Scans</li>
+              <li class="flex items-start"><Check class="w-6 h-6 text-indigo-600 mr-3 shrink-0" /> Dedicated Account Manager</li>
+              <li class="flex items-start"><Check class="w-6 h-6 text-indigo-600 mr-3 shrink-0" /> API Access</li>
             </ul>
             <router-link to="/login" class="btn-secondary w-full justify-center h-14 text-base">Contact Sales</router-link>
           </div>
@@ -281,14 +281,14 @@
     </section>
 
     <!-- Pre-Footer CTA (New Immersive Element) -->
-    <section class="py-24 bg-teal-900 text-white relative overflow-hidden">
+    <section class="py-24 bg-indigo-900 text-white relative overflow-hidden">
       <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xNSkiLz48L3N2Zz4=')] opacity-50"></div>
-      <div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_800px_at_50%_100%,#115e59,transparent)]"></div>
+      <div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_800px_at_50%_100%,#3730A3,transparent)]"></div>
       
       <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center relative z-10" data-reveal>
         <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-8">Ready to automate your warehouse?</h2>
-        <p class="text-xl text-teal-100 mb-10 font-medium max-w-2xl mx-auto">Join hundreds of logistics teams who have eliminated manual data entry completely.</p>
-        <router-link to="/login" class="inline-flex items-center h-16 px-10 bg-white text-teal-900 hover:bg-slate-50 font-extrabold rounded-full transition-transform hover:scale-105 duration-200 text-lg shadow-xl shadow-teal-950/50">
+        <p class="text-xl text-indigo-100 mb-10 font-medium max-w-2xl mx-auto">Join hundreds of logistics teams who have eliminated manual data entry completely.</p>
+        <router-link to="/login" class="inline-flex items-center h-16 px-10 bg-white text-indigo-900 hover:bg-slate-50 font-extrabold rounded-full transition-transform hover:scale-105 duration-200 text-lg shadow-xl shadow-indigo-950/50">
           Create your free account
         </router-link>
       </div>
@@ -300,7 +300,7 @@
         <div class="col-span-2">
           <div class="flex items-center mb-6">
             <div class="w-10 h-10 bg-slate-800 rounded-xl flex items-center justify-center mr-3 shadow-inner">
-              <Box class="w-5 h-5 text-teal-400" />
+              <Box class="w-5 h-5 text-indigo-400" />
             </div>
             <span class="font-bold tracking-tight text-xl text-white">{{ companyName }}</span>
           </div>
@@ -309,17 +309,17 @@
         <div>
           <h4 class="font-bold text-white mb-6 text-base">Product</h4>
           <ul class="space-y-4 text-base font-medium">
-            <li><a href="#features" class="hover:text-teal-400 transition-colors">Features</a></li>
-            <li><a href="#pricing" class="hover:text-teal-400 transition-colors">Pricing</a></li>
-            <li><router-link to="/login" class="hover:text-teal-400 transition-colors">Log In</router-link></li>
+            <li><a href="#features" class="hover:text-indigo-400 transition-colors">Features</a></li>
+            <li><a href="#pricing" class="hover:text-indigo-400 transition-colors">Pricing</a></li>
+            <li><router-link to="/login" class="hover:text-indigo-400 transition-colors">Log In</router-link></li>
           </ul>
         </div>
         <div>
           <h4 class="font-bold text-white mb-6 text-base">Legal</h4>
           <ul class="space-y-4 text-base font-medium">
-            <li><a href="#" class="hover:text-teal-400 transition-colors">Privacy Policy</a></li>
-            <li><a href="#" class="hover:text-teal-400 transition-colors">Terms of Service</a></li>
-            <li><a href="#" class="hover:text-teal-400 transition-colors">Contact Us</a></li>
+            <li><a href="#" class="hover:text-indigo-400 transition-colors">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-indigo-400 transition-colors">Terms of Service</a></li>
+            <li><a href="#" class="hover:text-indigo-400 transition-colors">Contact Us</a></li>
           </ul>
         </div>
       </div>
