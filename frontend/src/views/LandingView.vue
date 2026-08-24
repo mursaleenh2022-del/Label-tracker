@@ -34,12 +34,12 @@
         <div class="relative z-30 hero-text-wrapper pr-0 lg:pr-12">
           
           <h1 class="text-6xl md:text-[5.5rem] text-[#2B2620] font-extrabold tracking-tighter mb-8 leading-[1.05] flex flex-col">
-            <span class="overflow-hidden inline-block py-1"><span class="hero-word inline-block transform translate-y-[100%]">Stop typing.</span></span>
-            <span class="overflow-hidden inline-block py-1"><span class="hero-word text-transparent bg-clip-text bg-gradient-to-r from-[#8F6F3E] via-[#B08D57] to-[#8F6F3E] bg-[length:200%_auto] animate-gradient inline-block transform translate-y-[100%]">Start scanning.</span></span>
+            <span class="overflow-hidden inline-block py-1"><span class="hero-word inline-block transform translate-y-[100%]">Scale operations.</span></span>
+            <span class="overflow-hidden inline-block py-1"><span class="hero-word text-transparent bg-clip-text bg-gradient-to-r from-[#8F6F3E] via-[#B08D57] to-[#8F6F3E] bg-[length:200%_auto] animate-gradient inline-block transform translate-y-[100%]">Automate logistics.</span></span>
           </h1>
           
           <p class="text-xl md:text-2xl text-[#6E675C] mb-12 max-w-xl leading-relaxed font-medium hero-desc">
-            The intelligent data extraction engine for high-volume operations. Turn messy shipping labels into structured data instantly.
+            The all-in-one operational engine for high-volume dropshippers. Seamlessly manage sellers, automate label extraction, and track stock inventory in real-time.
           </p>
           
           <div class="flex flex-col sm:flex-row items-start gap-5 hero-btns">
@@ -139,7 +139,7 @@
 
     <!-- Continuous Infinite Marquee -->
     <section class="py-12 border-y border-[#ECE7DE] bg-[#FDFCFA]/50 backdrop-blur-sm overflow-hidden flex flex-col">
-      <p class="text-sm font-bold text-[#6E675C] tracking-widest uppercase mb-8 text-center px-6">Trusted by logistics teams powering</p>
+      <p class="text-sm font-bold text-[#6E675C] tracking-widest uppercase mb-8 text-center px-6">Designed exclusively for high-volume dropshipping operations</p>
       <div class="marquee-container flex whitespace-nowrap overflow-hidden relative">
         <div class="marquee-content flex items-center justify-around min-w-full shrink-0 gap-24 px-12">
           <div class="text-2xl font-extrabold text-[#2B2620] opacity-40 hover:opacity-100 transition-opacity">Shopify</div>
@@ -163,19 +163,16 @@
     <!-- Scroll Highlight Statement (Immersive Element) -->
     <section class="py-48 px-6 lg:px-8 max-w-5xl mx-auto text-center statement-section">
       <h2 class="text-4xl md:text-6xl font-bold leading-tight text-[#2B2620]">
-        <span class="statement-word opacity-10 transition-opacity">Manual</span>
-        <span class="statement-word opacity-10 transition-opacity"> data</span>
-        <span class="statement-word opacity-10 transition-opacity"> entry</span>
-        <span class="statement-word opacity-10 transition-opacity"> is</span>
-        <span class="statement-word opacity-10 transition-opacity"> completely</span>
-        <span class="statement-word opacity-10 transition-opacity"> dead.</span><br/>
-        <span class="statement-word opacity-10 transition-opacity">The</span>
-        <span class="statement-word opacity-10 transition-opacity"> future</span>
+        <span class="statement-word opacity-10 transition-opacity">Stop</span>
+        <span class="statement-word opacity-10 transition-opacity"> wrestling</span>
+        <span class="statement-word opacity-10 transition-opacity"> with</span>
+        <span class="statement-word opacity-10 transition-opacity"> spreadsheets.</span><br/>
+        <span class="statement-word opacity-10 transition-opacity">Take</span>
+        <span class="statement-word opacity-10 transition-opacity"> absolute</span>
+        <span class="statement-word opacity-10 transition-opacity"> control</span>
         <span class="statement-word opacity-10 transition-opacity"> of</span>
-        <span class="statement-word opacity-10 transition-opacity"> logistics</span>
-        <span class="statement-word opacity-10 transition-opacity text-[#8F6F3E]"> is</span>
-        <span class="statement-word opacity-10 transition-opacity text-[#8F6F3E]"> Vision</span>
-        <span class="statement-word opacity-10 transition-opacity text-[#8F6F3E]"> AI.</span>
+        <span class="statement-word opacity-10 transition-opacity text-[#8F6F3E]"> your</span>
+        <span class="statement-word opacity-10 transition-opacity text-[#8F6F3E]"> inventory.</span>
       </h2>
     </section>
 
@@ -187,8 +184,8 @@
         
         <!-- Title Left -->
         <div class="lg:w-1/2 pr-12 z-10 engine-text-wrap">
-          <h2 class="text-5xl md:text-7xl font-extrabold text-[#FDFCFA] tracking-tight mb-6 engine-title">The engine under the hood.</h2>
-          <p class="text-[#F2EAD9]/70 font-medium text-xl mb-8">Everything you need to completely eliminate manual logistics data entry.</p>
+          <h2 class="text-5xl md:text-7xl font-extrabold text-[#FDFCFA] tracking-tight mb-6 engine-title">The complete operational stack.</h2>
+          <p class="text-[#F2EAD9]/70 font-medium text-xl mb-8">A unified platform built to handle the rigorous demands of multi-seller dropshipping.</p>
           <div class="w-12 h-1 bg-[#B08D57] rounded-full engine-line"></div>
         </div>
         
@@ -200,26 +197,26 @@
             <div class="w-16 h-16 bg-[#211D19] rounded-2xl flex items-center justify-center mb-8 shadow-inner border border-[#6E675C]/20">
               <Camera class="w-8 h-8 text-[#B08D57]" />
             </div>
-            <h3 class="text-4xl font-bold text-[#FDFCFA] mb-4">Vision Extraction</h3>
-            <p class="text-[#F2EAD9]/70 text-lg leading-relaxed">Reads messy, crumpled, or badly printed shipping labels instantly.</p>
+            <h3 class="text-4xl font-bold text-[#FDFCFA] mb-4">Automated Extraction</h3>
+            <p class="text-[#F2EAD9]/70 text-lg leading-relaxed">Upload raw shipping labels and let our Vision AI instantly extract tracking references and quantities. Zero manual data entry.</p>
           </div>
           
           <!-- Card 2 -->
           <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 w-full bg-[#211D19] p-10 md:p-14 rounded-[2rem] border border-[#B08D57]/50 shadow-2xl flex flex-col justify-center engine-card card-2 origin-bottom translate-y-[100%] opacity-0">
             <div class="w-16 h-16 bg-[#2B2620] rounded-2xl flex items-center justify-center mb-8 shadow-inner border border-[#6E675C]/20">
-              <Database class="w-8 h-8 text-[#B08D57]" />
+              <Users class="w-8 h-8 text-[#B08D57]" />
             </div>
-            <h3 class="text-4xl font-bold text-[#FDFCFA] mb-4">Auto-Categorization</h3>
-            <p class="text-[#F2EAD9]/70 text-lg leading-relaxed">Matches extracted text to your existing product database instantly.</p>
+            <h3 class="text-4xl font-bold text-[#FDFCFA] mb-4">Seller Management</h3>
+            <p class="text-[#F2EAD9]/70 text-lg leading-relaxed">Track and manage your entire seller network from a single unified dashboard. Monitor specific pricing and seller-level data.</p>
           </div>
           
           <!-- Card 3 -->
           <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 w-full bg-[#FAF8F4] p-10 md:p-14 rounded-[2rem] border border-[#ECE7DE] shadow-2xl flex flex-col justify-center engine-card card-3 origin-bottom translate-y-[100%] opacity-0">
             <div class="w-16 h-16 bg-[#FDFCFA] rounded-2xl flex items-center justify-center mb-8 shadow-sm border border-[#ECE7DE]">
-              <FileSpreadsheet class="w-8 h-8 text-[#8F6F3E]" />
+              <Boxes class="w-8 h-8 text-[#8F6F3E]" />
             </div>
-            <h3 class="text-4xl font-bold text-[#2B2620] mb-4">One-Click Reports</h3>
-            <p class="text-[#6E675C] text-lg leading-relaxed">Filter by date and instantly download perfectly formatted Excel sheets.</p>
+            <h3 class="text-4xl font-bold text-[#2B2620] mb-4">Live Stock Tracking</h3>
+            <p class="text-[#6E675C] text-lg leading-relaxed">Maintain a pristine, real-time ledger of all stock levels. Weekly inventory synchronization ensures you never lose track of a single unit.</p>
           </div>
           
         </div>
@@ -266,8 +263,8 @@
             <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group timeline-step">
               <div class="flex items-center justify-center w-14 h-14 rounded-full bg-[#FDFCFA] text-[#2B2620] border border-[#ECE7DE] font-mono font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-lg z-10 text-xl step-node transition-all duration-500">01</div>
               <div class="w-[calc(100%-5rem)] md:w-[calc(50%-4rem)] p-10 rounded-[2rem] bg-[#FDFCFA] border border-[#ECE7DE] shadow-xl shadow-[#6E675C]/5 step-card transition-transform duration-700 hover:scale-[1.02]">
-                <h3 class="font-bold text-3xl text-[#2B2620] mb-3">Upload or Paste</h3>
-                <p class="text-lg text-[#6E675C] leading-relaxed font-medium">Just hit Ctrl+V on the dashboard to paste an image of a label directly from your clipboard, or batch upload PDFs.</p>
+                <h3 class="font-bold text-3xl text-[#2B2620] mb-3">Centralized Database</h3>
+                <p class="text-lg text-[#6E675C] leading-relaxed font-medium">Establish your foundation. Manage all your active sellers and define your baseline stock inventory in one secure workspace.</p>
               </div>
             </div>
             
@@ -275,8 +272,8 @@
             <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group timeline-step">
               <div class="flex items-center justify-center w-14 h-14 rounded-full bg-[#FDFCFA] text-[#2B2620] border border-[#ECE7DE] font-mono font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-lg z-10 text-xl step-node transition-all duration-500">02</div>
               <div class="w-[calc(100%-5rem)] md:w-[calc(50%-4rem)] p-10 rounded-[2rem] bg-[#FDFCFA] border border-[#ECE7DE] shadow-xl shadow-[#6E675C]/5 step-card transition-transform duration-700 hover:scale-[1.02]">
-                <h3 class="font-bold text-3xl text-[#2B2620] mb-3">AI Processing</h3>
-                <p class="text-lg text-[#6E675C] leading-relaxed font-medium">Our engine reads the image, finds the product in your database, and perfectly extracts the tracking reference.</p>
+                <h3 class="font-bold text-3xl text-[#2B2620] mb-3">Batch Extraction</h3>
+                <p class="text-lg text-[#6E675C] leading-relaxed font-medium">Upload daily batches of shipping labels. The Vision AI instantly extracts critical data and cross-references it against your active inventory.</p>
               </div>
             </div>
             
@@ -284,8 +281,8 @@
             <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group timeline-step">
               <div class="flex items-center justify-center w-14 h-14 rounded-full bg-[#FDFCFA] text-[#2B2620] border border-[#ECE7DE] font-mono font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-lg z-10 text-xl step-node transition-all duration-500">03</div>
               <div class="w-[calc(100%-5rem)] md:w-[calc(50%-4rem)] p-10 rounded-[2rem] bg-[#FDFCFA] border border-[#ECE7DE] shadow-xl shadow-[#6E675C]/5 step-card transition-transform duration-700 hover:scale-[1.02]">
-                <h3 class="font-bold text-3xl text-[#2B2620] mb-3">Verify & Save</h3>
-                <p class="text-lg text-[#6E675C] leading-relaxed font-medium">The batch table auto-fills. All you have to do is hit Confirm. We flag duplicates automatically to protect your ledger.</p>
+                <h3 class="font-bold text-3xl text-[#2B2620] mb-3">Automated Ledger</h3>
+                <p class="text-lg text-[#6E675C] leading-relaxed font-medium">With one click, reconcile shipments. The engine automatically deducts stock, audits records, and maintains an immutable historical grid.</p>
               </div>
             </div>
           </div>
@@ -300,7 +297,7 @@
       <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[radial-gradient(ellipse_at_bottom,#B08D57_0%,transparent_70%)] opacity-20 pointer-events-none"></div>
       
       <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center relative z-10" data-reveal>
-        <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 text-[#FDFCFA]">Ready to automate your workflow?</h2>
+        <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 text-[#FDFCFA]">Ready to scale your dropshipping operation?</h2>
         <p class="text-xl text-[#F2EAD9]/80 mb-10 font-medium max-w-2xl mx-auto">Log in to the secure internal portal to begin extracting shipping data.</p>
         <router-link to="/login" class="inline-flex items-center justify-center h-14 px-10 bg-[#F2EAD9] text-[#211D19] hover:bg-[#FDFCFA] font-bold rounded-full transition-all hover:scale-105 duration-200 text-base shadow-xl shadow-[#B08D57]/10">
           Access System
@@ -364,7 +361,7 @@
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue';
 import Lenis from '@studio-freight/lenis';
-import { Box, Camera, Database, FileSpreadsheet, Check, FileText , ArrowUp } from 'lucide-vue-next';
+import { Box, Camera, Database, FileSpreadsheet, Check, FileText, ArrowUp, Users, Boxes } from 'lucide-vue-next';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
