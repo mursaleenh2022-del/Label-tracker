@@ -1,9 +1,9 @@
 <template>
-  <div class="min-h-screen bg-[#FAF8F4] text-[#2B2620] font-sans selection:bg-[#B08D57] selection:text-[#F2EAD9] relative overflow-hidden">
+  <div class="min-h-screen bg-[#FAF8F4] text-[#2B2620] font-sans selection:bg-[#B08D57] selection:text-[#F2EAD9] relative overflow-hidden main-wrapper transition-colors duration-700">
     
     <!-- Subtle Grid & Glow Background for Immersive Feel -->
-    <div class="fixed inset-0 -z-10 h-full w-full bg-[#FAF8F4] bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]">
-      <div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_800px_at_100%_200px,#ECE7DE,transparent)]"></div>
+    <div class="fixed inset-0 -z-10 h-full w-full bg-[linear-gradient(to_right,#ECE7DE_1px,transparent_1px),linear-gradient(to_bottom,#ECE7DE_1px,transparent_1px)] bg-[size:6rem_4rem] opacity-30">
+      <div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_800px_at_100%_200px,#B08D57,transparent)] opacity-10"></div>
     </div>
 
     <!-- Navigation -->
@@ -30,7 +30,7 @@
     <header class="pt-24 pb-24 md:pt-32 md:pb-32 px-6 lg:px-8 max-w-7xl mx-auto relative hero-section" ref="heroSection" @mousemove="handleMouseMove" @mouseleave="handleMouseLeave">
       <div class="grid md:grid-cols-12 gap-12 lg:gap-16 items-center">
         <!-- Copy Left (50%) -->
-        <div class="md:col-span-6 relative z-10" data-reveal>
+        <div class="md:col-span-6 relative z-10 hero-text-wrapper" data-reveal>
           <h1 class="display-title text-[#2B2620] font-extrabold tracking-tight mb-6 leading-[1.05]">
             Stop typing.<br/><span class="text-[#8F6F3E]">Start scanning.</span>
           </h1>
@@ -48,9 +48,9 @@
         </div>
         
         <!-- Mockup Right (50%) -->
-        <div class="md:col-span-6 relative perspective-1000 mockup-wrapper">
+        <div class="md:col-span-6 relative perspective-1000 mockup-wrapper hero-mockup-wrapper">
           <!-- Floating Parallax Elements -->
-          <div class="absolute -top-10 -left-10 bg-white p-4 rounded-xl shadow-xl border border-[#ECE7DE] z-20 parallax-el flex items-center space-x-3" data-speed="0.8">
+          <div class="absolute -top-10 -left-10 bg-[#FDFCFA] p-4 rounded-xl shadow-xl border border-[#ECE7DE] z-20 parallax-el flex items-center space-x-3" data-speed="0.8">
             <div class="w-10 h-10 bg-[#FAF8F4] rounded-lg flex items-center justify-center"><FileText class="text-[#8F6F3E] w-5 h-5" /></div>
             <div>
               <p class="text-[10px] uppercase font-bold text-[#6E675C] tracking-wider">Raw Label</p>
@@ -66,18 +66,16 @@
             </div>
           </div>
 
-          <div class="absolute -inset-4 bg-gradient-to-tr from-[#ECE7DE] to-[#FAF8F4] blur-3xl -z-10 rounded-[3rem] opacity-70"></div>
+          <div class="absolute -inset-10 bg-gradient-to-tr from-[#ECE7DE] to-[#B08D57] blur-[80px] -z-10 rounded-full opacity-30"></div>
           
           <!-- Static Coded Dashboard Mockup -->
           <div class="mockup-container bg-[#FDFCFA] rounded-2xl border border-[#ECE7DE] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.15)] overflow-hidden relative" ref="heroMockup">
-            <!-- Mac Window Dots -->
             <div class="bg-[#FAF8F4]/80 backdrop-blur-sm border-b border-[#ECE7DE] px-4 py-3 flex items-center space-x-2">
               <div class="w-3 h-3 rounded-full bg-rose-400"></div>
               <div class="w-3 h-3 rounded-full bg-amber-400"></div>
               <div class="w-3 h-3 rounded-full bg-emerald-400"></div>
               <div class="ml-4 text-[10px] font-mono text-[#6E675C] flex-1 text-center pr-10">app.labeltracker.pro/batch</div>
             </div>
-            <!-- Mockup Content -->
             <div class="p-6 bg-[#FDFCFA]/60 backdrop-blur-md">
               <div class="flex items-center justify-between mb-6">
                 <div>
@@ -88,8 +86,6 @@
                   <Check class="w-3 h-3 mr-1.5 text-[#8F6F3E]" /> Complete
                 </div>
               </div>
-              
-              <!-- Table -->
               <div class="border border-[#ECE7DE] rounded-lg overflow-hidden bg-[#FDFCFA]">
                 <table class="w-full text-left text-sm">
                   <thead class="bg-[#FAF8F4] border-b border-[#ECE7DE]">
@@ -126,27 +122,25 @@
           </div>
         </div>
       </div>
-    
+      
       <!-- Scroll Indicator -->
-      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-70 animate-pulse">
+      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-70 animate-pulse z-50">
         <span class="text-[10px] uppercase font-bold tracking-widest text-[#6E675C] mb-2">Scroll to explore</span>
         <div class="w-px h-12 bg-gradient-to-b from-[#8F6F3E] to-transparent"></div>
       </div>
-
     </header>
 
     <!-- Continuous Infinite Marquee -->
     <section class="py-12 border-y border-[#ECE7DE] bg-[#FDFCFA]/50 backdrop-blur-sm overflow-hidden flex flex-col">
       <p class="text-sm font-bold text-[#6E675C] tracking-widest uppercase mb-8 text-center px-6">Trusted by logistics teams powering</p>
       <div class="marquee-container flex whitespace-nowrap overflow-hidden relative">
-        <!-- We duplicate the content to ensure seamless loop -->
         <div class="marquee-content flex items-center justify-around min-w-full shrink-0 gap-24 px-12">
-          <div class="text-2xl font-extrabold text-[#2B2620] opacity-40">Shopify</div>
-          <div class="text-2xl font-extrabold text-[#2B2620] opacity-40">WooCommerce</div>
-          <div class="text-2xl font-extrabold text-[#2B2620] opacity-40">Amazon</div>
-          <div class="text-2xl font-extrabold text-[#2B2620] opacity-40">TikTok Shop</div>
-          <div class="text-2xl font-extrabold text-[#2B2620] opacity-40">eBay</div>
-          <div class="text-2xl font-extrabold text-[#2B2620] opacity-40">FedEx</div>
+          <div class="text-2xl font-extrabold text-[#2B2620] opacity-40 hover:opacity-100 transition-opacity">Shopify</div>
+          <div class="text-2xl font-extrabold text-[#2B2620] opacity-40 hover:opacity-100 transition-opacity">WooCommerce</div>
+          <div class="text-2xl font-extrabold text-[#2B2620] opacity-40 hover:opacity-100 transition-opacity">Amazon</div>
+          <div class="text-2xl font-extrabold text-[#2B2620] opacity-40 hover:opacity-100 transition-opacity">TikTok Shop</div>
+          <div class="text-2xl font-extrabold text-[#2B2620] opacity-40 hover:opacity-100 transition-opacity">eBay</div>
+          <div class="text-2xl font-extrabold text-[#2B2620] opacity-40 hover:opacity-100 transition-opacity">FedEx</div>
         </div>
         <div class="marquee-content flex items-center justify-around min-w-full shrink-0 gap-24 px-12" aria-hidden="true">
           <div class="text-2xl font-extrabold text-[#2B2620] opacity-40">Shopify</div>
@@ -162,81 +156,83 @@
     <!-- Scroll Highlight Statement (Immersive Element) -->
     <section class="py-48 px-6 lg:px-8 max-w-5xl mx-auto text-center statement-section">
       <h2 class="text-4xl md:text-6xl font-bold leading-tight text-[#2B2620]">
-        <span class="statement-word opacity-20 transition-opacity">Manual</span>
-        <span class="statement-word opacity-20 transition-opacity"> data</span>
-        <span class="statement-word opacity-20 transition-opacity"> entry</span>
-        <span class="statement-word opacity-20 transition-opacity"> is</span>
-        <span class="statement-word opacity-20 transition-opacity"> completely</span>
-        <span class="statement-word opacity-20 transition-opacity"> dead.</span><br/>
-        <span class="statement-word opacity-20 transition-opacity">The</span>
-        <span class="statement-word opacity-20 transition-opacity"> future</span>
-        <span class="statement-word opacity-20 transition-opacity"> of</span>
-        <span class="statement-word opacity-20 transition-opacity"> logistics</span>
-        <span class="statement-word opacity-20 transition-opacity text-[#8F6F3E]"> is</span>
-        <span class="statement-word opacity-20 transition-opacity text-[#8F6F3E]"> Vision</span>
-        <span class="statement-word opacity-20 transition-opacity text-[#8F6F3E]"> AI.</span>
+        <span class="statement-word opacity-10 transition-opacity">Manual</span>
+        <span class="statement-word opacity-10 transition-opacity"> data</span>
+        <span class="statement-word opacity-10 transition-opacity"> entry</span>
+        <span class="statement-word opacity-10 transition-opacity"> is</span>
+        <span class="statement-word opacity-10 transition-opacity"> completely</span>
+        <span class="statement-word opacity-10 transition-opacity"> dead.</span><br/>
+        <span class="statement-word opacity-10 transition-opacity">The</span>
+        <span class="statement-word opacity-10 transition-opacity"> future</span>
+        <span class="statement-word opacity-10 transition-opacity"> of</span>
+        <span class="statement-word opacity-10 transition-opacity"> logistics</span>
+        <span class="statement-word opacity-10 transition-opacity text-[#8F6F3E]"> is</span>
+        <span class="statement-word opacity-10 transition-opacity text-[#8F6F3E]"> Vision</span>
+        <span class="statement-word opacity-10 transition-opacity text-[#8F6F3E]"> AI.</span>
       </h2>
     </section>
 
-    <!-- Sticky Stacking Features -->
-    <section id="features" class="bg-[#211D19] py-32 px-6 lg:px-8 relative z-20">
-      <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 relative">
+    <!-- CINEMATIC PINNED CARD STACK (HEAVY IMMERSIVE) -->
+    <section id="features" class="bg-[#211D19] relative z-20" ref="engineWrapper">
+      <!-- We make this absolute so the background spans the entire pinned duration -->
+      <div class="absolute inset-0 bg-[#211D19] w-full h-[300vh]"></div>
+      
+      <div class="h-screen sticky top-0 flex flex-col lg:flex-row items-center overflow-hidden px-6 lg:px-8 max-w-7xl mx-auto" ref="enginePin">
         
-        <!-- Sticky Title Left -->
-        <div class="lg:w-1/3 relative">
-          <div class="sticky top-32">
-            <h2 class="text-4xl md:text-5xl font-extrabold text-[#FDFCFA] tracking-tight mb-6">The engine under the hood.</h2>
-            <p class="text-[#F2EAD9]/70 font-medium text-lg mb-8">Everything you need to completely eliminate manual logistics data entry, built specifically for high-volume dropshipping.</p>
-            <div class="hidden lg:block w-12 h-1 bg-[#B08D57] rounded-full"></div>
-          </div>
+        <!-- Title Left -->
+        <div class="lg:w-1/2 pr-12 z-10 engine-text-wrap">
+          <h2 class="text-5xl md:text-7xl font-extrabold text-[#FDFCFA] tracking-tight mb-6 engine-title">The engine under the hood.</h2>
+          <p class="text-[#F2EAD9]/70 font-medium text-xl mb-8">Everything you need to completely eliminate manual logistics data entry.</p>
+          <div class="w-12 h-1 bg-[#B08D57] rounded-full engine-line"></div>
         </div>
         
-        <!-- Stacking Cards Right -->
-        <div class="lg:w-2/3 space-y-8 md:space-y-24 pb-24">
-          <!-- Feature 1 -->
-          <div class="sticky top-32 w-full bg-[#2B2620] p-10 md:p-14 rounded-[2rem] border border-[#6E675C]/30 shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
+        <!-- Animated Cards Right -->
+        <div class="lg:w-1/2 w-full h-[60vh] relative perspective-1000 mt-12 lg:mt-0">
+          
+          <!-- Card 1 -->
+          <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 w-full bg-[#2B2620] p-10 md:p-14 rounded-[2rem] border border-[#6E675C]/30 shadow-2xl flex flex-col justify-center engine-card card-1 origin-bottom">
             <div class="w-16 h-16 bg-[#211D19] rounded-2xl flex items-center justify-center mb-8 shadow-inner border border-[#6E675C]/20">
               <Camera class="w-8 h-8 text-[#B08D57]" />
             </div>
-            <h3 class="text-3xl font-bold text-[#FDFCFA] mb-4">Vision Extraction</h3>
-            <p class="text-[#F2EAD9]/70 text-lg leading-relaxed">Reads messy, crumpled, or badly printed shipping labels instantly. Our custom vision model is trained specifically on dropshipping and logistics formats.</p>
+            <h3 class="text-4xl font-bold text-[#FDFCFA] mb-4">Vision Extraction</h3>
+            <p class="text-[#F2EAD9]/70 text-lg leading-relaxed">Reads messy, crumpled, or badly printed shipping labels instantly.</p>
           </div>
           
-          <!-- Feature 2 -->
-          <div class="sticky top-40 w-full bg-[#211D19] p-10 md:p-14 rounded-[2rem] border border-[#B08D57]/30 shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
+          <!-- Card 2 -->
+          <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 w-full bg-[#211D19] p-10 md:p-14 rounded-[2rem] border border-[#B08D57]/50 shadow-2xl flex flex-col justify-center engine-card card-2 origin-bottom translate-y-[100%] opacity-0">
             <div class="w-16 h-16 bg-[#2B2620] rounded-2xl flex items-center justify-center mb-8 shadow-inner border border-[#6E675C]/20">
               <Database class="w-8 h-8 text-[#B08D57]" />
             </div>
-            <h3 class="text-3xl font-bold text-[#FDFCFA] mb-4">Auto-Categorization</h3>
-            <p class="text-[#F2EAD9]/70 text-lg leading-relaxed">Matches extracted text to your existing product database. Automatically assigns categories and flags brand new products for review before saving.</p>
+            <h3 class="text-4xl font-bold text-[#FDFCFA] mb-4">Auto-Categorization</h3>
+            <p class="text-[#F2EAD9]/70 text-lg leading-relaxed">Matches extracted text to your existing product database instantly.</p>
           </div>
           
-          <!-- Feature 3 -->
-          <div class="sticky top-48 w-full bg-[#FAF8F4] p-10 md:p-14 rounded-[2rem] border border-[#ECE7DE] shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
+          <!-- Card 3 -->
+          <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 w-full bg-[#FAF8F4] p-10 md:p-14 rounded-[2rem] border border-[#ECE7DE] shadow-2xl flex flex-col justify-center engine-card card-3 origin-bottom translate-y-[100%] opacity-0">
             <div class="w-16 h-16 bg-[#FDFCFA] rounded-2xl flex items-center justify-center mb-8 shadow-sm border border-[#ECE7DE]">
               <FileSpreadsheet class="w-8 h-8 text-[#8F6F3E]" />
             </div>
-            <h3 class="text-3xl font-bold text-[#2B2620] mb-4">One-Click Reports</h3>
-            <p class="text-[#6E675C] text-lg leading-relaxed">Filter by any date range and instantly download a perfectly formatted Excel sheet that matches your client's exact required tracking format.</p>
+            <h3 class="text-4xl font-bold text-[#2B2620] mb-4">One-Click Reports</h3>
+            <p class="text-[#6E675C] text-lg leading-relaxed">Filter by date and instantly download perfectly formatted Excel sheets.</p>
           </div>
+          
         </div>
-
       </div>
     </section>
-    
-    <!-- Stats Section -->
-    <section class="py-24 bg-[#FDFCFA] text-[#2B2620] relative overflow-hidden border-b border-[#ECE7DE]">
+
+    <!-- Stats Section (Color transforms dynamically in JS) -->
+    <section class="py-24 bg-[#FDFCFA] text-[#2B2620] relative overflow-hidden border-y border-[#ECE7DE] transition-colors duration-1000 stats-section">
       <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10" data-reveal>
         <div class="grid md:grid-cols-3 gap-12 text-center divide-y md:divide-y-0 md:divide-x divide-[#ECE7DE]">
-          <div class="py-6">
+          <div class="py-6 stat-block">
             <div class="text-5xl font-extrabold text-[#8F6F3E] mb-2 count-up" data-val="99.9">0.0%</div>
             <div class="text-[#6E675C] font-semibold uppercase tracking-wide text-sm">Data Accuracy</div>
           </div>
-          <div class="py-6">
+          <div class="py-6 stat-block">
             <div class="text-5xl font-extrabold text-[#8F6F3E] mb-2">&lt; <span class="count-up" data-val="2">0</span>s</div>
             <div class="text-[#6E675C] font-semibold uppercase tracking-wide text-sm">Processing Time</div>
           </div>
-          <div class="py-6">
+          <div class="py-6 stat-block">
             <div class="text-5xl font-extrabold text-[#8F6F3E] mb-2"><span class="count-up" data-val="1">0</span>M+</div>
             <div class="text-[#6E675C] font-semibold uppercase tracking-wide text-sm">Labels Scanned</div>
           </div>
@@ -245,45 +241,45 @@
     </section>
 
     <!-- How it Works (Vertical Scrub Timeline) -->
-    <section id="how-it-works" class="py-32 bg-[#FAF8F4] px-6 lg:px-8 relative">
+    <section id="how-it-works" class="py-48 px-6 lg:px-8 relative bg-transparent z-10">
       <div class="max-w-5xl mx-auto">
-        <div class="text-center mb-24" data-reveal>
-          <h2 class="text-3xl md:text-5xl font-extrabold text-[#2B2620] tracking-tight mb-6">How it works</h2>
-          <p class="body-text text-[#6E675C] font-medium">From a raw photo to perfectly structured data in seconds.</p>
+        <div class="text-center mb-32" data-reveal>
+          <h2 class="text-3xl md:text-6xl font-extrabold text-inherit tracking-tight mb-6">How it works</h2>
+          <p class="body-text opacity-70 font-medium">From a raw photo to perfectly structured data in seconds.</p>
         </div>
         
         <div class="relative">
           <!-- The SVG Line we will draw on scroll -->
           <svg class="absolute left-[27px] md:left-1/2 md:-translate-x-1/2 top-0 h-full w-[2px] z-0" preserveAspectRatio="none">
-            <line x1="1" y1="0" x2="1" y2="100%" stroke="#ECE7DE" stroke-width="2" />
-            <line class="draw-line" x1="1" y1="0" x2="1" y2="100%" stroke="#8F6F3E" stroke-width="2" />
+            <line x1="1" y1="0" x2="1" y2="100%" stroke="currentColor" opacity="0.1" stroke-width="2" />
+            <line class="draw-line" x1="1" y1="0" x2="1" y2="100%" stroke="#B08D57" stroke-width="4" />
           </svg>
           
-          <div class="space-y-16">
+          <div class="space-y-32">
             <!-- Step 1 -->
             <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group timeline-step">
-              <div class="flex items-center justify-center w-14 h-14 rounded-full bg-[#FDFCFA] text-[#2B2620] border border-[#ECE7DE] font-mono font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-lg z-10 text-xl step-node transition-colors duration-300">01</div>
-              <div class="w-[calc(100%-5rem)] md:w-[calc(50%-4rem)] p-10 rounded-3xl bg-[#FDFCFA] border border-[#ECE7DE] shadow-xl shadow-[#6E675C]/5">
-                <h3 class="font-bold text-2xl text-[#2B2620] mb-3">Upload or Paste</h3>
-                <p class="text-base text-[#6E675C] leading-relaxed font-medium">Just hit Ctrl+V on the dashboard to paste an image of a label directly from your clipboard, or batch upload PDFs.</p>
+              <div class="flex items-center justify-center w-14 h-14 rounded-full bg-[#FDFCFA] text-[#2B2620] border border-[#ECE7DE] font-mono font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-lg z-10 text-xl step-node transition-all duration-500">01</div>
+              <div class="w-[calc(100%-5rem)] md:w-[calc(50%-4rem)] p-10 rounded-[2rem] bg-[#FDFCFA] border border-[#ECE7DE] shadow-xl shadow-[#6E675C]/5 step-card transition-transform duration-700 hover:scale-[1.02]">
+                <h3 class="font-bold text-3xl text-[#2B2620] mb-3">Upload or Paste</h3>
+                <p class="text-lg text-[#6E675C] leading-relaxed font-medium">Just hit Ctrl+V on the dashboard to paste an image of a label directly from your clipboard, or batch upload PDFs.</p>
               </div>
             </div>
             
             <!-- Step 2 -->
             <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group timeline-step">
-              <div class="flex items-center justify-center w-14 h-14 rounded-full bg-[#FDFCFA] text-[#2B2620] border border-[#ECE7DE] font-mono font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-lg z-10 text-xl step-node transition-colors duration-300">02</div>
-              <div class="w-[calc(100%-5rem)] md:w-[calc(50%-4rem)] p-10 rounded-3xl bg-[#FDFCFA] border border-[#ECE7DE] shadow-xl shadow-[#6E675C]/5">
-                <h3 class="font-bold text-2xl text-[#2B2620] mb-3">AI Processing</h3>
-                <p class="text-base text-[#6E675C] leading-relaxed font-medium">Our engine reads the image, finds the product in your database, and perfectly extracts the tracking reference.</p>
+              <div class="flex items-center justify-center w-14 h-14 rounded-full bg-[#FDFCFA] text-[#2B2620] border border-[#ECE7DE] font-mono font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-lg z-10 text-xl step-node transition-all duration-500">02</div>
+              <div class="w-[calc(100%-5rem)] md:w-[calc(50%-4rem)] p-10 rounded-[2rem] bg-[#FDFCFA] border border-[#ECE7DE] shadow-xl shadow-[#6E675C]/5 step-card transition-transform duration-700 hover:scale-[1.02]">
+                <h3 class="font-bold text-3xl text-[#2B2620] mb-3">AI Processing</h3>
+                <p class="text-lg text-[#6E675C] leading-relaxed font-medium">Our engine reads the image, finds the product in your database, and perfectly extracts the tracking reference.</p>
               </div>
             </div>
             
             <!-- Step 3 -->
             <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group timeline-step">
-              <div class="flex items-center justify-center w-14 h-14 rounded-full bg-[#FDFCFA] text-[#2B2620] border border-[#ECE7DE] font-mono font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-lg z-10 text-xl step-node transition-colors duration-300">03</div>
-              <div class="w-[calc(100%-5rem)] md:w-[calc(50%-4rem)] p-10 rounded-3xl bg-[#FDFCFA] border border-[#ECE7DE] shadow-xl shadow-[#6E675C]/5">
-                <h3 class="font-bold text-2xl text-[#2B2620] mb-3">Verify & Save</h3>
-                <p class="text-base text-[#6E675C] leading-relaxed font-medium">The batch table auto-fills. All you have to do is hit Confirm. We flag duplicates automatically to protect your ledger.</p>
+              <div class="flex items-center justify-center w-14 h-14 rounded-full bg-[#FDFCFA] text-[#2B2620] border border-[#ECE7DE] font-mono font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-lg z-10 text-xl step-node transition-all duration-500">03</div>
+              <div class="w-[calc(100%-5rem)] md:w-[calc(50%-4rem)] p-10 rounded-[2rem] bg-[#FDFCFA] border border-[#ECE7DE] shadow-xl shadow-[#6E675C]/5 step-card transition-transform duration-700 hover:scale-[1.02]">
+                <h3 class="font-bold text-3xl text-[#2B2620] mb-3">Verify & Save</h3>
+                <p class="text-lg text-[#6E675C] leading-relaxed font-medium">The batch table auto-fills. All you have to do is hit Confirm. We flag duplicates automatically to protect your ledger.</p>
               </div>
             </div>
           </div>
@@ -292,10 +288,10 @@
     </section>
 
     <!-- Pricing Section -->
-    <section id="pricing" class="py-32 bg-[#FDFCFA] px-6 lg:px-8 border-t border-[#ECE7DE]">
+    <section id="pricing" class="py-32 bg-[#FDFCFA] px-6 lg:px-8 border-t border-[#ECE7DE] relative z-20">
       <div class="max-w-7xl mx-auto">
         <div class="text-center max-w-2xl mx-auto mb-24" data-reveal>
-          <h2 class="text-3xl md:text-5xl font-extrabold text-[#2B2620] tracking-tight mb-6">Simple, transparent pricing</h2>
+          <h2 class="text-4xl md:text-5xl font-extrabold text-[#2B2620] tracking-tight mb-6">Simple, transparent pricing</h2>
           <p class="body-text text-[#6E675C] font-medium">Start for free, upgrade when your volume grows.</p>
         </div>
         
@@ -314,7 +310,7 @@
           </div>
           
           <!-- Pro -->
-          <div class="p-10 rounded-[2rem] bg-[#211D19] text-[#F2EAD9] text-left flex flex-col shadow-2xl relative border border-[#2B2620]" data-reveal>
+          <div class="p-10 rounded-[2rem] bg-[#211D19] text-[#F2EAD9] text-left flex flex-col shadow-2xl relative border border-[#2B2620] transform md:-translate-y-4" data-reveal>
             <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#B08D57] text-[#211D19] text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg">Most Popular</div>
             <h3 class="font-bold text-2xl text-[#F2EAD9] mb-2 mt-2">Professional</h3>
             <p class="text-base text-[#F2EAD9]/70 mb-8 font-medium">For growing warehouses.</p>
@@ -344,7 +340,7 @@
     </section>
 
     <!-- Pre-Footer CTA -->
-    <section class="py-24 bg-[#211D19] text-[#F2EAD9] relative overflow-hidden border-t border-[#2B2620]">
+    <section class="py-24 bg-[#211D19] text-[#F2EAD9] relative overflow-hidden border-t border-[#2B2620] z-20">
       <!-- Decor -->
       <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjQyLDIzNCwyMTcsMC4wNSkiLz48L3N2Zz4=')] opacity-100"></div>
       <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[radial-gradient(ellipse_at_bottom,#B08D57_0%,transparent_70%)] opacity-20 pointer-events-none"></div>
@@ -359,7 +355,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="w-full bg-[#211D19] text-[#F2EAD9]/70 pt-24 pb-12">
+    <footer class="w-full bg-[#211D19] text-[#F2EAD9]/70 pt-24 pb-12 z-20 relative">
       <div class="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-12 mb-24">
         <div class="col-span-2">
           <div class="flex items-center mb-6">
@@ -409,6 +405,8 @@ const companyName = import.meta.env.VITE_COMPANY_NAME || 'Label Tracker Pro';
 
 const heroMockup = ref(null);
 const heroSection = ref(null);
+const engineWrapper = ref(null);
+const enginePin = ref(null);
 
 const handleMouseMove = (e) => {
   if (!heroMockup.value || !heroSection.value) return;
@@ -419,16 +417,15 @@ const handleMouseMove = (e) => {
   const centerX = rect.width / 2;
   const centerY = rect.height / 2;
   
-  // Calculate rotation (-5 to 5 degrees)
-  const rotateX = ((centerY - y) / centerY) * 8;
-  const rotateY = ((x - centerX) / centerX) * 8;
+  const rotateX = ((centerY - y) / centerY) * 12;
+  const rotateY = ((x - centerX) / centerX) * 12;
   
   gsap.to(heroMockup.value, {
     rotateX: rotateX,
     rotateY: rotateY,
     duration: 0.5,
     ease: 'power2.out',
-    transformPerspective: 1000,
+    transformPerspective: 1200,
     transformOrigin: 'center center'
   });
 };
@@ -438,19 +435,17 @@ const handleMouseLeave = () => {
   gsap.to(heroMockup.value, {
     rotateX: 6,
     rotateY: -12,
-    duration: 1,
-    ease: 'power3.out'
+    duration: 1.5,
+    ease: 'elastic.out(1, 0.5)'
   });
 };
 
-
-
-
-
-
 onMounted(() => {
-  if(heroMockup.value) { gsap.set(heroMockup.value, { rotateX: 6, rotateY: -12, transformPerspective: 1000 }); }
   gsap.registerPlugin(ScrollTrigger);
+  
+  if(heroMockup.value) { 
+    gsap.set(heroMockup.value, { rotateX: 6, rotateY: -12, transformPerspective: 1200 }); 
+  }
   
   // 1. Basic Entrance Reveals
   const els = gsap.utils.toArray('[data-reveal]');
@@ -487,7 +482,32 @@ onMounted(() => {
     });
   });
 
-  // 3. Statement Text Word-by-Word Highlight
+  // 3. MASSIVE HERO ZOOM SCRUB (HEAVY IMMERSIVE)
+  gsap.to('.hero-mockup-wrapper', {
+    scale: 1.2,
+    opacity: 0,
+    y: 100,
+    ease: "power1.inOut",
+    scrollTrigger: {
+      trigger: ".hero-section",
+      start: "top top",
+      end: "bottom top",
+      scrub: 1
+    }
+  });
+  
+  gsap.to('.hero-text-wrapper', {
+    y: -100,
+    opacity: 0,
+    scrollTrigger: {
+      trigger: ".hero-section",
+      start: "top top",
+      end: "bottom top",
+      scrub: true
+    }
+  });
+
+  // 4. Statement Text Word-by-Word Highlight
   const statementWords = gsap.utils.toArray('.statement-word');
   if (statementWords.length > 0) {
     gsap.to(statementWords, {
@@ -496,17 +516,56 @@ onMounted(() => {
       ease: "none",
       scrollTrigger: {
         trigger: ".statement-section",
-        start: "top 70%",
-        end: "bottom 50%",
-        scrub: true,
+        start: "top 80%",
+        end: "bottom 60%",
+        scrub: 1,
       }
     });
   }
 
-  // 5. Timeline Draw SVG & Nodes
+  // 5. CINEMATIC PINNED CARD STACK (HEAVY IMMERSIVE)
+  if (engineWrapper.value) {
+    // Set initial states
+    gsap.set('.card-2', { y: '150%', scale: 0.8, opacity: 0, rotateX: 20 });
+    gsap.set('.card-3', { y: '150%', scale: 0.8, opacity: 0, rotateX: 20 });
+    
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: engineWrapper.value,
+        start: "top top",
+        end: "+=300%", // Scroll for 3x the height
+        pin: true,
+        scrub: 1,
+      }
+    });
+    
+    // Animate Card 1 out, Card 2 in
+    tl.to('.card-1', { scale: 0.9, opacity: 0.3, y: '-10%', duration: 1 })
+      .to('.card-2', { y: '0%', scale: 1, opacity: 1, rotateX: 0, duration: 1, ease: 'power2.out' }, "<")
+    // Animate Card 2 out, Card 3 in
+      .to('.card-2', { scale: 0.9, opacity: 0.3, y: '-10%', duration: 1 })
+      .to('.card-3', { y: '0%', scale: 1, opacity: 1, rotateX: 0, duration: 1, ease: 'power2.out' }, "<")
+    // Hold Card 3 for a moment
+      .to('.card-3', { duration: 0.5 });
+  }
+
+  // 6. Dynamic Background Color Shift (Sand to Dark Anchor)
+  gsap.to('.main-wrapper', {
+    backgroundColor: '#211D19', // Dark Anchor
+    color: '#F2EAD9',
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '#how-it-works',
+      start: 'top 60%',
+      end: 'top 20%',
+      scrub: true
+    }
+  });
+
+  // 7. Timeline Draw SVG & Nodes
   const drawLine = document.querySelector('.draw-line');
   if (drawLine) {
-    const length = 2000; // rough max length
+    const length = 2000;
     gsap.set(drawLine, { strokeDasharray: length, strokeDashoffset: length });
     
     gsap.to(drawLine, {
@@ -521,14 +580,15 @@ onMounted(() => {
     });
   }
   
-  // Highlight nodes as line passes
   const steps = gsap.utils.toArray('.timeline-step');
   steps.forEach((step, i) => {
     const node = step.querySelector('.step-node');
+    const card = step.querySelector('.step-card');
     gsap.to(node, {
       backgroundColor: '#B08D57',
       color: '#F2EAD9',
       borderColor: '#B08D57',
+      scale: 1.2,
       scrollTrigger: {
         trigger: step,
         start: "top 60%",
@@ -536,9 +596,22 @@ onMounted(() => {
         toggleActions: "play reverse play reverse"
       }
     });
+    // Add a parallax float to the step cards
+    gsap.fromTo(card, 
+      { y: 50 }, 
+      { y: -20, 
+        ease: "none",
+        scrollTrigger: {
+          trigger: step,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true
+        }
+      }
+    );
   });
 
-  // 6. Stats Counter
+  // 8. Stats Counter
   const counters = gsap.utils.toArray('.count-up');
   counters.forEach(counter => {
     const target = parseFloat(counter.getAttribute('data-val'));
@@ -552,7 +625,7 @@ onMounted(() => {
         let current = { val: 0 };
         gsap.to(current, {
           val: target,
-          duration: 2,
+          duration: 2.5,
           ease: "power2.out",
           onUpdate: () => {
             counter.innerHTML = isFloat ? current.val.toFixed(1) + '%' : Math.floor(current.val);
@@ -562,9 +635,6 @@ onMounted(() => {
     });
   });
 
-  // Infinite CSS Marquee animation added in style block
-
-  // Safety net
   setTimeout(() => {
     els.forEach(el => {
       if (parseFloat(window.getComputedStyle(el).opacity) === 0) {
