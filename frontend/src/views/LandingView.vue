@@ -15,13 +15,14 @@
           </div>
           <span class="font-bold tracking-tight text-xl text-[#2B2620]">{{ companyName }}</span>
         </div>
-        <div class="hidden md:flex items-center space-x-8">
+        <div class="hidden md:flex items-center space-x-6">
           <a href="#features" class="text-sm font-semibold text-[#6E675C] hover:text-[#2B2620] transition-colors">Features</a>
           <a href="#how-it-works" class="text-sm font-semibold text-[#6E675C] hover:text-[#2B2620] transition-colors">How it works</a>
-          
-          <div class="w-px h-6 bg-[#ECE7DE]"></div>
+          <div class="w-px h-5 bg-[#ECE7DE]"></div>
           <router-link to="/login" class="text-sm font-bold text-[#2B2620] hover:text-[#8F6F3E] transition-colors">Log in</router-link>
-          <router-link to="/login" class="btn-primary">Access System</router-link>
+          <router-link to="/login" class="inline-flex items-center justify-center h-10 px-6 bg-[#211D19] text-[#F2EAD9] font-bold rounded-lg hover:bg-[#2B2620] transition-colors text-sm shadow-sm">
+            Access System
+          </router-link>
         </div>
       </div>
     </nav>
@@ -289,6 +290,29 @@
         </div>
       </div>
     </section>
+
+    <!-- Core Infrastructure Bar -->
+    <div class="border-y border-[#F2EAD9]/10 bg-[#FAF8F4]/5 py-16 w-full relative z-20">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-[#F2EAD9]/10">
+          <div class="flex flex-col items-center justify-center p-4">
+            <Users class="w-8 h-8 text-[#B08D57] mb-4" />
+            <h4 class="text-[#FDFCFA] font-bold text-lg mb-2 tracking-tight">Phase 2: Sellers</h4>
+            <p class="text-[#F2EAD9]/50 text-sm font-medium">Centralized partner management</p>
+          </div>
+          <div class="flex flex-col items-center justify-center p-4">
+            <Boxes class="w-8 h-8 text-[#B08D57] mb-4" />
+            <h4 class="text-[#FDFCFA] font-bold text-lg mb-2 tracking-tight">Phase 3: Inventory</h4>
+            <p class="text-[#F2EAD9]/50 text-sm font-medium">Real-time stock synchronization</p>
+          </div>
+          <div class="flex flex-col items-center justify-center p-4">
+            <Scan class="w-8 h-8 text-[#B08D57] mb-4" />
+            <h4 class="text-[#FDFCFA] font-bold text-lg mb-2 tracking-tight">Phase 1: Labels</h4>
+            <p class="text-[#F2EAD9]/50 text-sm font-medium">Automated Vision AI extraction</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Pre-Footer CTA -->
     <section class="py-24 bg-[#211D19] text-[#F2EAD9] relative overflow-hidden border-t border-[#2B2620] z-20">
