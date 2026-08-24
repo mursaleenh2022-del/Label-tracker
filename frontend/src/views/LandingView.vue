@@ -291,25 +291,29 @@
       </div>
     </section>
 
-    <!-- Core Infrastructure Bar -->
-    <div class="border-y border-[#ECE7DE] bg-[#FAF8F4] py-16 w-full relative z-20">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-[#ECE7DE]">
-          <div class="flex flex-col items-center justify-center p-4">
-            <Users class="w-8 h-8 text-[#B08D57] mb-4" />
-            <h4 class="text-[#2B2620] font-bold text-lg mb-2 tracking-tight">Phase 2: Sellers</h4>
-            <p class="text-[#6E675C] text-sm font-medium">Centralized partner management</p>
-          </div>
-          <div class="flex flex-col items-center justify-center p-4">
-            <Boxes class="w-8 h-8 text-[#B08D57] mb-4" />
-            <h4 class="text-[#2B2620] font-bold text-lg mb-2 tracking-tight">Phase 3: Inventory</h4>
-            <p class="text-[#6E675C] text-sm font-medium">Real-time stock synchronization</p>
-          </div>
-          <div class="flex flex-col items-center justify-center p-4">
-            <Scan class="w-8 h-8 text-[#B08D57] mb-4" />
-            <h4 class="text-[#2B2620] font-bold text-lg mb-2 tracking-tight">Phase 1: Labels</h4>
-            <p class="text-[#6E675C] text-sm font-medium">Automated Vision AI extraction</p>
-          </div>
+    <!-- Immersive Scrolling Banner -->
+    <div class="relative py-24 md:py-32 bg-[#211D19] overflow-hidden flex items-center z-20 border-y border-[#F2EAD9]/10">
+      
+      <!-- Deep Ambient Glow -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[200px] bg-gradient-to-r from-[#8F6F3E] via-[#B08D57] to-[#8F6F3E] blur-[150px] opacity-20 pointer-events-none rounded-full animate-pulse-slow"></div>
+      
+      <!-- Giant Marquee -->
+      <div class="w-full flex whitespace-nowrap overflow-hidden select-none">
+        <div class="immersive-marquee flex whitespace-nowrap items-center space-x-12 text-[#F2EAD9]/5 font-black text-7xl md:text-[12rem] tracking-tighter uppercase cursor-default">
+          <span class="hover:text-[#B08D57] hover:scale-105 transition-all duration-500">Zero Data Entry</span>
+          <span class="text-[#8F6F3E] text-4xl md:text-8xl">&bull;</span>
+          <span class="hover:text-[#B08D57] hover:scale-105 transition-all duration-500">Infinite Scale</span>
+          <span class="text-[#8F6F3E] text-4xl md:text-8xl">&bull;</span>
+          <span class="hover:text-[#B08D57] hover:scale-105 transition-all duration-500">Flawless Extraction</span>
+          <span class="text-[#8F6F3E] text-4xl md:text-8xl">&bull;</span>
+        </div>
+        <div class="immersive-marquee flex whitespace-nowrap items-center space-x-12 text-[#F2EAD9]/5 font-black text-7xl md:text-[12rem] tracking-tighter uppercase cursor-default ml-12">
+          <span class="hover:text-[#B08D57] hover:scale-105 transition-all duration-500">Zero Data Entry</span>
+          <span class="text-[#8F6F3E] text-4xl md:text-8xl">&bull;</span>
+          <span class="hover:text-[#B08D57] hover:scale-105 transition-all duration-500">Infinite Scale</span>
+          <span class="text-[#8F6F3E] text-4xl md:text-8xl">&bull;</span>
+          <span class="hover:text-[#B08D57] hover:scale-105 transition-all duration-500">Flawless Extraction</span>
+          <span class="text-[#8F6F3E] text-4xl md:text-8xl">&bull;</span>
         </div>
       </div>
     </div>
