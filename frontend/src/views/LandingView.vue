@@ -42,18 +42,6 @@
             The all-in-one operational engine for high-volume dropshippers. Seamlessly manage sellers, automate label extraction, and track stock inventory in real-time.
           </p>
           
-          <div class="flex flex-wrap items-center gap-3 mb-10 hero-desc">
-            <div class="flex items-center text-xs font-bold text-[#6E675C] uppercase tracking-wider bg-[#FDFCFA] px-3 py-1.5 rounded-lg border border-[#ECE7DE] shadow-sm">
-              <Users class="w-3.5 h-3.5 mr-2 text-[#B08D57]" /> Phase 2: Sellers
-            </div>
-            <div class="flex items-center text-xs font-bold text-[#6E675C] uppercase tracking-wider bg-[#FDFCFA] px-3 py-1.5 rounded-lg border border-[#ECE7DE] shadow-sm">
-              <Boxes class="w-3.5 h-3.5 mr-2 text-[#B08D57]" /> Phase 3: Inventory
-            </div>
-            <div class="flex items-center text-xs font-bold text-[#6E675C] uppercase tracking-wider bg-[#FDFCFA] px-3 py-1.5 rounded-lg border border-[#ECE7DE] shadow-sm">
-              <Scan class="w-3.5 h-3.5 mr-2 text-[#B08D57]" /> Phase 1: Labels
-            </div>
-          </div>
-          
           <div class="flex flex-col sm:flex-row items-center gap-4 hero-btns">
             <router-link to="/login" class="inline-flex items-center justify-center h-12 px-8 bg-[#211D19] text-[#F2EAD9] font-bold rounded-xl hover:bg-[#2B2620] hover:-translate-y-0.5 transition-all duration-300 text-sm shadow-xl shadow-[#211D19]/10">
               Access System
