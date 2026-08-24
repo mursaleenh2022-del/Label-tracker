@@ -27,7 +27,7 @@
     </nav>
 
     <!-- Parallax Hero Section -->
-    <header class="pt-24 pb-24 md:pt-32 md:pb-32 px-6 lg:px-8 max-w-7xl mx-auto relative hero-section">
+    <header class="pt-24 pb-24 md:pt-32 md:pb-32 px-6 lg:px-8 max-w-7xl mx-auto relative hero-section" ref="heroSection" @mousemove="handleMouseMove" @mouseleave="handleMouseLeave">
       <div class="grid md:grid-cols-12 gap-12 lg:gap-16 items-center">
         <!-- Copy Left (50%) -->
         <div class="md:col-span-6 relative z-10" data-reveal>
@@ -69,7 +69,7 @@
           <div class="absolute -inset-4 bg-gradient-to-tr from-[#ECE7DE] to-[#FAF8F4] blur-3xl -z-10 rounded-[3rem] opacity-70"></div>
           
           <!-- Static Coded Dashboard Mockup -->
-          <div class="mockup-container bg-[#FDFCFA] rounded-2xl border border-[#ECE7DE] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] overflow-hidden relative transform rotate-y-12 rotate-x-6">
+          <div class="mockup-container bg-[#FDFCFA] rounded-2xl border border-[#ECE7DE] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.15)] overflow-hidden relative" ref="heroMockup">
             <!-- Mac Window Dots -->
             <div class="bg-[#FAF8F4]/80 backdrop-blur-sm border-b border-[#ECE7DE] px-4 py-3 flex items-center space-x-2">
               <div class="w-3 h-3 rounded-full bg-rose-400"></div>
@@ -126,6 +126,13 @@
           </div>
         </div>
       </div>
+    
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-70 animate-pulse">
+        <span class="text-[10px] uppercase font-bold tracking-widest text-[#6E675C] mb-2">Scroll to explore</span>
+        <div class="w-px h-12 bg-gradient-to-b from-[#8F6F3E] to-transparent"></div>
+      </div>
+
     </header>
 
     <!-- Continuous Infinite Marquee -->
@@ -171,19 +178,23 @@
       </h2>
     </section>
 
-    <!-- Pinned Horizontal Scroll Features -->
-    <section id="features" class="bg-[#211D19] overflow-hidden" ref="horizontalWrapper">
-      <div class="h-screen flex items-center relative" ref="horizontalContainer">
-        <!-- Title attached to the section -->
-        <div class="absolute top-24 left-8 md:left-24 z-10 w-80">
-          <h2 class="text-4xl md:text-5xl font-extrabold text-[#FDFCFA] tracking-tight mb-4">Everything you need to scale</h2>
-          <p class="text-[#F2EAD9]/70 font-medium">Scroll to explore the engine.</p>
+    <!-- Sticky Stacking Features -->
+    <section id="features" class="bg-[#211D19] py-32 px-6 lg:px-8 relative z-20">
+      <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 relative">
+        
+        <!-- Sticky Title Left -->
+        <div class="lg:w-1/3 relative">
+          <div class="sticky top-32">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-[#FDFCFA] tracking-tight mb-6">The engine under the hood.</h2>
+            <p class="text-[#F2EAD9]/70 font-medium text-lg mb-8">Everything you need to completely eliminate manual logistics data entry, built specifically for high-volume dropshipping.</p>
+            <div class="hidden lg:block w-12 h-1 bg-[#B08D57] rounded-full"></div>
+          </div>
         </div>
         
-        <!-- The Horizontal Track -->
-        <div class="flex gap-16 px-[100vw] items-center" ref="horizontalTrack">
+        <!-- Stacking Cards Right -->
+        <div class="lg:w-2/3 space-y-8 md:space-y-24 pb-24">
           <!-- Feature 1 -->
-          <div class="w-[350px] md:w-[500px] shrink-0 bg-[#2B2620] p-10 rounded-[2rem] border border-[#6E675C]/30 shadow-2xl">
+          <div class="sticky top-32 w-full bg-[#2B2620] p-10 md:p-14 rounded-[2rem] border border-[#6E675C]/30 shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
             <div class="w-16 h-16 bg-[#211D19] rounded-2xl flex items-center justify-center mb-8 shadow-inner border border-[#6E675C]/20">
               <Camera class="w-8 h-8 text-[#B08D57]" />
             </div>
@@ -192,8 +203,8 @@
           </div>
           
           <!-- Feature 2 -->
-          <div class="w-[350px] md:w-[500px] shrink-0 bg-[#2B2620] p-10 rounded-[2rem] border border-[#6E675C]/30 shadow-2xl">
-            <div class="w-16 h-16 bg-[#211D19] rounded-2xl flex items-center justify-center mb-8 shadow-inner border border-[#6E675C]/20">
+          <div class="sticky top-40 w-full bg-[#211D19] p-10 md:p-14 rounded-[2rem] border border-[#B08D57]/30 shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
+            <div class="w-16 h-16 bg-[#2B2620] rounded-2xl flex items-center justify-center mb-8 shadow-inner border border-[#6E675C]/20">
               <Database class="w-8 h-8 text-[#B08D57]" />
             </div>
             <h3 class="text-3xl font-bold text-[#FDFCFA] mb-4">Auto-Categorization</h3>
@@ -201,17 +212,18 @@
           </div>
           
           <!-- Feature 3 -->
-          <div class="w-[350px] md:w-[500px] shrink-0 bg-[#2B2620] p-10 rounded-[2rem] border border-[#6E675C]/30 shadow-2xl">
-            <div class="w-16 h-16 bg-[#211D19] rounded-2xl flex items-center justify-center mb-8 shadow-inner border border-[#6E675C]/20">
-              <FileSpreadsheet class="w-8 h-8 text-[#B08D57]" />
+          <div class="sticky top-48 w-full bg-[#FAF8F4] p-10 md:p-14 rounded-[2rem] border border-[#ECE7DE] shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
+            <div class="w-16 h-16 bg-[#FDFCFA] rounded-2xl flex items-center justify-center mb-8 shadow-sm border border-[#ECE7DE]">
+              <FileSpreadsheet class="w-8 h-8 text-[#8F6F3E]" />
             </div>
-            <h3 class="text-3xl font-bold text-[#FDFCFA] mb-4">One-Click Reports</h3>
-            <p class="text-[#F2EAD9]/70 text-lg leading-relaxed">Filter by any date range and instantly download a perfectly formatted Excel sheet that matches your client's exact required tracking format.</p>
+            <h3 class="text-3xl font-bold text-[#2B2620] mb-4">One-Click Reports</h3>
+            <p class="text-[#6E675C] text-lg leading-relaxed">Filter by any date range and instantly download a perfectly formatted Excel sheet that matches your client's exact required tracking format.</p>
           </div>
         </div>
+
       </div>
     </section>
-
+    
     <!-- Stats Section -->
     <section class="py-24 bg-[#FDFCFA] text-[#2B2620] relative overflow-hidden border-b border-[#ECE7DE]">
       <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10" data-reveal>
@@ -395,11 +407,49 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 
 const companyName = import.meta.env.VITE_COMPANY_NAME || 'Label Tracker Pro';
 
-const horizontalWrapper = ref(null);
-const horizontalContainer = ref(null);
-const horizontalTrack = ref(null);
+const heroMockup = ref(null);
+const heroSection = ref(null);
+
+const handleMouseMove = (e) => {
+  if (!heroMockup.value || !heroSection.value) return;
+  const rect = heroSection.value.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+  
+  const centerX = rect.width / 2;
+  const centerY = rect.height / 2;
+  
+  // Calculate rotation (-5 to 5 degrees)
+  const rotateX = ((centerY - y) / centerY) * 8;
+  const rotateY = ((x - centerX) / centerX) * 8;
+  
+  gsap.to(heroMockup.value, {
+    rotateX: rotateX,
+    rotateY: rotateY,
+    duration: 0.5,
+    ease: 'power2.out',
+    transformPerspective: 1000,
+    transformOrigin: 'center center'
+  });
+};
+
+const handleMouseLeave = () => {
+  if (!heroMockup.value) return;
+  gsap.to(heroMockup.value, {
+    rotateX: 6,
+    rotateY: -12,
+    duration: 1,
+    ease: 'power3.out'
+  });
+};
+
+
+
+
+
 
 onMounted(() => {
+  if(heroMockup.value) { gsap.set(heroMockup.value, { rotateX: 6, rotateY: -12, transformPerspective: 1000 }); }
   gsap.registerPlugin(ScrollTrigger);
   
   // 1. Basic Entrance Reveals
@@ -449,25 +499,6 @@ onMounted(() => {
         start: "top 70%",
         end: "bottom 50%",
         scrub: true,
-      }
-    });
-  }
-
-  // 4. Horizontal Pinned Scroll (Features)
-  if (horizontalWrapper.value && horizontalTrack.value) {
-    const trackWidth = horizontalTrack.value.scrollWidth;
-    const viewportWidth = window.innerWidth;
-    
-    gsap.to(horizontalTrack.value, {
-      x: () => -(trackWidth - viewportWidth),
-      ease: "none",
-      scrollTrigger: {
-        trigger: horizontalWrapper.value,
-        start: "top top",
-        end: () => "+=" + (trackWidth - viewportWidth),
-        pin: true,
-        scrub: 1,
-        invalidateOnRefresh: true
       }
     });
   }
