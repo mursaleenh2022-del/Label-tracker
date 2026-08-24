@@ -19,7 +19,7 @@
           <a href="#features" class="text-sm font-semibold text-[#6E675C] hover:text-[#2B2620] transition-colors">Features</a>
           <a href="#how-it-works" class="text-sm font-semibold text-[#6E675C] hover:text-[#2B2620] transition-colors">How it works</a>
           <a href="#pricing" class="text-sm font-semibold text-[#6E675C] hover:text-[#2B2620] transition-colors">Pricing</a>
-          <div class="w-px h-6 bg-slate-200"></div>
+          <div class="w-px h-6 bg-[#ECE7DE]"></div>
           <router-link to="/login" class="text-sm font-bold text-[#2B2620] hover:text-[#8F6F3E] transition-colors">Log in</router-link>
           <router-link to="/login" class="btn-primary">Start free trial</router-link>
         </div>
@@ -58,7 +58,7 @@
               <div class="w-3 h-3 rounded-full bg-rose-400"></div>
               <div class="w-3 h-3 rounded-full bg-amber-400"></div>
               <div class="w-3 h-3 rounded-full bg-emerald-400"></div>
-              <div class="ml-4 text-[10px] font-mono text-[#F2EAD9]/70 flex-1 text-center pr-10">app.labeltracker.pro/batch</div>
+              <div class="ml-4 text-[10px] font-mono text-[#6E675C] flex-1 text-center pr-10">app.labeltracker.pro/batch</div>
             </div>
             <!-- Mockup Content -->
             <div class="p-6 bg-[#FDFCFA]/60 backdrop-blur-md">
@@ -83,7 +83,7 @@
                       <th class="px-4 py-3 font-mono text-[10px] uppercase tracking-wider text-[#6E675C] font-bold">Status</th>
                     </tr>
                   </thead>
-                  <tbody class="divide-y divide-slate-50">
+                  <tbody class="divide-y divide-[#ECE7DE]">
                     <tr class="bg-[#8F6F3E]/10/20">
                       <td class="px-4 py-3 font-mono text-[#2B2620] text-xs">1Z99923...</td>
                       <td class="px-4 py-3 font-semibold text-[#2B2620] text-xs">Wireless Earbuds Pro</td>
@@ -114,7 +114,7 @@
     <!-- Trusted By Section (New Immersive Element) -->
     <section class="py-12 border-y border-[#ECE7DE] bg-[#FDFCFA]/50 backdrop-blur-sm">
       <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center" data-reveal>
-        <p class="text-sm font-bold text-[#F2EAD9]/70 tracking-widest uppercase mb-8">Trusted by logistics teams powering</p>
+        <p class="text-sm font-bold text-[#6E675C] tracking-widest uppercase mb-8">Trusted by logistics teams powering</p>
         <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
           <div class="text-xl font-extrabold text-[#2B2620]">Shopify</div>
           <div class="text-xl font-extrabold text-[#2B2620]">WooCommerce</div>
@@ -131,7 +131,7 @@
       <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNykiLz48L3N2Zz4=')] opacity-50"></div>
       
       <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10" data-reveal>
-        <div class="grid md:grid-cols-3 gap-12 text-center divide-y md:divide-y-0 md:divide-x divide-slate-800">
+        <div class="grid md:grid-cols-3 gap-12 text-center divide-y md:divide-y-0 md:divide-x divide-[#F2EAD9]/10">
           <div class="py-6">
             <div class="text-5xl font-extrabold text-[#B08D57] mb-2">99.9%</div>
             <div class="text-[#F2EAD9]/70 font-semibold uppercase tracking-wide text-sm">Data Accuracy</div>
@@ -195,7 +195,7 @@
           <p class="body-text text-[#6E675C] font-medium">From a raw photo to perfectly structured data in seconds.</p>
         </div>
         
-        <div class="space-y-16 relative before:absolute before:inset-0 before:ml-[27px] md:before:ml-1/2 md:before:translate-x-[-50%] before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-px before:bg-gradient-to-b before:from-[#8F6F3E]/20 before:via-indigo-400 before:to-indigo-100">
+        <div class="space-y-16 relative before:absolute before:inset-0 before:ml-[27px] md:before:ml-1/2 md:before:translate-x-[-50%] before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-px before:bg-gradient-to-b before:from-[#8F6F3E]/20 before:via-[#8F6F3E] before:to-[#8F6F3E]/20">
           
           <!-- Step 1 -->
           <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group" data-reveal>
@@ -242,7 +242,7 @@
             <h3 class="font-bold text-2xl text-[#2B2620] mb-2">Starter</h3>
             <p class="text-base text-[#6E675C] mb-8 font-medium">Perfect for small shops.</p>
             <div class="mb-10"><span class="text-5xl font-extrabold text-[#2B2620]">$0</span><span class="text-[#6E675C] font-bold">/mo</span></div>
-            <ul class="space-y-5 mb-12 flex-grow text-base text-slate-700 font-medium">
+            <ul class="space-y-5 mb-12 flex-grow text-base text-[#6E675C] font-medium">
               <li class="flex items-start"><Check class="w-6 h-6 text-[#8F6F3E] mr-3 shrink-0" /> 500 AI Scans per month</li>
               <li class="flex items-start"><Check class="w-6 h-6 text-[#8F6F3E] mr-3 shrink-0" /> Basic Excel Reports</li>
               <li class="flex items-start"><Check class="w-6 h-6 text-[#8F6F3E] mr-3 shrink-0" /> 1 Admin Seat</li>
@@ -252,7 +252,7 @@
           
           <!-- Pro -->
           <div class="p-10 rounded-[2rem] bg-[#211D19] text-[#F2EAD9] text-left flex flex-col shadow-2xl relative border border-[#2B2620]" data-reveal>
-            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-indigo-400 text-indigo-950 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg">Most Popular</div>
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#B08D57] text-[#211D19] text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg">Most Popular</div>
             <h3 class="font-bold text-2xl text-[#F2EAD9] mb-2 mt-2">Professional</h3>
             <p class="text-base text-[#F2EAD9]/70 mb-8 font-medium">For growing warehouses.</p>
             <div class="mb-10"><span class="text-5xl font-extrabold text-[#F2EAD9]">$49</span><span class="text-[#F2EAD9]/70 font-bold">/mo</span></div>
@@ -269,7 +269,7 @@
             <h3 class="font-bold text-2xl text-[#2B2620] mb-2">Enterprise</h3>
             <p class="text-base text-[#6E675C] mb-8 font-medium">For massive operations.</p>
             <div class="mb-10"><span class="text-5xl font-extrabold text-[#2B2620]">$199</span><span class="text-[#6E675C] font-bold">/mo</span></div>
-            <ul class="space-y-5 mb-12 flex-grow text-base text-slate-700 font-medium">
+            <ul class="space-y-5 mb-12 flex-grow text-base text-[#6E675C] font-medium">
               <li class="flex items-start"><Check class="w-6 h-6 text-[#8F6F3E] mr-3 shrink-0" /> Unlimited AI Scans</li>
               <li class="flex items-start"><Check class="w-6 h-6 text-[#8F6F3E] mr-3 shrink-0" /> Dedicated Account Manager</li>
               <li class="flex items-start"><Check class="w-6 h-6 text-[#8F6F3E] mr-3 shrink-0" /> API Access</li>
@@ -281,14 +281,14 @@
     </section>
 
     <!-- Pre-Footer CTA (New Immersive Element) -->
-    <section class="py-24 bg-indigo-900 text-[#F2EAD9] relative overflow-hidden">
+    <section class="py-24 bg-[#211D19] text-[#F2EAD9] relative overflow-hidden">
       <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xNSkiLz48L3N2Zz4=')] opacity-50"></div>
-      <div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_800px_at_50%_100%,#3730A3,transparent)]"></div>
+      <div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_800px_at_50%_100%,#2B2620,transparent)]"></div>
       
       <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center relative z-10" data-reveal>
         <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-8">Ready to automate your warehouse?</h2>
         <p class="text-xl text-[#F2EAD9] mb-10 font-medium max-w-2xl mx-auto">Join hundreds of logistics teams who have eliminated manual data entry completely.</p>
-        <router-link to="/login" class="inline-flex items-center h-16 px-10 bg-[#FDFCFA] text-indigo-900 hover:bg-[#FAF8F4] font-extrabold rounded-full transition-transform hover:scale-105 duration-200 text-lg shadow-xl shadow-[#211D19]/50">
+        <router-link to="/login" class="inline-flex items-center h-16 px-10 bg-[#F2EAD9] text-[#211D19] hover:bg-white font-extrabold rounded-full transition-transform hover:scale-105 duration-200 text-lg shadow-xl shadow-[#211D19]/50">
           Create your free account
         </router-link>
       </div>
