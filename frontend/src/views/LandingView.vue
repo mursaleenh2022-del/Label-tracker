@@ -33,20 +33,32 @@
         <!-- Left: Copy (Staggered Reveal) -->
         <div class="relative z-30 hero-text-wrapper pr-0 lg:pr-12">
           
-          <h1 class="text-6xl md:text-[5.5rem] text-[#2B2620] font-extrabold tracking-tighter mb-8 leading-[1.05] flex flex-col">
+          <h1 class="text-5xl md:text-7xl text-[#2B2620] font-extrabold tracking-tight mb-6 leading-[1.1] flex flex-col">
             <span class="overflow-hidden inline-block py-1"><span class="hero-word inline-block transform translate-y-[100%]">Scale operations.</span></span>
-            <span class="overflow-hidden inline-block py-1"><span class="hero-word text-transparent bg-clip-text bg-gradient-to-r from-[#8F6F3E] via-[#B08D57] to-[#8F6F3E] bg-[length:200%_auto] animate-gradient inline-block transform translate-y-[100%]">Automate logistics.</span></span>
+            <span class="overflow-hidden inline-block py-1 pb-2"><span class="hero-word text-transparent bg-clip-text bg-gradient-to-r from-[#8F6F3E] via-[#B08D57] to-[#8F6F3E] bg-[length:200%_auto] animate-gradient inline-block transform translate-y-[100%]">Automate logistics.</span></span>
           </h1>
           
-          <p class="text-xl md:text-2xl text-[#6E675C] mb-12 max-w-xl leading-relaxed font-medium hero-desc">
+          <p class="text-lg md:text-xl text-[#6E675C] mb-8 max-w-lg leading-relaxed font-medium hero-desc">
             The all-in-one operational engine for high-volume dropshippers. Seamlessly manage sellers, automate label extraction, and track stock inventory in real-time.
           </p>
           
-          <div class="flex flex-col sm:flex-row items-start gap-5 hero-btns">
-            <router-link to="/login" class="inline-flex items-center justify-center h-16 px-10 bg-[#211D19] text-[#F2EAD9] font-bold rounded-full hover:bg-[#2B2620] hover:-translate-y-1 transition-all duration-300 text-lg shadow-2xl shadow-[#211D19]/20">
+          <div class="flex flex-wrap items-center gap-3 mb-10 hero-desc">
+            <div class="flex items-center text-xs font-bold text-[#6E675C] uppercase tracking-wider bg-[#FDFCFA] px-3 py-1.5 rounded-lg border border-[#ECE7DE] shadow-sm">
+              <Users class="w-3.5 h-3.5 mr-2 text-[#B08D57]" /> Phase 2: Sellers
+            </div>
+            <div class="flex items-center text-xs font-bold text-[#6E675C] uppercase tracking-wider bg-[#FDFCFA] px-3 py-1.5 rounded-lg border border-[#ECE7DE] shadow-sm">
+              <Boxes class="w-3.5 h-3.5 mr-2 text-[#B08D57]" /> Phase 3: Inventory
+            </div>
+            <div class="flex items-center text-xs font-bold text-[#6E675C] uppercase tracking-wider bg-[#FDFCFA] px-3 py-1.5 rounded-lg border border-[#ECE7DE] shadow-sm">
+              <Scan class="w-3.5 h-3.5 mr-2 text-[#B08D57]" /> Phase 1: Labels
+            </div>
+          </div>
+          
+          <div class="flex flex-col sm:flex-row items-center gap-4 hero-btns">
+            <router-link to="/login" class="inline-flex items-center justify-center h-12 px-8 bg-[#211D19] text-[#F2EAD9] font-bold rounded-xl hover:bg-[#2B2620] hover:-translate-y-0.5 transition-all duration-300 text-sm shadow-xl shadow-[#211D19]/10">
               Access System
             </router-link>
-            <a href="#how-it-works" class="inline-flex items-center justify-center h-16 px-10 bg-[#FDFCFA] text-[#2B2620] font-bold rounded-full border border-[#ECE7DE] hover:bg-[#FAF8F4] hover:border-[#6E675C] transition-all duration-300 text-lg">
+            <a href="#how-it-works" class="inline-flex items-center justify-center h-12 px-8 bg-[#FDFCFA] text-[#2B2620] font-bold rounded-xl border border-[#ECE7DE] hover:bg-[#FAF8F4] hover:border-[#6E675C] transition-all duration-300 text-sm shadow-sm">
               See how it works
             </a>
           </div>
