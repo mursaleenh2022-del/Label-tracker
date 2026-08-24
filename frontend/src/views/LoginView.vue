@@ -4,35 +4,81 @@
     <!-- Left Panel: Super Immersive Visual (Hidden on smaller screens) -->
     <div class="hidden lg:flex w-1/2 bg-[#211D19] relative overflow-hidden items-center justify-center p-12">
       <!-- Ambient Background -->
-      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(176,141,87,0.1),transparent_70%)] animate-pulse-slow"></div>
-      
-      <!-- Subtle Grid -->
-      <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
-
-      <!-- Centerpiece: Minimalist Luxury Abstract -->
-      <div class="relative z-10 w-full max-w-lg flex flex-col items-center justify-center mt-[-10%]">
+      <div class="absolute inset-0 bg-[#211D19] overflow-hidden">
+        <!-- Subtle Grid -->
+        <div class="absolute inset-0 bg-[linear-gradient(rgba(242,234,217,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(242,234,217,0.03)_1px,transparent_1px)] bg-[size:3rem_3rem]"></div>
         
-        <!-- Nested Glowing Rings -->
-        <div class="relative flex items-center justify-center w-80 h-80">
-          <div class="absolute inset-0 rounded-full border border-[#B08D57]/20 shadow-[0_0_80px_20px_rgba(176,141,87,0.1)] animate-spin-slow"></div>
-          <div class="absolute inset-8 rounded-full border border-[#ECE7DE]/10 shadow-[0_0_40px_10px_rgba(255,255,255,0.05)] animate-spin-slow" style="animation-direction: reverse; animation-duration: 20s;"></div>
-          <div class="w-16 h-16 bg-[#B08D57]/10 backdrop-blur-md rounded-2xl flex items-center justify-center border border-[#B08D57]/30 shadow-[0_0_30px_0_rgba(176,141,87,0.2)]">
-            <Box class="w-8 h-8 text-[#B08D57]" />
+        <!-- Glowing Accents -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-[#B08D57] blur-[150px] rounded-full opacity-20 transform translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-[#8F6F3E] blur-[150px] rounded-full opacity-10 transform -translate-x-1/2 translate-y-1/2"></div>
+      </div>
+
+      <div class="relative z-10 w-full max-w-lg">
+        
+        <!-- Glassmorphic Logistics Card (Reflecting the 5 Phases) -->
+        <div class="w-full bg-[#FAF8F4]/5 backdrop-blur-2xl border border-[#F2EAD9]/10 rounded-[2rem] p-8 shadow-2xl mb-12 transform hover:scale-[1.02] transition-transform duration-500">
+          
+          <div class="flex items-center justify-between mb-8">
+            <div class="flex items-center space-x-3">
+              <div class="w-12 h-12 bg-[#B08D57]/20 rounded-xl flex items-center justify-center border border-[#B08D57]/30">
+                <Package class="w-6 h-6 text-[#B08D57]" />
+              </div>
+              <div>
+                <p class="text-[10px] text-[#F2EAD9]/50 uppercase tracking-widest font-bold">Network Status</p>
+                <p class="text-sm text-[#F2EAD9] font-bold">Global Operations</p>
+              </div>
+            </div>
+            <div class="px-3 py-1 bg-[#8F6F3E]/20 text-[#B08D57] text-[10px] font-bold uppercase tracking-wider rounded-full border border-[#B08D57]/30 flex items-center shadow-inner">
+              <span class="w-1.5 h-1.5 bg-[#B08D57] rounded-full mr-2 animate-pulse"></span> Live
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <!-- Phase 2: Sellers -->
+            <div class="p-4 bg-[#211D19]/60 rounded-xl border border-[#F2EAD9]/5 flex items-center justify-between shadow-sm">
+              <div class="flex items-center space-x-3">
+                <Users class="w-4 h-4 text-[#F2EAD9]/50" />
+                <span class="text-xs text-[#F2EAD9]/70 font-medium">Active Sellers</span>
+              </div>
+              <span class="text-sm font-mono text-[#F2EAD9] font-bold">142</span>
+            </div>
+            
+            <!-- Phase 3: Stock Inventory -->
+            <div class="p-4 bg-[#211D19]/60 rounded-xl border border-[#B08D57]/30 flex items-center justify-between shadow-sm relative overflow-hidden">
+              <div class="absolute left-0 top-0 bottom-0 w-1 bg-[#B08D57]"></div>
+              <div class="flex items-center space-x-3">
+                <Boxes class="w-4 h-4 text-[#B08D57]" />
+                <span class="text-xs text-[#F2EAD9]/90 font-medium">Stock Inventory</span>
+              </div>
+              <span class="text-sm font-mono text-[#B08D57] font-bold">28,450</span>
+            </div>
+            
+            <!-- Phase 1: Labels -->
+            <div class="p-4 bg-[#211D19]/60 rounded-xl border border-[#F2EAD9]/5 flex items-center justify-between shadow-sm">
+              <div class="flex items-center space-x-3">
+                <Scan class="w-4 h-4 text-[#F2EAD9]/50" />
+                <span class="text-xs text-[#F2EAD9]/70 font-medium">Labels Processed</span>
+              </div>
+              <span class="text-sm font-mono text-[#F2EAD9] font-bold">1.2M+</span>
+            </div>
           </div>
         </div>
 
-        <h2 class="mt-16 text-4xl font-light text-[#FDFCFA] tracking-[0.2em] uppercase text-center">
-          Label Tracker
+        <!-- Typography -->
+        <h2 class="text-4xl md:text-5xl font-extrabold text-[#FDFCFA] tracking-tight mb-5 leading-[1.1]">
+          Dropshipping<br/>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#8F6F3E] to-[#B08D57]">Logistics Engine</span>
         </h2>
-        <div class="h-px w-24 bg-[#B08D57]/50 mt-6 mb-6"></div>
-        <p class="text-[#F2EAD9]/50 tracking-[0.4em] text-xs uppercase font-bold text-center">Internal Operations</p>
-        
+        <p class="text-base text-[#F2EAD9]/60 font-medium leading-relaxed max-w-sm">
+          The unified platform for managing sellers, tracking dynamic inventory, and automating label extraction.
+        </p>
+
       </div>
       
       <!-- Brand Bottom Left -->
-      <router-link to="/" class="absolute bottom-8 left-12 flex items-center space-x-3 text-[#FDFCFA] hover:text-[#B08D57] transition-colors z-20">
-        <span class="font-bold tracking-tight text-xl">v2.0</span>
-      </router-link>
+      <div class="absolute bottom-8 left-12 flex items-center space-x-3 text-[#F2EAD9]/40 z-20">
+        <span class="font-mono text-xs font-bold tracking-widest uppercase">System v2.0 &mdash; Restricted Access</span>
+      </div>
     </div>
 
     <!-- Right Panel: Login Form -->
@@ -107,7 +153,7 @@
 <script setup>
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
-import { Box, Loader2, Check, FileText } from 'lucide-vue-next';
+import { Box, Loader2, Check, FileText, Package, Users, Boxes, Scan } from 'lucide-vue-next';
 
 const router = useRouter();
 const email = ref('');
