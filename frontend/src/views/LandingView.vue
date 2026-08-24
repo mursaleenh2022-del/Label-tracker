@@ -27,21 +27,11 @@
     </nav>
 
     <!-- 50/50 Split Hero Section with Modern Animations -->
-    <header class="min-h-screen flex items-center pt-20 px-6 lg:px-8 max-w-[90rem] mx-auto relative hero-section" ref="heroSection">
+    <header class="pt-32 pb-16 md:pt-40 md:pb-24 px-6 lg:px-8 max-w-[90rem] mx-auto relative hero-section" ref="heroSection">
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center w-full">
         
         <!-- Left: Copy (Staggered Reveal) -->
         <div class="relative z-30 hero-text-wrapper pr-0 lg:pr-12">
-          
-          <div class="hero-pill-wrap overflow-hidden mb-8">
-            <div class="hero-pill inline-flex items-center space-x-3 bg-[#ECE7DE]/50 border border-[#B08D57]/30 rounded-full px-5 py-2 shadow-sm">
-              <span class="flex h-2.5 w-2.5 relative">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#B08D57] opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#8F6F3E]"></span>
-              </span>
-              <span class="text-xs font-bold uppercase tracking-widest text-[#6E675C]">Vision AI 2.0 Now Live</span>
-            </div>
-          </div>
           
           <h1 class="text-6xl md:text-[5.5rem] text-[#2B2620] font-extrabold tracking-tighter mb-8 leading-[1.05] flex flex-col">
             <span class="overflow-hidden inline-block py-1"><span class="hero-word inline-block transform translate-y-[100%]">Stop typing.</span></span>
@@ -87,11 +77,6 @@
 
           <!-- Mockup Box -->
           <div class="mockup-container w-full max-w-2xl bg-[#FDFCFA] rounded-2xl md:rounded-[2rem] border border-[#ECE7DE] shadow-[0_30px_80px_-15px_rgba(0,0,0,0.2)] overflow-hidden relative" ref="heroMockup">
-            
-            <!-- Laser Scan Effect -->
-            <div class="absolute inset-0 z-50 pointer-events-none overflow-hidden rounded-2xl">
-              <div class="w-full h-[3px] bg-[#B08D57] shadow-[0_0_30px_10px_rgba(176,141,87,0.6)] animate-laser-scan"></div>
-            </div>
 
             <div class="bg-[#FAF8F4]/80 backdrop-blur-sm border-b border-[#ECE7DE] px-5 py-4 flex items-center space-x-2">
               <div class="w-3.5 h-3.5 rounded-full bg-rose-400"></div>
@@ -517,13 +502,11 @@ onMounted(() => {
   // Modern Portfolio Hero Entrance Animation
   const heroTl = gsap.timeline({ defaults: { ease: "power4.out" } });
   
-  gsap.set('.hero-pill', { y: '100%', opacity: 0 });
   gsap.set('.hero-word', { y: '100%' });
   gsap.set('.hero-desc', { opacity: 0, y: 20 });
   gsap.set('.hero-btns', { opacity: 0, y: 20 });
   
-  heroTl.to('.hero-pill', { y: '0%', opacity: 1, duration: 1, delay: 0.2 })
-        .to('.hero-word', { y: '0%', duration: 1.2, stagger: 0.15 }, "-=0.6")
+  heroTl.to('.hero-word', { y: '0%', duration: 1.2, stagger: 0.15 }, "-=0.6")
         .to('.hero-desc', { opacity: 1, y: 0, duration: 1 }, "-=0.8")
         .to('.hero-btns', { opacity: 1, y: 0, duration: 1 }, "-=0.8");
 
@@ -793,15 +776,6 @@ onUnmounted(() => {
 }
 
 /* Immersive Hero Animations */
-@keyframes laser-scan {
-  0% { transform: translateY(-20%); opacity: 0; }
-  10% { opacity: 1; }
-  90% { opacity: 1; }
-  100% { transform: translateY(120%); opacity: 0; }
-}
-.animate-laser-scan {
-  animation: laser-scan 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
 
 @keyframes scroll-wheel {
   0% { transform: translateY(0); opacity: 1; }
