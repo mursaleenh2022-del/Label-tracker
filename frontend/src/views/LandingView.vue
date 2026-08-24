@@ -8,7 +8,7 @@
 
     <!-- Navigation -->
     <nav class="sticky top-0 w-full bg-[#FDFCFA]/80 backdrop-blur-xl z-50 border-b border-[#ECE7DE] transition-all duration-300">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div class="w-full px-6 md:px-10 lg:px-12 h-20 flex items-center justify-between">
         <div class="flex items-center space-x-3">
           <div class="w-10 h-10 bg-[#211D19] rounded-xl flex items-center justify-center shadow-md">
             <Box class="w-5 h-5 text-[#B08D57]" />
@@ -292,23 +292,23 @@
     </section>
 
     <!-- Core Infrastructure Bar -->
-    <div class="border-y border-[#F2EAD9]/10 bg-[#FAF8F4]/5 py-16 w-full relative z-20">
+    <div class="border-y border-[#ECE7DE] bg-[#FAF8F4] py-16 w-full relative z-20">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-[#F2EAD9]/10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-[#ECE7DE]">
           <div class="flex flex-col items-center justify-center p-4">
             <Users class="w-8 h-8 text-[#B08D57] mb-4" />
-            <h4 class="text-[#FDFCFA] font-bold text-lg mb-2 tracking-tight">Phase 2: Sellers</h4>
-            <p class="text-[#F2EAD9]/50 text-sm font-medium">Centralized partner management</p>
+            <h4 class="text-[#2B2620] font-bold text-lg mb-2 tracking-tight">Phase 2: Sellers</h4>
+            <p class="text-[#6E675C] text-sm font-medium">Centralized partner management</p>
           </div>
           <div class="flex flex-col items-center justify-center p-4">
             <Boxes class="w-8 h-8 text-[#B08D57] mb-4" />
-            <h4 class="text-[#FDFCFA] font-bold text-lg mb-2 tracking-tight">Phase 3: Inventory</h4>
-            <p class="text-[#F2EAD9]/50 text-sm font-medium">Real-time stock synchronization</p>
+            <h4 class="text-[#2B2620] font-bold text-lg mb-2 tracking-tight">Phase 3: Inventory</h4>
+            <p class="text-[#6E675C] text-sm font-medium">Real-time stock synchronization</p>
           </div>
           <div class="flex flex-col items-center justify-center p-4">
             <Scan class="w-8 h-8 text-[#B08D57] mb-4" />
-            <h4 class="text-[#FDFCFA] font-bold text-lg mb-2 tracking-tight">Phase 1: Labels</h4>
-            <p class="text-[#F2EAD9]/50 text-sm font-medium">Automated Vision AI extraction</p>
+            <h4 class="text-[#2B2620] font-bold text-lg mb-2 tracking-tight">Phase 1: Labels</h4>
+            <p class="text-[#6E675C] text-sm font-medium">Automated Vision AI extraction</p>
           </div>
         </div>
       </div>
